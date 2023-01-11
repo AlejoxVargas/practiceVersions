@@ -13,15 +13,15 @@ public class Ejercicio3 {
         int posicion1 = sc.nextInt();
         System.out.println("Escribir segundo índice: ");
         int posicion2 = sc.nextInt();
-        alternar(getArray,posicion1, posicion2);
+        alternar(getArray, posicion1, posicion2);
     }
 
     static boolean alternar(int[] getArray, int posicion1, int posicion2) {
-        boolean llave = false;
         for (int i : getArray) {
-            if(getArray[i]!=posicion1){
-               
+            if (posicion1 < 0 || posicion1 > getArray.length && posicion2 < 0 || posicion1 > getArray.length) {
+                
             }
+
         }
     }
 }
