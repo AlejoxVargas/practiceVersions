@@ -2,6 +2,11 @@ package MatricesUnidimensionales;
 
 import java.util.Scanner;
 
+/*Ejercicio 1:
+
+Versión 2: Escribir un método estaPresente() al que se le pase como argumento el array números y un entero y devuelva si el entero se encuentra en el array.
+Opcional: parar la búsqueda en cuanto se ha encontrado el número.*/
+
 public class Ejercicio1_V2 {
 
     public static void main(String[] args) {

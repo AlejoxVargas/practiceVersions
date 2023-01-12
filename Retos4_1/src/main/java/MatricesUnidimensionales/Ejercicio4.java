@@ -3,6 +3,7 @@ package MatricesUnidimensionales;
 /*Ejercicio 4:
 
 Escribir un método max() al que se le pase como argumento el array números y devuelva el valor máximo.*/
+
 public class Ejercicio4 {
 
     public static void main(String[] args) {

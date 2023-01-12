@@ -2,13 +2,17 @@ package MatricesUnidimensionales;
 
 import java.util.Scanner;
 
-public class Ejercicio1 {
+/*Ejercicio 1:
 
+Versión 1: Escribir un programa que lea un entero por teclado y diga si se encuentra en el array números.
+Opcional: parar la búsqueda en cuanto se ha encontrado el número.*/ 
+
+public class Ejercicio1 {
+    
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        /*Versión 1: Escribir un programa que lea un entero por teclado y diga si se encuentra en el array números.*/
-
+        
         int[] getArray = {12, 15, 13, 10, 8, 9, 13, 14};
         System.out.println("Enter a number in the array: ");
         int n = sc.nextInt();
