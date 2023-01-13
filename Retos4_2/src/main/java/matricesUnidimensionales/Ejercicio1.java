@@ -21,19 +21,22 @@ public class Ejercicio1 {
         char[] charArray = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
         int posicion;
         boolean llave = false;
+        String acumulador = "";
         do {
             System.out.println("Enter the array position: ");
             posicion = sc.nextInt();
-            
+
             if (posicion > charArray.length) {
                 System.out.println("Insertar números entre 0 y 25");
             } else if (posicion < 0) {
                 llave = true;
             } else {
                 System.out.println("Se añade la: " + "\'" + charArray[posicion] + "\'");
+                acumulador += charArray[posicion];
             }
+            
         } while (!llave);
         System.out.println("Fin de la ejecución");
-        //System.out.println("Cadena final:" + charArray[posicion]);
+        System.out.println("Cadena final: " + acumulador);
     }
 }
