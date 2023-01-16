@@ -36,3 +36,4 @@ public class Ejercicio2 {
 
     }
 }
+//ERRORES
