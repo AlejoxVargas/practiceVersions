@@ -13,6 +13,7 @@ public class Ejercicio0 {
         Scanner sc = new Scanner(System.in);
 
         /*----------------Enteros-------------------*/
+        
         int vectorEnteros[] = new int[6];
 
         for (int i = 0; i < vectorEnteros.length; i++) {
@@ -26,19 +27,25 @@ public class Ejercicio0 {
         System.out.println();
 
         /*----------Cadena de caracteres----------*/
+        
         String vectorString[] = new String[6];
         sc.nextLine();
+        
         for (int i = 0; i < vectorString.length; i++) {
             System.out.println("Introducir valores de cadena de caracteres: ");
             vectorString[i] = sc.nextLine();
         }
-
+        
+        int contadorIndice = 0;
         for (String vectorString1 : vectorString) {
-            System.out.println("Contenido : " + vectorString1);
+            System.out.println("Introducir valores de cadena de caracteres " + contadorIndice + " es: " + vectorString1);
+            contadorIndice += 1;
+            //Aquí utilizo en for each para practicar a diferencia de los demás, y agregando un contador para imprimir el indice
         }
         System.out.println();
 
         /*------------6 caracteres---------------*/
+        
         char vectorChar[] = new char[6];
 
         for (int i = 0; i < vectorChar.length; i++) {

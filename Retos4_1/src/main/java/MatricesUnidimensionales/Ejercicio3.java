@@ -22,7 +22,7 @@ public class Ejercicio3 {
     }
 
     static void alternar(int[] getArray, int posicion1, int posicion2) {
-        int cambio = 0;
+        int cambio;
         if (posicion1 < 0 || posicion1 > getArray.length || posicion2 < 0 || posicion1 > getArray.length) {
             System.out.println("Rango de indices incorrectos");
         } else {
