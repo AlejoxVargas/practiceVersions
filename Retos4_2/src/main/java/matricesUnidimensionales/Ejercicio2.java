@@ -8,32 +8,28 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        char[] charArray = new char[25];
+        char[] charArray = new char[26];
         int posicion;
-        boolean llave = false;
-        int ascii = 65;
         String acumulador = "";
-        
+
         do {
-            System.out.println("Inserte indice: ");
+            System.out.println("Insertar número entre 0 y 25: ");
             posicion = sc.nextInt();
-            
-            if (posicion > charArray.length) {
-                System.out.println("Insertar números entre 0 y 25");
-            } else if (posicion < 0) {
-                llave = true;
-            } else {
-                for (int i = 0; i <= charArray.length; i++) {
-                    ascii += posicion;
-                    System.out.println((char)ascii);
-                //System.out.println("Se añade la: " + "\'" + charArray[i] + "\'");
-                acumulador += charArray[posicion];
-                }
+            if (posicion >= 0 && posicion < charArray.length) {
+                System.out.println("Se añade la: " + "\'" + arregloAscii(charArray, posicion) + "\'");
+                //acumulador += arregloAscii(charArray, posicion); esta linea con función y la de abajo hacen lo mismo, la pregunta es: ¿Cómo lo hacen?
+                acumulador += charArray[posicion]; 
             }
+        } while (posicion >= 0);
+        System.out.println("Fin de la ejecución");
+        System.out.println("Cadena final: " + acumulador);
 
-        } while (!llave);
-         System.out.println("Fin de la ejecución");
-         System.out.println("Cadena final: " + acumulador);
+    }
 
+    static char arregloAscii(char[] arreglo, int posi) {
+        for (int i = 0, ascii = 65; i < arreglo.length; i++, ascii++) {
+            arreglo[i] = (char) ascii;
+        }
+        return arreglo[posi];
     }
 }
