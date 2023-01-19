@@ -11,18 +11,36 @@ public class Ejercicio2 {
         Scanner sc = new Scanner(System.in);
         int[][] arrayEnteros = new int[4][5];
         int contador = 20;
-//        for (int i = 0; i < arrayEnteros.length; i++) {
-//            for (int j = 0; j < arrayEnteros[0].length; j++) {
-//                System.out.println("Escriba " + contador + " números enteros: ");
-//                arrayEnteros[i][j] = sc.nextInt();
-//                contador--;
-//            }
-//        }
-//        for (int i = 0; i < arrayEnteros.length; i++) {
-//            for (int j = 0; j < arrayEnteros.length; j++) {
-//                System.out.println(arrayEnteros[i][j]);
-//            }
-//        }
-    }
+        for (int i = 0; i < arrayEnteros.length; i++) {
+            for (int j = 0; j < arrayEnteros[0].length; j++) {
+                System.out.println("Escriba " + contador + " números enteros: ");
+                arrayEnteros[i][j] = sc.nextInt();
+                contador--;
+            }
+        }
+        int fila = 0;
+        int columna = 0;
+        int total = 0;
 
+        for (int i = 0; i < arrayEnteros.length; i++) {
+            int suma = 0;
+            for (int j = 0; j < arrayEnteros[0].length; j++) {
+                suma += arrayEnteros[i][j];
+                System.out.print("\t" + arrayEnteros[i][j]);
+            }
+            System.out.println("\t[fila " + fila + " suma: " + suma);
+            fila++;
+            total += suma;
+        }
+        for (int j = 0; j < arrayEnteros[0].length; j++) {
+            int suma = 0;
+            for (int i = 0; i < arrayEnteros.length; i++) {
+                suma += arrayEnteros[i][j];
+            }          
+            System.out.print("\t[" + suma);
+            columna++;
+            total += suma;
+        }
+        System.out.print("\t[Total: " + total);
+    }
 }
