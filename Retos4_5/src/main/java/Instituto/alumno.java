@@ -21,7 +21,7 @@ public class alumno {
     }
 
     //Metodos
-    static void setNotaIngles(alumno alumnoX, double notaIngles) {
+    public static void setNotaIngles(alumno alumnoX, double notaIngles) {
         if (notaIngles < 0 || notaIngles > 10) {
             System.out.println("Calificación incorrecta");
         } else {
@@ -32,7 +32,7 @@ public class alumno {
         }
     }
 
-    static void setNotaFrances(alumno alumnoX, double notaFrances) {
+    public static void setNotaFrances(alumno alumnoX, double notaFrances) {
         if (notaFrances < 0 || notaFrances > 10) {
             System.out.println("Calificación incorrecta");
         } else {
@@ -42,7 +42,7 @@ public class alumno {
         }
     }
 
-    static void setNotaAleman(alumno alumnoX, double notaAleman) {
+    public static void setNotaAleman(alumno alumnoX, double notaAleman) {
         if (notaAleman < 0 || notaAleman > 10) {
             System.out.println("Calificación incorrecta");
         } else {
@@ -53,7 +53,7 @@ public class alumno {
     }
 
     //Calcular Media
-    static void calcularMedia(alumno alumnoX) {
+    public static void calcularMedia(alumno alumnoX) {
         double resultado = (alumnoX.notas[0] + alumnoX.notas[1] + alumnoX.notas[2]) / 3;
         System.out.println("Nota media: " + resultado);
     }
