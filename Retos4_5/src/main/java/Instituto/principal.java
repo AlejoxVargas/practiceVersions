@@ -14,6 +14,7 @@ public class principal {
 //        for (int i = 0; i < grupo.length; i++) {
 //            grupo[i] = new alumno(crearNombre(), crearApellido(), LocalDate.of(crearAño(), crearMes(), crearDia()));
 //        }
+System.out.println("Nuevo cambio para practice version desde gitHub hola");
         int opcion;
         do {
             opcion = menu();
