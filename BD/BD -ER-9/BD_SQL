@@ -1,0 +1,47 @@
+CREATE TABLE PRESIDENTE (
+dni TEXT, 
+nombre TEXT,
+apellido TEXT, 
+fechaNacimiento TEXT,
+equipoPresidente TEXT,
+fechaEleccion TEXT,
+PRIMARY KEY (dni)
+);
+
+CREATE TABLE EQUIPO (
+codigoEquipo INTEGER,
+nombreEquipo TEXT,
+nombreEstadio TEXT,
+aforo INTEGER, 
+fechaFundacion TEXT, 
+ciudadEquipo TEXT,
+PRIMARY KEY (codigoEquipo) 
+);
+
+CREATE TABLE PARTIDO (
+codigoPartido INTEGER, 
+fechaPartido TEXT,
+goles INTEGER,
+golVisitante INTEGER,
+golHost INTEGER,
+PRIMARY KEY (codigoPartido)
+);
+
+CREATE TABLE JUGADOR (
+codigoJugador INTEGER, 
+nombreJugador TEXT, 
+fechaNacimiento TEXT, 
+posicionJugador TEXT, 
+codigoEquipo INTEGER
+PRIMARY KEY (codigoJugador),
+FOREIGN KEY (codigoEquipo) REFERENCES EQUIPO (codigoEquipo)
+);
+
+CREATE TABLE GOL (
+minuto TEXT, 
+descripcio TEXT, 
+codigoPartido INTEGER,
+codigoJugador INTEGER,
+FOREIGN KEY (codigoPartido) REFERENCES PARTIDO (codigoPartido)
+FOREIGN KEY (codigoJugador) REFERENCES JUGADOR (codigoJugador)
+);
