@@ -16,9 +16,7 @@ public class principalTest {
         grupo[2] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 11, 9));
         grupo[3] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1997, 2, 11));
         grupo[4] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 11, 9));
-        
-        System.out.println("Hey this is a test");
-
+       
         int opcion;
         do {
             opcion = menu();
