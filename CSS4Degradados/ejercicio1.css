@@ -1,0 +1,9 @@
+div{
+    height: 120px;
+    background-image: linear-gradient(to right,red,orange,yellow,green,blue,purple,violet);
+    text-align: center;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(135, 135, 135);
+    font-weight: bold;
+}
