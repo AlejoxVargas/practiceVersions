@@ -1,0 +1,93 @@
+body {
+    background-image: url(./Wikipedia-logo-v2_\(10_percent_opacity\).svg.png);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+h1 {
+    text-align: center;
+    border: 10px solid black;
+    width: 400px;
+    margin-left: 30%;
+    border-radius: 20px/4px 30px;
+}
+
+img {
+    border-top: 8px dotted blue;
+    border-right: 8px solid red;
+    border-bottom: 8px groove rgb(5, 187, 5);
+    border-left: 8px double rgb(184, 165, 2);
+    width: 300px;
+    margin-left: 30%;
+}
+
+ul{   
+    background-color: #CFC85E;
+    padding: 2% 2% 2% 2%;
+}
+
+li{    
+    list-style-image: url("./sqpurple.gif");   
+}
+
+.lista{
+    background-color: #CE9B10;
+    border-bottom: 5px solid #CFC85E;
+}
+
+table{
+    border: 3px solid black;
+    margin-left: 30%;
+    border-collapse: collapse;
+}
+
+tr:nth-child(7){
+    background-color: rgba(255, 0, 0, 0.4);
+    opacity: 0.8;
+}
+tr:nth-child(6){
+    background-color: rgba(241, 121, 40, 0.801);
+    opacity: 0.8;
+}
+tr:nth-child(5){
+    background-color: rgba(255, 182, 87, 0.829);
+    opacity: 0.8;
+}
+tr:nth-child(4){
+    background-color: rgba(255, 251, 0, 0.863);
+    opacity: 0.8;
+}
+tr:nth-child(3){
+    background-color: rgba(229, 255, 115, 0.856);
+    opacity: 0.8;
+}
+tr:nth-child(2){
+    background-color: rgba(138, 248, 74, 0.856);
+    opacity: 0.8;
+}
+#especial{
+    background-color: rgba(72, 182, 9, 0.856);
+    opacity: 0.8;
+}
+thead{
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    opacity: 0.8;
+}
+#negrita{
+    font-weight: bold;
+}
+#underline{
+    text-decoration: underline;
+}
+a{
+    font-weight: bold;
+    color:  blue;
+}
+#link{
+    margin-left: 15px;
+    margin-top: 30px;
+    font-size: 13px;
+}
+.sombreadoGris{
+    background-color: rgba(143, 143, 143, 0.1)
+}

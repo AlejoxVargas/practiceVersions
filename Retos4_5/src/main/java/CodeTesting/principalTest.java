@@ -1,4 +1,4 @@
-package codeTesting;
+package CodeTesting;
 
 import Instituto.alumno; //he importado la clase alumno desde el paquete Instituto para que ahora pueda ser manejada desde esta clase principal
 import java.time.LocalDate;
@@ -12,10 +12,10 @@ public class principalTest {
     public static void main(String[] args) {
         alumno[] grupo = new alumno[6];
         grupo[0] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 1, 16));
-        grupo[1] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1995, 1, 3));
-        grupo[2] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 11, 9));
-        grupo[3] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1997, 2, 11));
-        grupo[4] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 11, 9));
+//        grupo[1] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1995, 1, 3));
+//        grupo[2] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 11, 9));
+//        grupo[3] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1997, 2, 11));
+//        grupo[4] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 11, 9));
        
         int opcion;
         do {

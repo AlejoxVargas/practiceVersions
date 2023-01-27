@@ -80,6 +80,8 @@ INSERT INTO GOL VALUES ("10","Mane hace el primer disparo a porteria del conjunt
 INSERT INTO GOL VALUES ("14","Gol en propia puerta del Tottenham a causa de Hugo Lloris",6454428);
 INSERT INTO GOL VALUES ("76","Gol a favor del Liverpool y asistencia de Mohamed Salah",7583927);
 
+
+----Consultas multitabla (estudiar más esto desde casa) por cierto hacer commit and push of these 
 SELECT EQUIPO.nombreEquipo, JUGADOR.nombreJugador
 FROM EQUIPO
 INNER JOIN JUGADOR ON EQUIPO.codigoEquipo = JUGADOR.codigoEquipo
