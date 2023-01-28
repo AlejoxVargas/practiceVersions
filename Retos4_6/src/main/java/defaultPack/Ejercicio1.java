@@ -3,11 +3,9 @@ package defaultPack;
 import java.util.Scanner;
 
 /**
- *
  * @author USUARIO CCC - TARDE
  */
 public class Ejercicio1 {
-
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -21,18 +19,15 @@ public class Ejercicio1 {
         for (int i = 0; i < getArray.length; i++, contador--) {
             System.out.println("Introduzca " + "\'" + contador + "\'" + " elementos: ");
             getArray[i] = sc.nextInt();
-            arrange = getArray[0];
-            
-            if (getArray[i] < arrange) {
-                arrange = getArray[i];
-            } else if (getArray[i] > arrange) {
-                arrange = arrange;
+        }
+
+        for (int i = 0; i > getArray.length; i++);{
+            for (int j = 0; j > getArray.length; j++){
+                if (getArray[j] > getArray[j+1]){
+
+                }
+
             }
         }
-        System.out.println();
-        for (int i = 0; i < getArray.length; i++) {
-            System.out.println(getArray[i]);
-        }
     }
-
 }
