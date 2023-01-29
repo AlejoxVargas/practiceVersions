@@ -1,5 +1,6 @@
 package defaultPack;
-
+/*1. Escribir un programa Java que pida por teclado el número de elementos que se van a introducir y posteriormente vaya pidiendo el
+valor de esos números enteros, los almacene en un array, los ordene y los muestre por pantalla.*/
 import java.util.Scanner;
 
 /**
@@ -21,13 +22,18 @@ public class Ejercicio1 {
             getArray[i] = sc.nextInt();
         }
 
-        for (int i = 0; i > getArray.length; i++);{
-            for (int j = 0; j > getArray.length; j++){
-                if (getArray[j] > getArray[j+1]){
-
+        for (int i = 0; i < getArray.length - 1; i++){
+            for (int j = 0; j < getArray.length - 1; j++) {
+                if (getArray[j] > getArray[j + 1]) {
+                    arrange = getArray[j];
+                    getArray[j] = getArray[j + 1];
+                    getArray[j + 1] = arrange;
                 }
-
             }
+        }
+        System.out.println("Orden creciente: ");
+        for (int i = 0; i < getArray.length; i++) {
+            System.out.print("[" + getArray[i]+ "]");
         }
     }
 }

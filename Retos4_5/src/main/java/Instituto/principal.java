@@ -67,22 +67,22 @@ public class principal {
         return opcion;
     }
 
-    static alumno elegirAlumno(alumno alumnoX) {
-        System.out.println("Elegir estudiante: ");
-        switch (sc.nextInt()) {
-            case 1 ->
-                alumnoAux = alumnoX;
-            case 2 ->
-                alumnoAux = alumno2;
-            case 3 ->
-                alumnoAux = alumno3;
-            case 4 ->
-                alumnoAux = alumno4;
-            case 5 ->
-                alumnoAux = alumno5;
-        }
-        return alumnoAux;
-    }
+//    static alumno elegirAlumno(alumno alumnoX) {
+//        System.out.println("Elegir estudiante: ");
+//        switch (sc.nextInt()) {
+//            case 1 ->
+// //               alumnoAux = alumno1;
+////            case 2 ->
+////                alumnoAux = alumno2;
+////            case 3 ->
+////                alumnoAux = alumno3;
+////            case 4 ->
+////                alumnoAux = alumno4;
+////            case 5 ->
+////                alumnoAux = alumno5;
+//        }
+//        return alumnoAux;
+//    }
 
     static int elegirAsignatura() {
         System.out.println("1.-Inglés\n2.-Francés\n3.-Aleman\n");
@@ -128,25 +128,24 @@ public class principal {
         return dia;
     }
 
-    static alumno registrarAlumno() {
-        boolean llave = true;
-        int cantidad = 1;
-        alumno grupo[] = new alumno[6];
-        do {
-            for (int i = 0; i < cantidad; i++) {
-                grupo[i] = new alumno(crearNombre(), crearApellido(), LocalDate.of(crearAño(), crearMes(), crearDia()));
-            }
-            System.out.println(
-                    "¿Quiere registrar a otro estudiante?"
-                    + "\n1.Si"
-                    + "\n2.No");
-            int opcion = sc.nextInt();
-            if (opcion == 1) {
-                llave = true;
-                cantidad++;
-            }
-        } while (llave);
-        return alumno;
+//    static alumno registrarAlumno() {
+//        boolean llave = true;
+//        int cantidad = 1;
+//        alumno grupo[] = new alumno[6];
+//        do {
+//            for (int i = 0; i < cantidad; i++) {
+//                grupo[i] = new alumno(crearNombre(), crearApellido(), LocalDate.of(crearAño(), crearMes(), crearDia()));
+//            }
+//            System.out.println(
+//                    "¿Quiere registrar a otro estudiante?"
+//                    + "\n1.Si"
+//                    + "\n2.No");
+//            int opcion = sc.nextInt();
+//            if (opcion == 1) {
+//                llave = true;
+//                cantidad++;
+//            }
+//        } while (llave);
+//        return alumno;
     }
-}
 

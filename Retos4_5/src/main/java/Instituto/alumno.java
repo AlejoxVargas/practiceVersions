@@ -1,5 +1,6 @@
 package Instituto;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 
 public class alumno {
@@ -54,18 +55,19 @@ public class alumno {
 
     //Calcular Media
     public static void calcularMedia(alumno alumnoX) {
+        DecimalFormat df = new DecimalFormat("##.##");
         double resultado = (alumnoX.notas[0] + alumnoX.notas[1] + alumnoX.notas[2]) / 3;
-        System.out.println("Nota media: " + resultado);
+        System.out.println("\nNombre: " + alumnoX.nombre + "\nApellido: " + alumnoX.apellido + "Nota media:" + df.format(resultado));
     }
 
     @Override
     public String toString() {
-        return "\nNombre del estudiante: " + nombre
-                + "\nApellido:" + apellido
-                + "\nFecha nacimiento:" + fechaNacimiento
-                + "\nIngles:" + notas[0]
-                + "\nFrancés:" + notas[1]
-                + "\nAlemán:" + notas[2]
+        return "\nNombre: " + nombre
+                + "\nApellido: " + apellido
+                + "\nFecha nacimiento: " + fechaNacimiento
+                + "\nIngles: " + notas[0]
+                + "\nFrancés: " + notas[1]
+                + "\nAlemán: " + notas[2]
                 + "\n";
     }
 }
