@@ -11,29 +11,28 @@ public class principalTest {
     static alumno alumnoAux = new alumno();
 
     public static void main(String[] args) {
-        alumno[] grupo = new alumno[6];
-        for (int i = 0; i < grupo.length; i++) {
-            System.out.println(grupo[i]);
-        }
-        //grupo[0] = new alumno(crearNombre(), crearApellido(), LocalDate.of(crearAnyo(), crearMes(), crearDia()));
-//        grupo[1] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1995, 1, 3));
-//        grupo[2] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 11, 9));
-//        grupo[3] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1997, 2, 11));
-//        grupo[4] = new alumno(crearNombre(), crearApellido(), LocalDate.of(1996, 11, 9));
+        alumno[] grupo = new alumno[5];
 
-        int opcion;
+        int opcionMenu, opcionAsignatura = 0;
+        boolean llaveAlumno = false;
         do {
-            opcion = menu();
-            if (opcion != 0 && opcion != 3) {
-                alumnoAux = elegirAlumno(grupo, alumnoAux);
+            opcionMenu = menu();
+            if (opcionMenu != 0 && opcionMenu != 3) {
+                if (elegirAlumno(grupo, alumnoAux) != null) {
+                    alumnoAux = elegirAlumno(grupo, alumnoAux);
+                    llaveAlumno = true;
+                }
             }
-            switch (opcion) {
+            switch (opcionMenu) {
                 case 1 -> {
-                    opcion = elegirAsignatura();
-                    switch (opcion) {
-                        case 1 -> alumno.setNotaIngles(alumnoAux, elegirNota());
-                        case 2 -> alumno.setNotaFrances(alumnoAux, elegirNota());
-                        case 3 -> alumno.setNotaAleman(alumnoAux, elegirNota());
+                    if (llaveAlumno == true) {
+                        opcionAsignatura = elegirAsignatura();
+                    } else {
+                        switch (opcionAsignatura) {
+                            case 1 -> alumno.setNotaIngles(alumnoAux, elegirNota());
+                            case 2 -> alumno.setNotaFrances(alumnoAux, elegirNota());
+                            case 3 -> alumno.setNotaAleman(alumnoAux, elegirNota());
+                        }
                     }
                 }
                 case 2 -> {
@@ -46,7 +45,7 @@ public class principalTest {
 
                 default -> System.out.println("Fin");
             }
-        } while (opcion != 0);
+        } while (opcionMenu != 0);
     }
 
     static int menu() {
@@ -67,12 +66,16 @@ public class principalTest {
 
     static alumno elegirAlumno(alumno[] grupoArray, alumno alumnoX) {
         boolean llave = false;
+        //crearme un metodo para esto
         for (int i = 0; i < grupoArray.length; i++) {
-            if (grupoArray[i] == null) {
+            if (grupoArray[i] != null) {
+                llave = false;
+                break;
+            } else {
                 llave = true;
             }
         }
-        if (llave = true) {
+        if (llave == true) {
             System.out.println("Lo sentimos :( parece que no has creado ningún estudiante en la base de datos");
         } else {
             System.out.println("Elegir estudiante: ");
@@ -101,9 +104,9 @@ public class principalTest {
     }
 
     static String crearNombre() {
+        sc.nextLine();
         System.out.println("Nombre: ");
         String nombre = sc.nextLine();
-        sc.nextLine();
         return nombre;
     }
 
@@ -136,13 +139,13 @@ public class principalTest {
 
     static alumno registrarAlumno(alumno[] grupoArray, alumno alumnoX) {
         boolean llave = true;
-        // alumno grupo[] = new alumno[6];
         do {
             int cantidad = 1;
             for (int i = 0; i < cantidad; i++) {
                 grupoArray[i] = new alumno(crearNombre(), crearApellido(), LocalDate.of(crearAnyo(), crearMes(), crearDia()));
                 alumnoX = grupoArray[i];
             }
+            System.out.println(alumnoX.toString());
             System.out.println(
                     "¿Quiere registrar a otro estudiante?"
                             + "\n1.Si"
@@ -155,6 +158,6 @@ public class principalTest {
             }
         } while (llave);
         return alumnoX;
-        //numero de estudiantes totales en la base de datos
+        //numero de estudiantes totales en la base de datos metodo nuevo para esto
     }
 }

@@ -5,19 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf048b05-7a41-4452-85e4-428c5530cc2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Retos4_6/src/main/java/defaultPack/Ejercicio2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Instituto/grupo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodeTesting/principalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodeTesting/principalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Instituto/alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Instituto/alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Instituto/principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Instituto/principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Instituto/alumno.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Instituto/alumno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Instituto/principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Instituto/principal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retos4_6/src/main/java/defaultPack/Ejercicio1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_6/src/main/java/defaultPack/Ejercicio1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retos4_6/target/classes/defaultPack/Ejercicio1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_6/target/classes/defaultPack/Ejercicio1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -87,5 +89,16 @@
       <updated>1674911044158</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
