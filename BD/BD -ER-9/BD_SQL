@@ -87,3 +87,43 @@ FROM EQUIPO
 INNER JOIN JUGADOR ON EQUIPO.codigoEquipo = JUGADOR.codigoEquipo
 WHERE EQUIPO.codigoEquipo = 1001
 ORDER BY JUGADOR.nombreJugador;
+
+----------NUEVA TABLA PARA SELF JOIN -----------
+CREATE TABLE ALUMNOS (
+alumnoId INTEGER,
+nombre TEXT NOT NULL,
+apellido TEXT NOT NULL,
+delegado INTEGER,
+PRIMARY KEY (alumnoId)
+);
+
+INSERT INTO ALUMNOS VALUES(1000, "Lorena", "Cubillos",1004);
+INSERT INTO ALUMNOS VALUES(1001, "Alejo", "Vargas",1004);
+INSERT INTO ALUMNOS VALUES(1002, "Juan", "Caballo",1004);
+INSERT INTO ALUMNOS VALUES(1003, "Javier", "Hacker",1004);
+INSERT INTO ALUMNOS VALUES(1004, "Alonso", "Portugal",null);
+INSERT INTO ALUMNOS VALUES(1005, "Juan", "Carlos",1004);
+INSERT INTO ALUMNOS VALUES(1006, "Mishel", "Pro",1004);
+INSERT INTO ALUMNOS VALUES(1007, "Miguel", "Discord",1004);
+INSERT INTO ALUMNOS VALUES(1008, "Luis", "Miguel",1004);
+INSERT INTO ALUMNOS VALUES(1009, "Diego", "elPana",1004);
+
+SELECT  a.nombre || '' || a.apellido as 'alumnos',
+		d.nombre || '' || d.apellido as 'delegado'
+FROM ALUMNOS a 
+INNER JOIN ALUMNOS d on a.alumnoId = d.delegado
+ORDER BY d.delegado;
+
+---left-join
+SELECT  a.nombre || '' || a.apellido as 'alumnos',
+		d.nombre || '' || d.apellido as 'delegado'
+FROM ALUMNOS d
+LEFT JOIN ALUMNOS a on a.alumnoId = d.delegado
+ORDER BY d.delegado;
+
+----RIGHT JOIN
+SELECT  a.nombre || '' || a.apellido as 'delegado',
+		d.nombre || '' || d.apellido as 'alumno'
+FROM ALUMNOS a
+RIGHT JOIN ALUMNOS d on a.alumnoId = d.delegado
+ORDER BY d.delegado;

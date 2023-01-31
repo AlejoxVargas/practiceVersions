@@ -13,22 +13,25 @@ import java.util.Scanner;
  * Luego debe mostrar los dos arrays.
  */
 public class Ejercicio2 {
+
     public static Scanner sc = new Scanner(System.in);
     public static Random rnd = new Random();
 
     public static void main(String[] args) {
+
         final int CANTIDAD_NUMEROS = 20;
 
         int[] vectorAleatorio = new int[CANTIDAD_NUMEROS];
         int[] primosAleatorio = new int[CANTIDAD_NUMEROS];
 
-        ArrayAleatorio(vectorAleatorio);
-        primeNumber(primosAleatorio, primosAleatorio);
+        vectorAleatorio = ArrayAleatorio(vectorAleatorio);
+        primeNumber(vectorAleatorio, primosAleatorio);
 
         System.out.println(Arrays.toString(vectorAleatorio));
+       // System.out.println(Arrays.toString(primosAleatorio));
     }
 
-    public static void ArrayAleatorio(int[] vector) {
+    public static int[] ArrayAleatorio(int[] vector) {
         boolean descartado;
         int min_value = 100, max_value = 199;
         for (int i = 0; i < vector.length; i++) {
@@ -42,26 +45,39 @@ public class Ejercicio2 {
                     }
                 }
                 if (!descartado) {
-                    vector[i] = numeroRandom;
+                   vector[i] = numeroRandom;
                 }
             } while (descartado);
         }
+        return vector;
     }
 
-    public static void primeNumber(int[] vector, int [] vector2) {
-        for (int i = 0; i < vector.length; i++) {
-            int count = 0;
-            for (int j = 1; j < vector[i]; j++) {
-                if (i % j == 0) {
-                    count++;
+    public static void primeNumber(int[] vector, int[] vector2) {
+
+        for (int h = 0; h < vector.length; h++) {
+            if (vector[h] != 0 && vector[h] != 1) {
+
+                for (int i = 0; i < vector.length; i++) {
+                    int count = 0;
+
+                    for (int j = 1; j <= vector[i]; j++) {
+                        if (vector[i] % j == 0) {
+                            count++;
+                        }
+                    }
+
+                    if (count == 2) {
+                        for (int k = 0; k < vector2.length; k++) {
+                            vector2[k] = vector[i];
+                        }
+                        for (int l = 0; l < vector2.length; l++) {
+                        
+                            System.out.println(vector2[l]);
+                        }
+                    }
                 }
-            }
-            if (count == 2) {
-                System.out.println(vector[i]);
-            } else {
-                System.out.println("No hay numeros primos");
+
             }
         }
     }
 }
-
