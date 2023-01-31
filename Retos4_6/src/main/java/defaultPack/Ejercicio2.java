@@ -1,5 +1,9 @@
 package defaultPack;
 
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  * @author Alejandro Vargas
  */
@@ -9,7 +13,55 @@ package defaultPack;
  * Luego debe mostrar los dos arrays.
  */
 public class Ejercicio2 {
+    public static Scanner sc = new Scanner(System.in);
+    public static Random rnd = new Random();
+
     public static void main(String[] args) {
-        System.out.println("hola mundo");
+        final int CANTIDAD_NUMEROS = 20;
+
+        int[] vectorAleatorio = new int[CANTIDAD_NUMEROS];
+        int[] primosAleatorio = new int[CANTIDAD_NUMEROS];
+
+        ArrayAleatorio(vectorAleatorio);
+        primeNumber(primosAleatorio, primosAleatorio);
+
+        System.out.println(Arrays.toString(vectorAleatorio));
+    }
+
+    public static void ArrayAleatorio(int[] vector) {
+        boolean descartado;
+        int min_value = 100, max_value = 199;
+        for (int i = 0; i < vector.length; i++) {
+            do {
+                int numeroRandom = min_value + rnd.nextInt(max_value - min_value);
+                descartado = false;
+                for (int numVector : vector) {
+                    if (numVector == numeroRandom) {
+                        descartado = true;
+                        break;
+                    }
+                }
+                if (!descartado) {
+                    vector[i] = numeroRandom;
+                }
+            } while (descartado);
+        }
+    }
+
+    public static void primeNumber(int[] vector, int [] vector2) {
+        for (int i = 0; i < vector.length; i++) {
+            int count = 0;
+            for (int j = 1; j < vector[i]; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+            if (count == 2) {
+                System.out.println(vector[i]);
+            } else {
+                System.out.println("No hay numeros primos");
+            }
+        }
     }
 }
+
