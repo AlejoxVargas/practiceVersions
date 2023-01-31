@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Reto3.4_while" />
+        <module name="Tema1" />
+        <module name="Retos3_5_for" />
+        <module name="Retos1_2" />
+        <module name="Retos2_1" />
+        <module name="Retos2_3" />
+        <module name="Retos3_2" />
+        <module name="Retos4_1" />
+        <module name="Retos2_2" />
+        <module name="Retos4_3" />
+        <module name="Retos2_4" />
+        <module name="Retos3_3" />
+        <module name="Retos4_2" />
+        <module name="Retos3_6" />
+        <module name="Retos4_5" />
+        <module name="Retos3" />
+        <module name="Retos4_4" />
+        <module name="Retos4_6" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Reto3.4_while" target="19" />
+      <module name="Retos1_2" target="19" />
+      <module name="Retos2_1" target="19" />
+      <module name="Retos2_2" target="19" />
+      <module name="Retos2_3" target="19" />
+      <module name="Retos2_4" target="19" />
+      <module name="Retos3" target="19" />
+      <module name="Retos3_2" target="19" />
+      <module name="Retos3_3" target="19" />
+      <module name="Retos3_5_for" target="19" />
+      <module name="Retos3_6" target="19" />
+      <module name="Retos4_1" target="19" />
+      <module name="Retos4_2" target="19" />
+      <module name="Retos4_3" target="19" />
+      <module name="Retos4_4" target="19" />
+      <module name="Retos4_5" target="19" />
+      <module name="Retos4_6" target="19" />
+      <module name="Tema1" target="19" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

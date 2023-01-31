@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Retos3_4_While/Reto3.4_while.iml" filepath="$PROJECT_DIR$/Retos3_4_While/Reto3.4_while.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos1_2/Retos1_2.iml" filepath="$PROJECT_DIR$/Retos1_2/Retos1_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos2_1/Retos2_1/Retos2_1.iml" filepath="$PROJECT_DIR$/Retos2_1/Retos2_1/Retos2_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos2_2/Retos2_2.iml" filepath="$PROJECT_DIR$/Retos2_2/Retos2_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos2_3/Retos2_3.iml" filepath="$PROJECT_DIR$/Retos2_3/Retos2_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos2_4/Retos2_4.iml" filepath="$PROJECT_DIR$/Retos2_4/Retos2_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos3/Retos3.iml" filepath="$PROJECT_DIR$/Retos3/Retos3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos3_2/Retos3_2.iml" filepath="$PROJECT_DIR$/Retos3_2/Retos3_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos3_3/Retos3_3.iml" filepath="$PROJECT_DIR$/Retos3_3/Retos3_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos3_5_for/Retos3_5_for.iml" filepath="$PROJECT_DIR$/Retos3_5_for/Retos3_5_for.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos3_6/Retos3_6.iml" filepath="$PROJECT_DIR$/Retos3_6/Retos3_6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos4_1/Retos4_1.iml" filepath="$PROJECT_DIR$/Retos4_1/Retos4_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos4_2/Retos4_2.iml" filepath="$PROJECT_DIR$/Retos4_2/Retos4_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos4_3/Retos4_3.iml" filepath="$PROJECT_DIR$/Retos4_3/Retos4_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos4_4/Retos4_4.iml" filepath="$PROJECT_DIR$/Retos4_4/Retos4_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos4_5/Retos4_5.iml" filepath="$PROJECT_DIR$/Retos4_5/Retos4_5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos4_6/Retos4_6.iml" filepath="$PROJECT_DIR$/Retos4_6/Retos4_6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retos1_1/Tema1/Tema1.iml" filepath="$PROJECT_DIR$/Retos1_1/Tema1/Tema1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/practiceVersions.iml" filepath="$PROJECT_DIR$/.idea/practiceVersions.iml" />
+    </modules>
+  </component>
+</project>
