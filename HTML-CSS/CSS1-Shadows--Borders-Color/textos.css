@@ -1,0 +1,29 @@
+#center{
+    text-align: center;
+    text-decoration: overline;
+    text-transform: lowercase;
+    letter-spacing: 5px;
+}
+#left{
+    text-align: left;
+    text-decoration: underline;
+    text-transform: uppercase;
+    line-height: 50px;
+}
+#right{
+    text-align: right;
+    text-align-last: left;
+    text-transform: capitalize;
+}
+#justify{
+    text-align: justify;
+}
+#a{
+    vertical-align: baseline;
+}
+a{
+    text-decoration: none;
+}
+#uno{
+    text-shadow: 2px 2px 8px red;
+}

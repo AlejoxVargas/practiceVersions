@@ -1,0 +1,15 @@
+p span{
+    color: orange;
+}
+
+#note{
+    color: white;
+    background-color: red;
+    margin: 50px 40px 60px 30px;
+    padding: 45px;
+}
+
+p{
+    margin-top: 70px;
+    margin-left: 50px;
+}

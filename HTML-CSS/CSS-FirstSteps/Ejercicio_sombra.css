@@ -1,0 +1,37 @@
+.container {
+    margin-left: 600px;
+    margin-top: 300px;
+    background-color: red;
+}
+
+.desing {
+    color: rgb(133, 125, 145);
+    margin: 20px;
+    background-color: rgb(218, 218, 229);
+    width: 180px;
+    height: 60px;
+    text-align: center;
+    float: left;
+    line-height: 55px;
+    margin-left: 60px;
+    margin-top: 300px;
+}
+
+#a {
+    box-shadow: -5px -5px rgb(133, 125, 125);
+}
+
+#b {
+    box-shadow: -5px -5px 5px rgb(133, 125, 125);
+}
+
+#c {
+    box-shadow: -8px -8px rgb(133, 125, 125);
+}
+
+#text {
+    color: rgb(236, 230, 219);
+    text-shadow: 1.5px 1.2px 2.5px rgb(219, 41, 41);
+    font-size: 25px; 
+    text-align: center;
+}

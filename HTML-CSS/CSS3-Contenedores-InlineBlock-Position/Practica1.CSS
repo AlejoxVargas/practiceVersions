@@ -1,0 +1,9 @@
+div{ 
+    display: inline-block;
+    width: 33%;
+    border: 2px solid red;
+    box-sizing: border-box;
+}
+a{
+    margin: 30px;
+}

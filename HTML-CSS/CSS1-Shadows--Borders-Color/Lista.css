@@ -1,0 +1,36 @@
+.azul {
+    color: blue;
+    font-size: 40px;
+}
+
+#Primero {
+    font-size: 20px;
+}
+
+.azul {
+    color: blue;
+}
+
+#Segundo {
+    font-size: 23px;
+}
+
+#Tercero {
+    font-size: 32px;
+}
+
+#Cuarto {
+    font-size: 38px;
+}
+
+#Quinto {
+    font-size: 43px;
+}
+
+.negro {
+    color: black;
+}
+
+.lista {
+    text-align: center;
+}

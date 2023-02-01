@@ -1,0 +1,25 @@
+#text{
+    text-align: left;
+    letter-spacing: 1.6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+#green{
+    color: rgba(15, 177, 15, 0.904);
+    text-decoration: underline;
+}
+#red{
+    color: red;
+}
+#over_under{
+    text-decoration: overline underline;
+}
+#big-bold{
+    font-size: 30px;
+}
+#blue{
+    color: blue;
+}
+#red_under{
+    color: red;
+}

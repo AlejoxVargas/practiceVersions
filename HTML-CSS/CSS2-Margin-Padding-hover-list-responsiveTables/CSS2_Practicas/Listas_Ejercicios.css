@@ -1,0 +1,18 @@
+ol{
+    list-style-type:upper-roman;
+    background-color: #FF9101;
+    padding: 5% 0 5% 5%;
+}
+ul{
+    list-style-type: square;
+    background-color: green;
+    padding: 5% 0 5% 5%;
+}
+
+.li2{
+    background-color: #0DCE7E;
+    border-bottom: 5px solid green;
+}
+li{
+    background-color: #E9BF06;
+}

@@ -1,0 +1,38 @@
+p{
+    margin: 20px 1px 1px 200px;
+}
+#box1{
+    border-top-style: dotted;
+    border-top-color: blue;
+    border-top-width: 4px;
+    border-right: 2px solid red ;
+    border-bottom: 7px groove green;
+    border-left: 12px double rgba(255, 192, 20, 0.986);
+    width: 80px;
+    padding: 8px;
+    padding-right: 20px;
+}
+
+#box2{
+    border: 4px solid blue;   
+    width: 80px;
+    padding: 8px;
+    padding-right: 20px
+}
+
+#box3{
+    border: 4px solid rgba(236, 182, 32, 0.87); 
+    border-left: 4px solid rgba(155, 119, 22, 0.87);
+    border-top: 4px solid rgba(116, 88, 13, 0.87);
+    width: 80px;
+    padding: 8px;
+    padding-right: 20px
+}
+
+#box4{
+    border: 4px solid rgba(236, 182, 32, 0.87);
+    border-style: outset ;
+    width: 80px;
+    padding: 8px;
+    padding-right: 20px
+}

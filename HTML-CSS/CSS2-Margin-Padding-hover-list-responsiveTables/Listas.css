@@ -1,0 +1,9 @@
+ul{
+    /*list-style-type:upper-alpha;*/
+    /*Sirve se hace todo el estilo de la lista*/
+    /*se puede forzar a hacer el cambio a lista organizada*/
+    list-style-image: url("./sqpurple.gif");
+    /*podemos colocar una imagen en la lista*/
+    list-style-position: outside; 
+    /*Podemos meter el icono dentro de o fuera de la lista o parrafo*/
+}

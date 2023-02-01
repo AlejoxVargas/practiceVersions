@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio de Reservas</title>
+</head>
+
+<body style="background-color: #FFD38F;">
+    <DIV align="center">
+        <font face="Trebuchet MS,arial,verdana">
+            <h1 style="background-color: white;">RESTAURANTE MILANO</h1>
+        </font>
+    </DIV>
+    <form action="">
+        <table border="3" align="center" style="border-radius: 2%; background-color: #F9EDDD" size="40">
+            <tr>
+                <td><img src="https://www.tropopublicidad.com/fotos/prj_32/2/5/img-25_25-s-1602376770.jpg" alt="">
+                    <fieldset>
+                        <font face="Trebuchet MS,arial,verdana">
+                            <legend> <b> Datos de la Reserva</b></legend>
+                            <label for="tipoReserva">Tipo de reserva:</label>
+                            <select name="" id="tipoReserva">
+                                <option value="">...</option>
+                                <option value="">Desayuno</option>
+                                <option value="">Aperitivo</option>
+                                <option value="">Almuerzo</option>
+                                <option value="">Cena</option>
+                            </select><br>
+                            <label for="Fecha de la reserva:">Fecha de la reserva:</label>
+                            <input type="date" name="" id="Fecha de la reserva:"><br>
+                            <label for="Hora de la Reserva">Hora de la Reserva</label>
+                            <input type="time" name="" id="Hora de la Reserva"><br>
+                            <label for="Número de Personas:">Número de Personas:</label>
+                            <input type="number" name="" id="Número de Personas:" placeholder="2" required
+                                maxlength="10" minlength="1"> <br>
+                            <label for="Zona del restaurante:">Zona del restaurante:</label>
+                            <input type="radio" name="" id="Zona del restaurante:">Terraza
+                            <input type="radio" name="" id="">Interior <br>
+                            <textarea name="" id="" cols="20" rows="5"
+                                placeholder="Más servicios que necesite:"></textarea>
+                        </font>
+                    </fieldset>
+                    <font face="Comic Sans MS,arial,verdana">
+                        <fieldset>
+                            <legend>Datos Personales</legend>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="" id="nombre" autofocus maxlength="25" minlength="3" required
+                                size="30"><br>
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="" id="apellido" maxlength="25" minlength="3" size="30"> <br>
+                            <label for="movil">movil</label>
+                            <select name="" id="">
+                                <option value="" selected>+34</option>
+                                <option value="">+51</option>
+                                <option value="">+1</option>
+                                <option value="">+102</option>
+                                <option value="">+13</option>
+                                <br>
+                                <input type="text" name="" id="movil" maxlength="9" required size="30"><br>
+                                <label for="email">email ㅤ</label>
+                                <input type="email" name="" id="Email" size="30" placeholder="ej: milano@___com">
+                        </fieldset>
+                        <div align="center">
+                            <button type="submit"><img
+                                    src="https://thumbs.dreamstime.com/b/bot%C3%B3n-de-env%C3%ADo-signo-aislamiento-redondeado-enviar-196835463.jpg"
+                                    alt="" width="80"></button>
+                            <button type="submit"><img
+                                    src="https://www.pngall.com/wp-content/uploads/6/Delete-Button-PNG-Image-File.png"
+                                    alt="" width="80" height="50"></button>
+                        </div>
+                    </font>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+
+</html>

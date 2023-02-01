@@ -1,0 +1,24 @@
+table,td{
+    border: 3px double green;
+    /*aqui nos pone tanto las lineas de la tabla y dentro de ella
+    con el table,td*/
+
+}
+table{
+    width: 800px;
+    border-collapse: collapse;
+    /*esto lo pongo ya que me pone tanto borde para la tabla como para los Td y yo solo quiero dos lineas no 4 de todos los td*/
+    text-align: justify;
+}
+thead{
+    height: 40px;
+    
+}
+td{
+    height: 40px;
+    vertical-align: bottom;
+}
+tr:nth-child(even){
+    background-color: red;
+    /*le di la condición de que en las tablas pares me ponga el delineado*/
+}

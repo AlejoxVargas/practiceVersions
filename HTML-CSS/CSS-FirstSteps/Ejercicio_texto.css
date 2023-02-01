@@ -1,0 +1,16 @@
+#title{
+    text-align: center;
+    letter-spacing: 5px;
+}
+#first{
+    text-transform: uppercase;
+    text-align-last: center;
+}
+#second{
+    color: rgb(15, 177, 15);
+    letter-spacing: 10px;
+    line-height: 1.5;
+}
+#last{
+    text-decoration: line-through;
+}

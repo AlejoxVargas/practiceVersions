@@ -1,0 +1,24 @@
+#name {
+    background-color: grey;
+}
+
+#hex {
+    background-color: #e8f068;
+}
+
+#rgb {
+    background-color: rgb(122, 46, 224);
+    opacity: 1;
+}
+
+#rgba {
+    background-color: rgb(122, 46, 224, 0.3);
+}
+
+#hsl {
+    background-color: hsl(173, 79%, 53%);
+}
+
+#hsla {
+    background-color: hsl(173, 79%, 53%, 0.3);
+}

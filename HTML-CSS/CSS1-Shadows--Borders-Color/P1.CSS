@@ -1,0 +1,30 @@
+body{
+    background-image: url(https://media.istockphoto.com/id/656453072/es/foto/fondo-de-grunge-retro-vintage-dise%C3%B1o-y-patr%C3%B3n-de-la-textura.jpg?s=612x612&w=0&k=20&c=HcDsoas5pAJPbXM7zwZkhhk7ZwtCzpgyvex0pncz6nw=);
+}
+h1 {
+    color: rebeccapurple;
+    background-color: black;
+    margin-left: 50px;
+    border-radius: 40px/9px 8px;
+}
+
+/*
+Comentarios: 
+*/
+
+h2 {
+    color: brown;
+}
+
+.amarillo {
+    background-color: #30714B;
+}
+.solido {
+    background-color: rgb(125, 206, 160,0.5);
+}
+
+#uno {
+    color: blue;
+    text-align: justify;
+    background-color: bisque;
+}

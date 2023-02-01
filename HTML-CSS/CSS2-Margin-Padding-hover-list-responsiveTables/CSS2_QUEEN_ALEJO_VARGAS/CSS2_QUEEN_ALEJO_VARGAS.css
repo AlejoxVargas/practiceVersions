@@ -1,0 +1,47 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20%;
+}
+img{
+    width: 400px;
+    height: 200px;
+}
+table,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+h1{
+    color: #333;
+    font-size: 20px;
+}
+h2{
+    color: #666;
+    font-size: 16px;
+}
+a{
+    color: blue;
+}
+p,ul,tbody{
+    color: #000;
+    font-size: 12px;
+}
+caption{
+    color: #000;
+    font-size: 14px;
+}
+thead{
+    background-color: #666;
+    color: white;
+    text-align: center;
+}
+tbody{
+    background-color: #fff;
+}
+#pie{
+    background-color: #ccc;
+}
+div{
+   border-left: 1px solid black;
+   padding: 8px;
+}
