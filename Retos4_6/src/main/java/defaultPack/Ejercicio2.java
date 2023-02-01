@@ -24,11 +24,11 @@ public class Ejercicio2 {
         int[] vectorAleatorio = new int[CANTIDAD_NUMEROS];
         int[] primosAleatorio = new int[CANTIDAD_NUMEROS];
 
-        vectorAleatorio = ArrayAleatorio(vectorAleatorio);
+        ArrayAleatorio(vectorAleatorio);
         primeNumber(vectorAleatorio, primosAleatorio);
 
         System.out.println(Arrays.toString(vectorAleatorio));
-       // System.out.println(Arrays.toString(primosAleatorio));
+        System.out.println(Arrays.toString(primosAleatorio));
     }
 
     public static int[] ArrayAleatorio(int[] vector) {
@@ -45,7 +45,7 @@ public class Ejercicio2 {
                     }
                 }
                 if (!descartado) {
-                   vector[i] = numeroRandom;
+                    vector[i] = numeroRandom;
                 }
             } while (descartado);
         }
@@ -53,30 +53,19 @@ public class Ejercicio2 {
     }
 
     public static void primeNumber(int[] vector, int[] vector2) {
-
-        for (int h = 0; h < vector.length; h++) {
-            if (vector[h] != 0 && vector[h] != 1) {
-
+        for (int k : vector) {
+            if (k != 0 && k != 1) {
                 for (int i = 0; i < vector.length; i++) {
                     int count = 0;
-
                     for (int j = 1; j <= vector[i]; j++) {
                         if (vector[i] % j == 0) {
                             count++;
                         }
                     }
-
                     if (count == 2) {
-                        for (int k = 0; k < vector2.length; k++) {
-                            vector2[k] = vector[i];
-                        }
-                        for (int l = 0; l < vector2.length; l++) {
-                        
-                            System.out.println(vector2[l]);
-                        }
+                        vector2[i] = vector[i];
                     }
                 }
-
             }
         }
     }
