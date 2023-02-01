@@ -1,0 +1,18 @@
+input[type=text], input[type=password]{
+    background-color: yellow;
+}
+input[type=URL]{
+    border-radius: 10px;
+    padding: 20px;
+}
+input[type=url]:focus{
+    background-color: black;
+    color: white;
+}
+input[type=number]{
+    background-image: url(./done_all_FILL0_wght200_GRAD0_opsz40.png);
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-position: 3px;
+    cursor: pointer;
+}

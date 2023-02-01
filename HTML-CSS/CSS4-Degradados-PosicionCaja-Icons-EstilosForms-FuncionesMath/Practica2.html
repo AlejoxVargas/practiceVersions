@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Practica2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,200,0,0" />
+
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <p>
+            <fieldset>
+                <legend>Datos Personales</legend>
+            <label for="nombre">
+            Nombre: </label><input type="text" 
+            name="nombre" id="nombre" size="60"
+            placeholder="Introduzca su nombre"
+            required 
+            maxlength="20" minlength="10"
+            autofocus> <!--readonly-->
+        </p>
+        <p>
+            contraseña: <input type="password" 
+            name="contrasenna" id="" tabindex="1">
+        </p>
+        <p>
+            Fichero: <input type="file" 
+            name="" id="">
+        </p>
+        <p>
+            Edad <input type="number" 
+            name="" id="" value="20" min="18" max="100" disabled>
+        </p>
+
+        <p>
+            Fecha Nacimiento: <input type="date" name="" id="" tabindex="2">
+        </p>
+        <p>
+            URL <input type="url">
+        </p>
+        <p>
+            hora de Nacimiento: <input 
+            type="time" name="" id="" tabindex="3" accesskey="a">
+        </p>
+        </fieldset>
+        <p>
+            Altura: <input type="number" 
+            name="" id="" step="0.05">
+        </p>
+        <p>
+            Correo-e: <input type="email" 
+            name="" id="">
+        </p>
+
+        <p>
+            Casilla de verificación<input type="checkbox" name="" id="">
+        </p>
+
+        <P>
+            Genero:
+            <input type="radio" name="radio1" id="">Hombre
+            <input type="radio" name="radio1" id="" checked>Mujer
+        </P>
+
+        <p>
+            <input type="color" name="" 
+            id="" value="#ff0000">
+        </p>
+        <p>
+            <input type="range" name="" id="" min="0" max="10" step="2">
+        </p>
+        <p>
+            <input type="hidden" name="">
+        </p>
+
+        <p>
+            <textarea name="" id="" cols="30" rows="5"
+            placeholder="Escriba aquí sus comentarios"></textarea>
+        </p>
+
+        <p>
+            <select name="" id="" size="5" multiple>
+            <option value="" selected>...</option>
+            <option value="">uno</option>
+            <option value="">dos</option>
+            <option value="">tres</option>
+            
+        </select>
+        </p>
+
+        <p>
+            <input type="submit" 
+            value="submit">
+
+            <button type="submit">
+                <img src="../imagenes/buttom enviar.png" width="50" alt="">
+            </button>
+        </p>
+        <p>
+            <input type="reset"
+             value="borrar">
+             
+             <button type="submit"><img src="../imagenes/delete button.png" alt="" width="50"></button>
+        </p>
+
+    </form>
+</body>
+</html>

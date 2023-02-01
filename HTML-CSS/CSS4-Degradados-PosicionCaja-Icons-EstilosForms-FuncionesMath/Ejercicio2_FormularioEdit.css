@@ -1,0 +1,20 @@
+form{
+    background-color: #10075C;
+    color: white;
+    margin: 200px;
+    width: 60%;
+    height: 40%;
+}
+label{
+    margin-right: 150px;
+    margin-left: 10px;
+}
+input{
+    width: 500px;
+    height: 30px;
+}
+textarea{
+    width: 500px;
+    height: 180px;
+}
+
