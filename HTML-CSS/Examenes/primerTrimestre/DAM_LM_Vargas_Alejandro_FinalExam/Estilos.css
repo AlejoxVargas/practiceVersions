@@ -1,0 +1,82 @@
+body {
+
+    background-image: url("./imagen-fondo-pg.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.formulario {
+
+    margin-left: 450px;
+    width: 600px;
+    background-image: url("./imagen-fondo-tabla.jpeg");
+    background-repeat: repeat-y;
+    background-size: contain;
+    border: 20px solid;
+    border-top-width: 30px;
+    border-left-width: 15px;
+    border-right-width: 15px;
+    border-bottom-width: 30px;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 90px;
+    border-top-color: red;
+    border-left-color: yellow;
+    border-right-color: rgb(1, 61, 23);
+    border-bottom-color: purple;
+    padding: 20px;
+}
+
+h1 {
+    width: 500px;
+    font-family: 'Black Ops One', cursive;
+    text-align: center;
+    color: #8102FD;
+    background-color: rgba(252, 204, 86, 0.7);
+    text-shadow: 8px 2px 20px rgb(0, 0, 0);
+    border: 10px rgba(252, 204, 86, 0.7);
+    border-radius: 17px;
+    margin: 0px 510px 0px;
+}
+
+.input {
+    background-color: yellow;
+    padding: 5px 45px;
+    margin: auto;
+    margin-left: 300px;
+
+}
+
+#input-provincia {
+    background-color: yellow;
+    padding: 5px 80px;
+    margin-left: 300px;
+}
+.tarjeta,.radio{
+    align-items: center;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+
+}
+
+.tarjeta {
+    width: 70px;
+    height: 55px;
+    ;
+}
