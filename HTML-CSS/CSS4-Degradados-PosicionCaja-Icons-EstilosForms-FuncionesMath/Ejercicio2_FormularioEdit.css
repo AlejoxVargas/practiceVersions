@@ -1,20 +1,51 @@
-form{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.form-register{
     background-color: #10075C;
     color: white;
-    margin: 200px;
     width: 60%;
-    height: 40%;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 8px; 
 }
 label{
-    margin-right: 150px;
-    margin-left: 10px;
+    display: block;  
 }
 input{
-    width: 500px;
-    height: 30px;
+    width: 65%;
+    padding: 10px;
+    border-radius: 4px;
+
+}
+p{
+    display:inline-block;
+    margin-top: 100px;
+}
+select{
+    width: 65%;
+    padding: 10px;
+    border-radius: 4px;
 }
 textarea{
-    width: 500px;
-    height: 180px;
+    width: 65%;
+    height: 200px;
+    padding: 10px;
+    border-radius: 4px;
+}
+.container{
+    position: relative;
+    margin-left: 200px;
 }
 
+button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #3C51CA;
+    color: white;
+    margin-bottom: 40px;
+}

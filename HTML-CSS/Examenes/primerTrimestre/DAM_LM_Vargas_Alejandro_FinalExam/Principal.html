@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <title>Formulario Compra</title>
+</head>
+
+<body>
+    <h1>FORMULARIO COMPRA</h1>
+
+    <form action="" class="formulario">
+        <td>
+            <h2>__________Datos Personales__________</h2>
+
+            <label for="nombre" class="text">Nombre</label>
+            <input type="text" name="" id="nombre" maxlength="15" minlength="5" required class="input"><br>
+
+            <label for="correo" class="text">Correo electrónico</label>
+            <input type="email" name="" id="correo" required class="input"><br>
+
+            <label for="telefono" class="text">Teléfono</label>
+            <input type="text" name="" id="telefono" maxlength="15" required class="input"><br>
+
+            <h2>__________Datos de envío__________</h2>
+
+            <label for="direccion" class="text">Dirección</label>
+            <input type="text" name="" id="direccion" class="input"><br>
+
+            <label for="provincia" class="text">Provincia</label>
+            <select name="" id="input-provincia">
+                <option value="" selected></option>
+                <option value="">Madrid</option>
+                <option value="">Guadalajara</option>
+                <option value="">Toledo</option>
+                <option value="">Segovia</option>
+            </select>
+            <br>
+
+            <label for="codigo" class="text">Código postal</label>
+            <input type="number" name="" id="codigo" max="52080" class="input"><br>
+
+            <h2>__________Datos de pago___________</h2>
+
+            <label for="" class="text">Tipo de tarjeta</label><br>
+            <input type="radio" name="radio1" class="radio"><img src="./visa.png" alt="visa png" class="tarjeta">
+            <input type="radio" name="radio1" class="radio"> <img src="./mastercard.jpg" alt="mastercard" class="tarjeta">
+            <input type="radio" name="radio1" class="radio"> <img src="./amex.png" alt="amex" class="tarjeta">
+            <br>
+
+            <label for="tarjeta" class="text">Número de tarjeta</label>
+            <input type="text" name="" id="" class="input"><br>
+
+            <label for="contra" class="text">Código de seguridad</label>
+            <input type="password" name="" id="contra" class="input"><br>
+
+            <button type="submit" class="buttom"> ENVIAR</button>
+            <button type="reset" class="buttom"> BORRAR</button>
+            <hr>
+            <p>Condiciones de compra y Términos de uso OBJETO Y GENERALIDADES Las presentes Condiciones
+                Generales de Uso, Condiciones de Venta y Política de Privacidad regulan el uso del sitio Web
+                <a href="https://www.cursosccc.com/"> www.cursosccc.com</a> Links to an external site.(en adelante "el
+                Sitio Web"), de la que CCC (de
+                ahora en adelante LA EMPRESA) con CIF C59852053 y domicilio en Albasanz, 12, en Madrid. A través
+                de su sitio <a href="https://www.cursosccc.com/">
+                    www.cursosccc.com</a> Links to an external site., LA EMPRESA proporciona información
+                acerca de sus productos y ofrece la posibilidad de adquisición de alguno de los productos del
+                catálogo. Debido al contenido y la finalidad del Sitio Web, las personas que quieran
+                beneficiarse de sus servicios deben contar con la condición de "Cliente", la cual adquiere
+                completando el formulario de registro. La condición de Cliente supone la adhesión a las
+                Condiciones de Uso (aviso legal, política de privacidad y clausula de protección de datos)
+                publicadas en el Sitio Web.
+            </p>
+        </td>
+    </form>
+</body>
+
+</html>

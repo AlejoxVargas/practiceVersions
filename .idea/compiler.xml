@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Reto3.4_while" />
-        <module name="Tema1" />
         <module name="Retos3_5_for" />
         <module name="Retos1_2" />
         <module name="Retos2_1" />
