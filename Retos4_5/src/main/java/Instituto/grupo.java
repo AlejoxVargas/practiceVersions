@@ -1,19 +1,26 @@
 package Instituto;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class grupo {
-    //Attributes
     String nombre;
     int planta ;
-    alumno[] alumno = new alumno[5];
-
+     alumno[] alumnos;
     //Constructors
     public grupo(String nombre, int planta) {
         this.nombre = nombre;
         this.planta = planta;
+        alumnos = new alumno[2];
     }
 
-    public grupo() {
+    public asignarAlumno(alumno alumnox) {
+        boolean llave = false;
+        for(int i = 0; i < alumn
+    }
+
+    @Override
+    public String toString() {
+        return "Grupo: " + this.nombre + "Planta: " + this.planta + Arrays.toString(alumnos);
     }
 }
