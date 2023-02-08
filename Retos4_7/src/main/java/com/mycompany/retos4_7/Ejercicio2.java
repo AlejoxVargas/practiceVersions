@@ -46,7 +46,7 @@ public class Ejercicio2 {
                     2.Recover
                     3.Update
                     4.Delete
-                    5.Add by specifiying 
+                    5.Add by specifying
                     0.Exit
                     """);
             opcion = sc.nextInt();
