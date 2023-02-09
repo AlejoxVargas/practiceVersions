@@ -51,7 +51,7 @@ public class Ejercicio2 {
                     """);
             opcion = sc.nextInt();
             if (opcion < 0 || opcion > 6) {
-                System.out.println("Opcion incorrecta");
+                System.out.println("Wrong option");
             }
         } while (opcion < 0 || opcion > 6);
         return opcion;

@@ -15,7 +15,7 @@ public class Ejercicio1 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Integer numero;
+        int numero;
 
         do {
             System.out.println("Introduce numero: ");
@@ -55,7 +55,7 @@ public class Ejercicio1 {
     }
 
     public static int TotalVal(ArrayList<Integer> numeros) {
-        int suma = numeros.get(0);
+        int suma = 0;
         for (int iterador : numeros) {
             suma += iterador;
         }
@@ -65,7 +65,7 @@ public class Ejercicio1 {
     public static int meanValue(ArrayList<Integer> numeros) {
         int meanValue;
         meanValue = TotalVal(valNumeric) / numeros.size();       
-        return meanValue; //comprobrar que da la media exacta
+        return meanValue;
     }
 
     public static int UpToAverage(ArrayList<Integer> numeros) {
