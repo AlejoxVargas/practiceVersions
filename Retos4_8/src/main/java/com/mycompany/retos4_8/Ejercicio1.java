@@ -1,8 +1,14 @@
+package com.mycompany.retos4_8;
+
 import java.util.ArrayList;
 
+/**
+ *
+ * @author USUARIO CCC - TARDE
+ */
 public class Ejercicio1 {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         /*Cree una lista (arrayList) de cadenas de caracteres*/
         ArrayList<String> arrayList = new ArrayList<>();
         ArrayList<String> arrayList1 = new ArrayList<>();
@@ -17,14 +23,14 @@ public class Ejercicio1 {
         showArray(arrayList);
 
         System.out.println("Inserte Pascal en la primera posición y visualice de nuevo la lista (Pascal, PHP, Java, C++, Python)");
-        arrayList.add(0,"Pascal");
+        arrayList.add(0, "Pascal");
         showArray(arrayList);
 
         System.out.println("Recuperar el 3º elemento de la lista : Java");
-        System.out.println( arrayList.get(2));
+        System.out.println(arrayList.get(2));
 
         System.out.println("\nBuscar en qué posición se encuentra el elemento Python.");
-        System.out.println(arrayList.indexOf("Python")+"\n");
+        System.out.println(arrayList.indexOf("Python") + "\n");
 
         System.out.println("Borrar Pascal y visualizar la lista");
         arrayList.remove("Pascal");
@@ -34,8 +40,9 @@ public class Ejercicio1 {
         arrayList1.removeAll(arrayList);
         showArray(arrayList);
     }
-    public static void showArray(ArrayList <String> arrayList){
-        for (String iterador : arrayList){
+
+    public static void showArray(ArrayList<String> arrayList) {
+        for (String iterador : arrayList) {
             System.out.println(iterador);
         }
         System.out.println();

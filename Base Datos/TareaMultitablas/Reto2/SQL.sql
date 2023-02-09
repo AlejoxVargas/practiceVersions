@@ -62,7 +62,8 @@ CREATE TABLE pedido (
 	INSERT INTO pedido VALUES(15, 370.85, '2019-03-11', 1, 5);
 	INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
 	
-	---------/CONSULTAS SOBRE UNA TABLA/---------
+	---------/1.3.3 Consultas sobre una tabla/---------
+	
 /*1. Devuelve un listado con todos los pedidos que se han realizado. Los pedidos deben estar 
 ordenados por la fecha de realización, mostrando en primer lugar los pedidos más recientes.*/
 SELECT * FROM pedido ORDER by fecha;
@@ -84,5 +85,53 @@ SELECT nombre, apellido1, apellido2 FROM comercial where comision BETWEEN 0.05 a
 /*6. Devuelve el valor de la comisión de mayor valor que existe en la tabla comercial.*/
 SELECT comision FROM comercial ORDER by comision DESC LIMIT 1;
 
-/*7. 7. Devuelve el identificador, nombre y primer apellido de aquellos clientes cuyo segundo apellido no es 
+/*7. Devuelve el identificador, nombre y primer apellido de aquellos clientes cuyo segundo apellido no es 
 NULL. El listado deberá estar ordenado alfabéticamente por apellidos y nombre.*/
+SELECT id, nombre, apellido1 FROM cliente WHERE apellido2 IS NOT NULL ORDER BY apellido1, apellido2, nombre; --no ejecuta pero esta bien
+
+/*8. Devuelve un listado de los nombres de los clientes que empiezan por A y terminan por n y también los 
+nombres que empiezan por P. El listado deberá estar ordenado alfabéticamente.*/
+SELECT nombre FROM cliente WHERE nombre like 'A%n' OR nombre like 'P%' ORDER BY nombre ASC; --no ejecuta pero esta bien
+
+/*9. Devuelve un listado de los nombres de los clientes que no empiezan por A. El listado deberá estar 
+ordenado alfabéticamente.*/
+SELECT nombre FROM cliente WHERE nombre NOT like 'A%' ORDER by nombre ASC;
+
+/*10. Devuelve un listado con los nombres de los comerciales que terminan por "el" o "o". Tenga en cuenta que 
+se deberán eliminar los nombres repetidos.*/
+SELECT DISTINCT nombre FROM comercial WHERE nombre like '%el' OR nombre like '%o';
+
+	---------/1.3.4 Consultas multitabla (Composición interna)/---------
+	
+/*1. Devuelve un listado con el identificador, nombre y los apellidos de todos los clientes que han realizado algún pedido. 
+El listado debe estar ordenado alfabéticamente y se deben eliminar los elementos repetidos.*/
+SELECT DISTINCT cliente.id, cliente.nombre, cliente.apellido1, cliente.apellido2
+FROM cliente, pedido where pedido.id_cliente = cliente.id ORDER BY cliente.nombre;
+
+/*2. Devuelve un listado que muestre todos los pedidos que ha realizado cada cliente. El resultado debe mostrar todos 
+los datos de los pedidos y del cliente. El listado debe mostrar los datos de los clientes ordenados alfabéticamente.*/
+SELECT * FROM cliente, pedido WHERE cliente.id = pedido.id_cliente ORDER by nombre;
+
+/*3. Devuelve un listado que muestre todos los pedidos en los que ha participado un comercial. El resultado debe 
+mostrar todos los datos de los pedidos y de los comerciales. El listado debe mostrar los datos de los comerciales 
+ordenados alfabéticamente.*/
+SELECT * FROM pedido, comercial WHERE pedido.id_comercial = comercial.id ORDER by nombre;
+
+/*4. Devuelve un listado que muestre todos los clientes, con todos los pedidos que han realizado y con los datos de los 
+comerciales asociados a cada pedido.*/
+SELECT * FROM cliente, comercial WHERE comercial.id = pedido.id_cliente and cliente.id = pedido.id_cliente; --creo que aquí es con full join
+
+/*5. Devuelve un listado de todos los clientes que realizaron un pedido durante el año 2017, cuya cantidad esté entre 
+300 €y 1000 €.*/
+SELECT * FROM cliente where cliente.id = pedido.id_cliente (and pedido.fecha like '2017%' and pedido.cantidad_total BETWEEN 300 and 1000); --peding por hacer con from
+
+SELECT * FROM cliente
+INNER JOIN pedido on pedido.id_cliente = cliente.id
+WHERE pedido.fecha like '2017%' and pedido.cantidad_total BETWEEN 300 and 1000;
+
+/*6.Devuelve el nombre y los apellidos de todos los comerciales que ha participado en algún pedido realizado por 
+María Santana Moreno.*/
+SELECT comercial.nombre, comercial.apellido1, comercial.apellido2; --pending
+
+/*7. Devuelve el nombre de todos los clientes que han realizado algún pedido con el comercial Daniel Sáez Vega.*/
+--a revisar 4,5,6,7

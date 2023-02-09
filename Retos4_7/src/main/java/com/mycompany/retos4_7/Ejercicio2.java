@@ -65,8 +65,8 @@ public class Ejercicio2 {
         Float random;
         do {
             random = rnd.nextFloat(10);
-            arrayList.add(Float.valueOf(df.format(random)));
-        } while (arrayList.size() <= 5);
+            arrayList.add(Float.valueOf( df.format(random).replace(',', '.')));
+        } while (arrayList.size() < 5);
         return arrayList;
     }
 
