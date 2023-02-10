@@ -17,6 +17,6 @@ public class Coches {
 
     @Override
     public String toString() {
-        return "Matricula: " + this.matricula + "Marca: " + this.marca + "Modelo: " + this.modelo;
+        return "Matricula: " + this.matricula + " Marca: " + this.marca + " Modelo: " + this.modelo;
     }
 }

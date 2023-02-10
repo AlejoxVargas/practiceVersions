@@ -11,9 +11,6 @@ public class Ejercicio1 {
     public static void main(String[] args) {
         /*Cree una lista (arrayList) de cadenas de caracteres*/
         ArrayList<String> arrayList = new ArrayList<>();
-        ArrayList<String> arrayList1 = new ArrayList<>();
-
-        arrayList1.add("vacio");
 
         System.out.println("Inserte las cadenas PHP, Java, C++, Python y visualice la lista con un for");
         arrayList.add("PHP");
@@ -36,8 +33,8 @@ public class Ejercicio1 {
         arrayList.remove("Pascal");
         showArray(arrayList);
 
-        System.out.println("Borrar todos los elementos de la lista y visualizarla de nuevo"); //error aquí
-        arrayList1.removeAll(arrayList);
+        System.out.println("Borrar todos los elementos de la lista y visualizarla de nuevo");
+        arrayList.clear();
         showArray(arrayList);
     }
 
