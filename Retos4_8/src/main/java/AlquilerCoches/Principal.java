@@ -1,7 +1,6 @@
 package AlquilerCoches;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -16,7 +15,7 @@ public class Principal {
         ArrayList<Coches> alquilados = new ArrayList<>();
         ArrayList<Coches> libres = new ArrayList<>();
 
-        libres.add(new Coches ("AB123", "HONDA", "H1"));
+        libres.add(new Coches("AB123", "HONDA", "H1"));
         libres.add(new Coches("CD456", "KIA", "K2"));
         libres.add(new Coches("EF789", "RENAULT", "R2"));
 
@@ -39,7 +38,7 @@ public class Principal {
                     1. Dar de alta
                     2. Alquilar
                     3. Devolver
-                    0. Salir                     
+                    0. Salir                 
                     """);
             opcion = sc.nextInt();
         } while (opcion < 0 || opcion > 3);
@@ -47,9 +46,7 @@ public class Principal {
     }
 
     public static void CrearCoche(ArrayList<Coches> libres) {
-        int opcion;
         String matricula, marca, modelo;
-
         sc.nextLine();
 
         System.out.println("Matricula: ");
@@ -58,48 +55,60 @@ public class Principal {
         marca = sc.nextLine();
         System.out.println("Modelo: ");
         modelo = sc.nextLine();
-        Coches cocheAux = new Coches(matricula, marca, modelo); //esto enviarlo al MAIN, crear algunos coches ya previamente
 
+        Coches cocheAux = new Coches(matricula, marca, modelo);
         libres.add(cocheAux);
     }
 
     public static void AlquilarCoche(ArrayList<Coches> libres, ArrayList<Coches> alquilar) {
         String matricula;
-/*        for (int i = 0; i < libre.size(); i++) {
-            System.out.println(libre.get(i));
-        }*/
-        System.out.println(libres);
+        boolean noDisponible = false;
+        do {
+            sc.nextLine();
+            System.out.println(libres);
+            System.out.println("Coche a alquilar: ");
+            matricula = sc.nextLine();
 
-        sc.nextLine();
-        System.out.println("Coche a alquilar: ");
-        matricula = sc.nextLine();
-
-        for (int i = 0; i < libres.size(); i++) {
-            if (libres.get(i).matricula.equalsIgnoreCase(matricula)) {
-                System.out.println("Se encuentra libre");
-                alquilar.add(libres.get(i));
-                libres.remove(i);
-            } else {
-                System.out.println("No se encuentra libre");
+            for (int i = 0; i < libres.size(); i++) {
+                if (libres.get(i).matricula.equalsIgnoreCase(matricula)) {
+                    System.out.println("Se encuentra libre");
+                    alquilar.add(libres.get(i));
+                    libres.remove(i);
+                    noDisponible = false;
+                    break;
+                } else {
+                    noDisponible = true;
+                }
             }
-        }
+        } while (noDisponible);
+
         System.out.println(libres.toString());
         System.out.println(alquilar.toString());
     }
 
     public static void DevolverCoche(ArrayList<Coches> libres, ArrayList<Coches> alquilar) {
         String matricula;
-        sc.nextLine();
-        System.out.println("Matriculas del coche: ");
-        matricula = sc.nextLine();
 
-        for (int i = 0; i < alquilar.size(); i++) {
-            if (alquilar.get(i).matricula.equalsIgnoreCase(matricula)) {
-                System.out.println("Se ha devuelto exitosamente");
-                libres.add(alquilar.get(i));
-                alquilar.remove(i);
+        boolean noDisponible = false;
+        do {
+            sc.nextLine();
+            System.out.println(libres);
+            System.out.println("Coche a alquilar: ");
+            matricula = sc.nextLine();
+
+            for (int i = 0; i < libres.size(); i++) {
+                if (libres.get(i).matricula.equalsIgnoreCase(matricula)) {
+                    System.out.println("Se ha devuelto exitosamente");
+                    libres.add(alquilar.get(i));
+                    alquilar.remove(i);
+                    noDisponible = false;
+                    break;
+                } else {
+                    noDisponible = true;
+                }
             }
-        }
+        } while (noDisponible);
+
         System.out.println(libres.toString());
         System.out.println(alquilar.toString());
     }
