@@ -1,7 +1,6 @@
 package AlquilerCoches;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author USUARIO CCC - TARDE
@@ -19,6 +18,7 @@ public class Principal {
         libres.add(new Coches("CD456", "KIA", "K2"));
         libres.add(new Coches("EF789", "RENAULT", "R2"));
 
+        arrangeNumbers(libres);
         boolean llave = true;
         do {
             switch (Menu()) {
@@ -65,6 +65,7 @@ public class Principal {
         boolean noDisponible = false;
         do {
             sc.nextLine();
+            //arrangeNumbers(libres);
             System.out.println(libres);
             System.out.println("Coche a alquilar: ");
             matricula = sc.nextLine();
@@ -111,5 +112,17 @@ public class Principal {
 
         System.out.println(libres.toString());
         System.out.println(alquilar.toString());
+    }
+
+    public static void arrangeNumbers(ArrayList<Coches> libreOrdenar) {
+            Collections.sort(libreOrdenar, new Comparator<Coches>() {
+                @Override
+                public int compare(Coches o1, Coches o2) {
+                    return o1.getMarca().compareTo(o2.getMarca());
+                }
+            });
+            for(Coches coche : libreOrdenar){
+                System.out.println(coche.getMarca());
+            }
     }
 }
