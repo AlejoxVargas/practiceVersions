@@ -18,7 +18,10 @@ public class Principal {
         libres.add(new Coches("CD456", "KIA", "K2"));
         libres.add(new Coches("EF789", "RENAULT", "R2"));
 
-        arrangeNumbers(libres);
+        alquilados.add(new Coches("KL789", "BUGATTI", "B2"));
+        alquilados.add(new Coches("GH123", "FERRARI", "F23"));
+        alquilados.add(new Coches("JI456", "AUDI", "A50"));
+
         boolean llave = true;
         do {
             switch (Menu()) {
@@ -65,8 +68,7 @@ public class Principal {
         boolean noDisponible = false;
         do {
             sc.nextLine();
-            //arrangeNumbers(libres);
-            System.out.println(libres);
+            arrangeNumbers(libres);
             System.out.println("Coche a alquilar: ");
             matricula = sc.nextLine();
 
@@ -83,22 +85,23 @@ public class Principal {
             }
         } while (noDisponible);
 
-        System.out.println(libres.toString());
-        System.out.println(alquilar.toString());
+        System.out.println("\t -------LIBRES--------");
+        arrangeNumbers(libres);
+        System.out.println("\t -------ALQUILADOS--------");
+        arrangeNumbers(alquilar);
     }
 
     public static void DevolverCoche(ArrayList<Coches> libres, ArrayList<Coches> alquilar) {
         String matricula;
-
         boolean noDisponible = false;
         do {
             sc.nextLine();
-            System.out.println(libres);
-            System.out.println("Coche a alquilar: ");
+            arrangeNumbers(alquilar);
+            System.out.println("Coche a devolver: ");
             matricula = sc.nextLine();
 
-            for (int i = 0; i < libres.size(); i++) {
-                if (libres.get(i).matricula.equalsIgnoreCase(matricula)) {
+            for (int i = 0; i < alquilar.size(); i++) {
+                if (alquilar.get(i).matricula.equalsIgnoreCase(matricula)) {
                     System.out.println("Se ha devuelto exitosamente");
                     libres.add(alquilar.get(i));
                     alquilar.remove(i);
@@ -110,19 +113,21 @@ public class Principal {
             }
         } while (noDisponible);
 
-        System.out.println(libres.toString());
-        System.out.println(alquilar.toString());
+        System.out.println("\t -------ALQUILADOS--------");
+        arrangeNumbers(alquilar);
+        System.out.println("\t -------LIBRES--------");
+        arrangeNumbers(libres);
     }
 
-    public static void arrangeNumbers(ArrayList<Coches> libreOrdenar) {
-            Collections.sort(libreOrdenar, new Comparator<Coches>() {
-                @Override
-                public int compare(Coches o1, Coches o2) {
-                    return o1.getMarca().compareTo(o2.getMarca());
-                }
-            });
-            for(Coches coche : libreOrdenar){
-                System.out.println(coche.getMarca());
+    public static void arrangeNumbers(ArrayList<Coches> MarcasOrdenar) {
+        Collections.sort(MarcasOrdenar, new Comparator<Coches>() {
+            @Override
+            public int compare(Coches o1, Coches o2) {
+                return o1.getMarca().compareTo(o2.getMarca());
             }
+        });
+        for (Coches coche : MarcasOrdenar) {
+            System.out.println(coche.toString());
+        }
     }
 }
