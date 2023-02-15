@@ -1,0 +1,140 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-areas: 
+    'D1 D2 D3 D4 D5 D6'
+    'H1 P1 P1 E2 P2 S3'
+    'H2 P1 P1 F2 P2 S3'
+    'H3 F1 B1 B1 B1 P3'
+    'H4 F1 B1 B1 B1 P3'
+    'H5 E1 S1 L1 S2 L2'
+    'H6 E1 S1 L1 S2 L2'
+    ;
+    width: 100%;
+    min-width: 30%;
+    background-color: white;
+    justify-content: center;
+    margin-top: 15%;
+}
+.grid-container div{
+    border: 2px solid black;
+    padding: 5px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+
+/*-----DIAS----*/
+#D1{
+    grid-area: D1;
+}
+#D2{
+    grid-area: D2;
+}
+#D3{
+    grid-area: D3;
+}
+#D4{
+    grid-area: D4;
+}
+#D5{
+    grid-area: D5;
+}
+#D6{
+    grid-area: D6;
+}
+.DIAS{
+    background-color: white;
+    color: #4191DE;
+    font-weight: bold;
+}
+/*-----horas------*/
+#H1{
+    grid-area: H1;
+}
+#H2{
+    grid-area: H2;
+}
+#H3{
+    grid-area: H3;
+}
+#H4{
+    grid-area: H4;
+}
+#H5{
+    grid-area: H5;
+}
+#H6{
+    grid-area: H6;
+}
+
+.HORARIO{
+    font-weight: bold;
+}
+
+/*Programacion*/
+
+#P1{
+    grid-area: P1;
+}
+#P2{
+    grid-area: P2;
+}
+#P3{
+    grid-area: P3;
+}
+.PROGRAMACION{
+    background-color: #BDD7EE;
+}
+
+/*--------FOL--------*/
+#F1{
+    grid-area: F1;
+}
+#F2{
+    grid-area: F2;
+}
+.FOL{
+    background-color: #F8CBAD;
+}
+/*-------Entornos------*/
+#E1{
+    grid-area: E1;
+}
+#E2{
+    grid-area: E2;
+}
+.ENTORNOS{
+    background-color: #00B050;
+}
+/*-------Base de Datos--------*/
+#B1{
+    grid-area: B1;
+}
+.BASEDATOS{
+    background-color: #A9D08E;
+}
+/*-------Sistemas--------*/
+#S1{
+    grid-area: S1;
+}
+#S2{
+    grid-area: S2;
+}
+#S3{
+    grid-area: S3;
+}
+.SISTEMAS{
+    background-color:#5B9BD5 ;
+}
+
+/*--------Lenguaje de marcas------*/
+#L1{
+    grid-area: L1;
+}
+#L2{
+    grid-area: L2;
+}
+.LENGUAJES{
+    background-color: #FFD966;
+}
