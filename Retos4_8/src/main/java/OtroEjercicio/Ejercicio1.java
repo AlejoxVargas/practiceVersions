@@ -1,5 +1,4 @@
-package com.mycompany.retos4_8;
-
+package OtroEjercicio;
 import java.util.ArrayList;
 
 /**
@@ -45,3 +44,4 @@ public class Ejercicio1 {
         System.out.println();
     }
 }
+
