@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d6da75fa-acc1-4283-a979-ac48abbc9d12" name="Changes" comment="" />
+=======
+    <list default="true" id="d6da75fa-acc1-4283-a979-ac48abbc9d12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Base Datos/Triggers/Triggers1.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Base Datos/Triggers/Triggers1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/POO/src/paquete1/Coche.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/POO/src/paquete1/Coche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/POO/src/paquete1/PrincipalCoche.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/POO/src/paquete1/PrincipalCoche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Retos4_7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AlquilerCoches/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AlquilerCoches/Principal.java" afterDir="false" />
+    </list>
+>>>>>>> 6c696752f1af4829228fc9b3a083f4d9ce11713d
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +43,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
@@ -42,6 +55,19 @@
   }
 }</component>
   <component name="RunManager" selected="Application.com.mycompany.retos4_8.Ejercicio1">
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/USUARIO CCC - TARDE/Desktop/workArea/practiceVersions/Retos4_7",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Principal">
+>>>>>>> 6c696752f1af4829228fc9b3a083f4d9ce11713d
     <configuration name="Ejercicio1" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ejercicio1" />
       <module name="Retos4_8" />
@@ -77,8 +103,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.mycompany.retos4_8.Ejercicio1" />
         <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.com.mycompany.retos4_8.Ejercicio1" />
       </list>
     </recent_temporary>
   </component>
