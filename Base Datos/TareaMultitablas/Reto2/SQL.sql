@@ -66,7 +66,7 @@ CREATE TABLE pedido (
 	
 /*1. Devuelve un listado con todos los pedidos que se han realizado. Los pedidos deben estar 
 ordenados por la fecha de realización, mostrando en primer lugar los pedidos más recientes.*/
-SELECT * FROM pedido ORDER by fecha;
+SELECT * FROM pedido ORDER by fecha DESC;
 
 /*2. Devuelve todos los datos de los dos pedidos de mayor valor.*/
 SELECT * FROM pedido ORDER by cantidad_total DESC LIMIT 2;
@@ -87,11 +87,11 @@ SELECT comision FROM comercial ORDER by comision DESC LIMIT 1;
 
 /*7. Devuelve el identificador, nombre y primer apellido de aquellos clientes cuyo segundo apellido no es 
 NULL. El listado deberá estar ordenado alfabéticamente por apellidos y nombre.*/
-SELECT id, nombre, apellido1 FROM cliente WHERE apellido2 IS NOT NULL ORDER BY apellido1, apellido2, nombre; --no ejecuta pero esta bien
+SELECT id, nombre, apellido1 FROM cliente WHERE apellido2 IS NOT NULL ORDER BY apellido1 ASC, nombre ASC;
 
 /*8. Devuelve un listado de los nombres de los clientes que empiezan por A y terminan por n y también los 
 nombres que empiezan por P. El listado deberá estar ordenado alfabéticamente.*/
-SELECT nombre FROM cliente WHERE nombre like 'A%n' OR nombre like 'P%' ORDER BY nombre ASC; --no ejecuta pero esta bien
+SELECT nombre FROM cliente WHERE nombre like 'A%n' OR nombre like 'P%' ORDER BY nombre ASC;
 
 /*9. Devuelve un listado de los nombres de los clientes que no empiezan por A. El listado deberá estar 
 ordenado alfabéticamente.*/
@@ -103,35 +103,169 @@ SELECT DISTINCT nombre FROM comercial WHERE nombre like '%el' OR nombre like '%o
 
 	---------/1.3.4 Consultas multitabla (Composición interna)/---------
 	
+--• Resuelva todas las consultas utilizando la sintaxis de SQL1 y SQL2.
+	
 /*1. Devuelve un listado con el identificador, nombre y los apellidos de todos los clientes que han realizado algún pedido. 
 El listado debe estar ordenado alfabéticamente y se deben eliminar los elementos repetidos.*/
 SELECT DISTINCT cliente.id, cliente.nombre, cliente.apellido1, cliente.apellido2
-FROM cliente, pedido where pedido.id_cliente = cliente.id ORDER BY cliente.nombre;
+FROM cliente, pedido where pedido.id_cliente = cliente.id ORDER BY cliente.nombre ASC;
 
 /*2. Devuelve un listado que muestre todos los pedidos que ha realizado cada cliente. El resultado debe mostrar todos 
 los datos de los pedidos y del cliente. El listado debe mostrar los datos de los clientes ordenados alfabéticamente.*/
-SELECT * FROM cliente, pedido WHERE cliente.id = pedido.id_cliente ORDER by nombre;
+SELECT * FROM cliente, pedido WHERE cliente.id = pedido.id_cliente ORDER by nombre ASC;
 
 /*3. Devuelve un listado que muestre todos los pedidos en los que ha participado un comercial. El resultado debe 
 mostrar todos los datos de los pedidos y de los comerciales. El listado debe mostrar los datos de los comerciales 
 ordenados alfabéticamente.*/
-SELECT * FROM pedido, comercial WHERE pedido.id_comercial = comercial.id ORDER by nombre;
+SELECT * FROM pedido, comercial WHERE pedido.id_comercial = comercial.id ORDER by nombre ASC;
 
 /*4. Devuelve un listado que muestre todos los clientes, con todos los pedidos que han realizado y con los datos de los 
 comerciales asociados a cada pedido.*/
-SELECT * FROM cliente, comercial WHERE comercial.id = pedido.id_cliente and cliente.id = pedido.id_cliente; --creo que aquí es con full join
+SELECT * FROM cliente, pedido, comercial WHERE cliente.id = pedido.id_cliente and comercial.id = pedido.id_comercial;
 
 /*5. Devuelve un listado de todos los clientes que realizaron un pedido durante el año 2017, cuya cantidad esté entre 
 300 €y 1000 €.*/
-SELECT * FROM cliente where cliente.id = pedido.id_cliente (and pedido.fecha like '2017%' and pedido.cantidad_total BETWEEN 300 and 1000); --peding por hacer con from
-
-SELECT * FROM cliente
-INNER JOIN pedido on pedido.id_cliente = cliente.id
-WHERE pedido.fecha like '2017%' and pedido.cantidad_total BETWEEN 300 and 1000;
+SELECT * FROM cliente, pedido where pedido.id_cliente = cliente.id and pedido.fecha like '2017%' and pedido.cantidad_total BETWEEN 300 and 1000;
 
 /*6.Devuelve el nombre y los apellidos de todos los comerciales que ha participado en algún pedido realizado por 
 María Santana Moreno.*/
-SELECT comercial.nombre, comercial.apellido1, comercial.apellido2; --pending
+SELECT DISTINCT comercial.nombre, comercial.apellido1, comercial.apellido2 
+FROM comercial, pedido, cliente 
+WHERE pedido.id_comercial = comercial.id and pedido.id_cliente = cliente.id and 
+cliente.nombre in ('María') and cliente.apellido1 in ('Santana') and cliente.apellido2 in ('Moreno');
 
 /*7. Devuelve el nombre de todos los clientes que han realizado algún pedido con el comercial Daniel Sáez Vega.*/
---a revisar 4,5,6,7
+SELECT DISTINCT cliente.nombre, cliente.apellido1, cliente.apellido2
+FROM comercial, pedido, cliente 
+WHERE pedido.id_comercial = comercial.id and pedido.id_cliente = cliente.id and 
+comercial.nombre like 'Daniel' and comercial.apellido1 like 'Sáez' and comercial.apellido2 like 'Vega';
+
+	---------/1.3.5 Consultas multitabla (Composición Externa)/---------
+	
+--• Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
+
+/*1 Devuelve un listado con todos los clientes junto con los datos de los pedidos que han realizado. Este 
+listado también debe incluir los clientes que no han realizado ningún pedido. El listado debe estar 
+ordenado alfabéticamente por el primer apellido, segundo apellido y nombre de los clientes.*/
+
+SELECT * FROM cliente
+LEFT JOIN pedido on pedido.id_cliente = cliente.id
+ORDER BY cliente.apellido1 ASC, cliente.apellido2 ASC, cliente.nombre ASC;
+
+/*Devuelve un listado con todos los comerciales junto con los datos de los pedidos que han realizado. 
+Este listado también debe incluir los comerciales que no han realizado ningún pedido. El listado debe 
+estar ordenado alfabéticamente por el primer apellido, segundo apellido y nombre de los comerciales.*/
+SELECT * FROM comercial
+LEFT JOIN pedido on comercial.id = pedido.id_comercial
+ORDER BY comercial.apellido1 ASC, comercial.apellido2 ASC, comercial.nombre ASC;
+
+/*3. Devuelve un listado que solamente muestre los clientes que no han realizado ningún pedido.*/
+SELECT * FROM cliente 
+LEFT JOIN pedido on cliente.id = pedido.id_cliente
+WHERE pedido.id_cliente IS NULL;
+
+/*4. Devuelve un listado que solamente muestre los comerciales que no han realizado ningún pedido.*/
+SELECT * FROM comercial 
+LEFT JOIN pedido on pedido.id_comercial = comercial.id
+WHERE pedido.id_comercial IS NULL;
+
+/*5. Devuelve un listado con los clientes que no han realizado ningún pedido y de los comerciales que no 
+han participado en ningún pedido. Ordene el listado alfabéticamente por los apellidos y el nombre. En 
+en listado deberá diferenciar de algún modo los clientes y los comerciales.*/
+SELECT * FROM cliente, comercial
+LEFT JOIN pedido on pedido.id_cliente = cliente.id
+LEFT JOIN comercial on pedido.id_comercial = comercial.id
+WHERE pedido.id_cliente IS NULL and pedido.id_comercial IS NULL
+ORDER BY; --lo dejaré pendiente
+
+/*6. ¿Se podrían realizar las consultas anteriores con NATURAL LEFT JOIN o NATURAL RIGHT JOIN? 
+Justifique su respuesta.*/
+--NO, porque no tienen el mismo nombre de columna
+
+	---------/1.3.6 Consultas Resumen/---------
+
+/*1. Calcula la cantidad total que suman todos los pedidos que aparecen en la tabla pedido.*/
+SELECT sum (cantidad_total)  as 'Suma total Pedidos' FROM pedido;
+
+/*2. Calcula la cantidad media de todos los pedidos que aparecen en la tabla pedido.*/
+SELECT avg (cantidad_total)  as 'Media total' FROM pedido;
+
+/*3. Calcula el número total de comerciales distintos que aparecen en la tabla pedido.*/
+SELECT count (DISTINCT id_comercial) as 'Total comerciales distintos' FROM pedido;
+
+/*4. Calcula el número total de clientes que aparecen en la tabla cliente.*/
+SELECT count (*) as 'Total clientes' FROM cliente;
+
+/*5. Calcula cuál es la mayor cantidad que aparece en la tabla pedido.*/
+SELECT max (cantidad_total) FROM pedido; --Primera forma
+SELECT cantidad_total FROM pedido ORDER by cantidad_total DESC LIMIT 1; --Segunda forma
+
+/*6. Calcula cuál es la menor cantidad que aparece en la tabla pedido.*/
+SELECT min (cantidad_total) FROM pedido; --Primera forma
+SELECT cantidad_total FROM pedido ORDER by cantidad_total ASC LIMIT 1; --Segunda forma
+
+/*7. Calcula cuál es el valor máximo de categoría para cada una de las ciudades que aparece en la tabla 
+cliente.*/
+SELECT max(categoria) as 'Maximo categoria' FROM cliente;
+
+
+
+/*8. Calcula cuál es el máximo valor de los pedidos realizados durante el mismo día para cada uno de los 
+clientes. Es decir, el mismo cliente puede haber realizado varios pedidos de diferentes cantidades el 
+mismo día. Se pide que se calcule cuál es el pedido de máximo valor para cada uno de los días en los 
+que un cliente ha realizado un pedido. Muestra el identificador del cliente, nombre, apellidos, la fecha 
+y el valor de la cantidad.*/
+SELECT count(pedido.fecha), cliente.id, cliente.nombre, cliente.apellido1, cliente.apellido2, pedido.fecha, pedido.cantidad_total
+FROM cliente
+INNER JOIN pedido on pedido.id_cliente = cliente.id
+ORDER by cliente.nombre, pedido.fecha; --no funciona
+
+
+
+
+/*9. Calcula cuál es el máximo valor de los pedidos realizados durante el mismo día para cada uno de los 
+clientes, teniendo en cuenta que sólo queremos mostrar aquellos pedidos que superen la cantidad de 
+2000 €.*/
+SELECT count(pedido.fecha), cliente.id, cliente.nombre, cliente.apellido1, cliente.apellido2, pedido.fecha, pedido.cantidad_total
+FROM pedido
+INNER JOIN cliente on pedido.id_cliente = cliente.id
+WHERE pedido.cantidad_total > 20000
+ORDER by cliente.nombre, pedido.fecha; --no funciona
+
+
+
+/*10 Calcula el máximo valor de los pedidos realizados para cada uno de los comerciales durante la fecha 
+2016-08-17. Muestra el identificador del comercial, nombre, apellidos y total.*/
+SELECT max(cantidad_total) 'Valor', comercial.id, comercial.nombre, comercial.apellido1, comercial.apellido2
+FROM comercial
+INNER JOIN pedido on pedido.id_comercial = comercial.id
+WHERE pedido.fecha in ('2016-08-17');
+
+/*11 Devuelve un listado con el identificador de cliente, nombre y apellidos y el número total de pedidos 
+que ha realizado cada uno de clientes. Tenga en cuenta que pueden existir clientes que no han 
+realizado ningún pedido. Estos clientes también deben aparecer en el listado indicando que el número 
+de pedidos realizados es 0.*/
+SELECT cliente.id, cliente.nombre, cliente.apellido1, cliente.apellido2, count (pedido.id_cliente) as 'Total pedidos'
+FROM pedido
+RIGHT JOIN cliente on pedido.id_cliente = cliente.id
+GROUP by cliente.id;
+
+/*12 Devuelve un listado con el identificador de cliente, nombre y apellidos y el número total de pedidos 
+que ha realizado cada uno de clientes durante el año 2017.*/
+SELECT cliente.id, cliente.nombre, cliente.apellido1, cliente.apellido2, count (pedido.id_cliente) as 'Total pedidos'
+FROM pedido
+RIGHT JOIN cliente on pedido.id_cliente = cliente.id
+WHERE pedido.fecha like ('2017%')
+GROUP by pedido.id_cliente;
+
+/*13.  Devuelve un listado que muestre el identificador de cliente, nombre, primer apellido y el valor de la 
+máxima cantidad del pedido realizado por cada uno de los clientes. El resultado debe mostrar aquellos 
+clientes que no han realizado ningún pedido indicando que la máxima cantidad de sus pedidos 
+realizados es 0. Puede hacer uso de la función IFNULL.*/
+
+/*14. Devuelve cuál ha sido el pedido de máximo valor que se ha realizado cada año.*/
+SELECT pedido.fecha as 'Año', max (pedido.cantidad_total) as 'Maximo valor' FROM pedido GROUP by substr (pedido.fecha, 1,4);
+
+	
+	---------/1.3.7 Subconsultas/---------
+

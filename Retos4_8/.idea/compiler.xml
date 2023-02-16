@@ -6,10 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Retos4_8" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Retos4_8" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>
