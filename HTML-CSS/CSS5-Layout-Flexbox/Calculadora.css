@@ -5,6 +5,10 @@
 
 body {
     background-color: #224870;
+    height: 1000px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 .grid-container {
@@ -19,7 +23,7 @@ body {
     'cero cero punto igual'
     ;
     background-color: #00916e;
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: 15px 10px 0px 5px #00000033;
     height: 500px;
     width: 340px ;

@@ -1,0 +1,35 @@
+body {
+    background-image: url("https://i.pinimg.com/originals/8a/28/bf/8a28bf9807573000e4fa776efe180874.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.tablero {
+    flex-direction: row-reverse;
+    display: flex;
+    flex-wrap: wrap;
+    width: 580px;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+div[class|="casilla"] {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70px;
+    height: 70px;
+    background-color: #C8A46D;
+    justify-content: center;
+    align-content: center;
+    font-size: 30px;
+}
+
+#negra {
+    background-color: rgb(255, 255, 255);
+}
