@@ -1,23 +1,23 @@
 package ejercicio1;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Producto {
-	private Date fechaCaducidad;
+	private LocalDate fechaCaducidad;
 	private int numeroLote;
-	
-	public Producto(int año, int mes, int dia, int numeroLote) {
-		GregorianCalendar calendario = new GregorianCalendar(año,mes,dia);
-		this.fechaCaducidad = calendario.getTime();
+
+	public Producto(LocalDate fechaCaducidad, int numeroLote) {
+		this.fechaCaducidad = fechaCaducidad;
 		this.numeroLote = numeroLote;
 	}
 
-	public Date getFechaCaducidad() {
+	public LocalDate getFechaCaducidad() {
 		return fechaCaducidad;
 	}
 
-	public void setFechaCaducidad(Date fechaCaducidad) {
+	public void setFechaCaducidad(LocalDate fechaCaducidad) {
 		this.fechaCaducidad = fechaCaducidad;
 	}
 
@@ -28,8 +28,8 @@ public class Producto {
 	public void setNumeroLote(int numeroLote) {
 		this.numeroLote = numeroLote;
 	}
-	
+
 	public String getDatos() {
-		return "Fecha de Caducidad: " + getFechaCaducidad() +" || "+ " Numero de lote: " + getNumeroLote();
+		return "||" + " Fecha de Caducidad: " + getFechaCaducidad() + "||" + " Numero de lote: " + getNumeroLote();
 	}
 }

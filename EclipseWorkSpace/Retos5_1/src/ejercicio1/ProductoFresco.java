@@ -1,24 +1,24 @@
 package ejercicio1;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class ProductoFresco extends Producto {
-	private Date fechaEnvasado;
+	private LocalDate fechaEnvasado;
 	private String paisOrigen;
 
-	public ProductoFresco(int anno, int mes, int dia, int numeroLote, String paisOrigen) {
-		super(anno, mes, dia, numeroLote);
-		GregorianCalendar calendario = new GregorianCalendar(anno, mes, dia); // LocalDate
-		this.fechaEnvasado = calendario.getTime();
+	public ProductoFresco(LocalDate fechaCaducidad, int numeroLote, LocalDate fechaEnvasado, String paisOrigen) {
+		super(fechaCaducidad, numeroLote);
+		this.fechaEnvasado = fechaEnvasado;
 		this.paisOrigen = paisOrigen;
 	}
 
-	public Date getFechaEnvasado() {
+	public LocalDate getFechaEnvasado() {
 		return fechaEnvasado;
 	}
 
-	public void setFechaEnvasado(Date fechaEnvasado) {
+	public void setFechaEnvasado(LocalDate fechaEnvasado) {
 		this.fechaEnvasado = fechaEnvasado;
 	}
 
@@ -31,7 +31,7 @@ public class ProductoFresco extends Producto {
 	}
 
 	public String getDatosFresco() {
-		return "||" + " Fecha envasado: " + getFechaEnvasado() + " || "+" País Origen: " + getPaisOrigen();
+		return "||" + " Fecha envasado: " + getFechaEnvasado() + "||" + " País Origen: " + getPaisOrigen();
 	}
 
 }

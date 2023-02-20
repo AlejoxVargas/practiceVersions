@@ -1,10 +1,12 @@
 package ejercicio1;
 
-public class ProductoCongelado extends Producto{
+import java.time.LocalDate;
+
+public class ProductoCongelado extends Producto {
 	private double temperatura;
-	
-	public ProductoCongelado(int anno, int mes, int dia, int numeroLote, double temperatura) {
-		super(anno,mes,dia,numeroLote);
+
+	public ProductoCongelado(LocalDate fechaCaducidad, int numeroLote, double temperatura) {
+		super(fechaCaducidad, numeroLote);
 		this.temperatura = temperatura;
 	}
 
@@ -15,7 +17,7 @@ public class ProductoCongelado extends Producto{
 	public void setTemperatura(double temperatura) {
 		this.temperatura = temperatura;
 	}
-	
+
 	public String getDatosCongelados() {
 		return "||" + " Temperatura: " + getTemperatura();
 	}

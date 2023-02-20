@@ -1,10 +1,12 @@
 package ejercicio1;
 
-public class ProductoRefrigerado extends Producto{
+import java.time.LocalDate;
+
+public class ProductoRefrigerado extends Producto {
 	private int codigoOSA;
-	
-	public ProductoRefrigerado(int anno, int mes, int dia, int numeroLote, int codigoOSA) {
-		super(anno,mes,dia,numeroLote);
+
+	public ProductoRefrigerado(LocalDate fechaCaducidad, int numeroLote, int codigoOSA) {
+		super(fechaCaducidad, numeroLote);
 		this.codigoOSA = codigoOSA;
 	}
 
@@ -15,7 +17,7 @@ public class ProductoRefrigerado extends Producto{
 	public void setCodigoOSA(int codigoOSA) {
 		this.codigoOSA = codigoOSA;
 	}
-	
+
 	public String getDatosRefrigerado() {
 		return "||" + " Código de supervision alimentaria" + getCodigoOSA();
 	}
