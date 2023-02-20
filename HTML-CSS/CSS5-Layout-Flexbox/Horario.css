@@ -1,3 +1,7 @@
+body{
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color:  #ee3c48;;
+}
 .grid-container{
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
@@ -12,16 +16,18 @@
     ;
     width: 100%;
     min-width: 30%;
-    background-color: white;
     justify-content: center;
     margin-top: 15%;
 }
 .grid-container div{
     border: 2px solid black;
-    padding: 5px;
     display: grid;
     align-items: center;
     text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 17px;
+    border-radius: 10px;
+    margin-top: 3px;
 }
 
 /*-----DIAS----*/
@@ -44,8 +50,8 @@
     grid-area: D6;
 }
 .DIAS{
-    background-color: white;
-    color: #4191DE;
+    background-color: #437C83;
+    color: white;
     font-weight: bold;
 }
 /*-----horas------*/
@@ -70,6 +76,7 @@
 
 .HORARIO{
     font-weight: bold;
+    background-color: white;
 }
 
 /*Programacion*/

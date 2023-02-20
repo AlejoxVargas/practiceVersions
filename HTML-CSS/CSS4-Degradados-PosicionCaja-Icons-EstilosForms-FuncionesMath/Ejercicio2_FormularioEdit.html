@@ -1,40 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Ejercicio2_FormularioEdit.css">
-    <title>Document</title>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario de Registro</title>
+	<link rel="stylesheet" href="Ejercicio2_FormularioEdit.css">
 </head>
-
 <body>
-    <section class="form-register">        
-       <p>nombre</p>
-        <label for="apellido">Apellido</label>
-        <label for="pais">País</label>
-        <label for="comentario">Comentario</label>
 
-        <div class="container">
-        <input type="text">
-        <input type="text" placeholder="Tu apellido">
-        <select name="" id="">
-            <option value="">España</option>
-            <option value="">Portugal</option>
-            <option value="">Andorra</option>
-            <option value="">Francia</option>
-            <option value="">Italia</option>
-            <option value="">Reino Unido</option>
-            <option value="">Alemania</option>
-            <option value="">Países Bajos</option>
-            <option value="">Belgica</option>
-            <option value="">Suiza</option>
-        </select>
-        <textarea name="" id="" cols="0" rows="0" placeholder="Escribre algo"></textarea>
-        </div>
-        <button type="submit">Enviar</button>
-    </section>
+    <form action="">
+<div class="wrapper">
+    <div class="title">
+      Formulario de Registro
+    </div>
+    <div class="form">
+       <div class="inputfield">
+          <label>Nombre</label>
+          <input type="text" class="input">
+       </div>  
+        <div class="inputfield">
+          <label>Apellido</label>
+          <input type="text" class="input">
+       </div>  
+       <div class="inputfield">
+          <label>Contraseña</label>
+          <input type="password" class="input">
+       </div>  
+      <div class="inputfield">
+          <label>Confirmar contraseña</label>
+          <input type="password" class="input">
+       </div> 
+        <div class="inputfield">
+          <label>Gender</label>
+          <div class="custom_select">
+            <select>
+              <option value="">Seleccione</option>
+              <option value="male">Masculino</option>
+              <option value="female">Femenino</option>
+              <option value="other">Otro</option>
+            </select>
+          </div>
+       </div> 
+        <div class="inputfield">
+          <label>Correo</label>
+          <input type="text" class="input">
+       </div> 
+      <div class="inputfield">
+          <label>Télefono</label>
+          <input type="text" class="input">
+       </div> 
+      <div class="inputfield">
+          <label>Dirección</label>
+          <textarea class="textarea"></textarea>
+       </div> 
+      <div class="inputfield">
+          <label>Codigo Postal</label>
+          <input type="text" class="input">
+       </div> 
+      <div class="inputfield terms">
+          <label class="check">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <p>Aceptar términos y condiciones</p>
+       </div> 
+      <div class="inputfield">
+        <input type="submit" value="Registrar" class="btn">
+      </div>
+    </div>
+</div>	
+</form>
 </body>
-
 </html>

@@ -1,22 +1,31 @@
 body {
     background-image: url("https://i.pinimg.com/originals/8a/28/bf/8a28bf9807573000e4fa776efe180874.jpg");
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     background-size: 100%;
     font-family: sans-serif;
-    position: relative;
 }
 
-.tablero {
-    flex-direction: row-reverse;
-    display: flex;
-    flex-wrap: wrap;
-    width: 580px;
+.marco{
     position: absolute;
-    top: 200px;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     margin: auto;
+    width: 650px;
+    height: 650px;
+    background-color:#e7a138;
+    border-radius: 10px;
+}
+
+.tablero {
+    position: relative;
+    top: 18px;
+    margin: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 580px;
 }
 
 div[class|="casilla"] {
