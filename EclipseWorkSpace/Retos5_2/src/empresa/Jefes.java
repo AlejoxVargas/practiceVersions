@@ -1,6 +1,6 @@
 package empresa;
 
-public class Jefes extends Empleados {
+public class Jefes extends Empleado {
 	private double prima;
 
 	public Jefes(String nombre, double sueldo, double prima) {

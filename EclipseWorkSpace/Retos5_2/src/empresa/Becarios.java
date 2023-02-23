@@ -1,6 +1,6 @@
 package empresa;
 
-public class Becarios extends Empleados {
+public class Becarios extends Empleado {
 	private String contrato;
 
 	public Becarios(String nombre, double sueldo, String contrato) {
