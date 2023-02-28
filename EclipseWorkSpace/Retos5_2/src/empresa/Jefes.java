@@ -7,15 +7,21 @@ public class Jefes extends Empleado {
 		super(nombre, sueldo);
 		this.prima = prima;
 	}
-	public double getSueldo() {
-		return super.getSueldo();
-	}
 
 	public double getPrima() {
 		return prima;
 	}
 
 	public void setPrima(double prima) {
-		this.prima = prima;
+		this.prima += super.getSueldo() + prima;
+	}
+
+	public double getSueldo() {
+		return super.getSueldo();
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "Prima: " + getPrima() + "\n";
 	}
 }

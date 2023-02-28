@@ -15,8 +15,9 @@ public class Becarios extends Empleado {
 	public void setContrato(String contrato) {
 		this.contrato = contrato;
 	}
+
 	@Override
 	public String toString() {
-		return "\nNombre: " + getNombre() + "\nSueldo: " + getSueldo() + "\nContrato: " + getContrato();
+		return super.toString() + "\nContrato: " + getContrato() + "\n";
 	}
 }
