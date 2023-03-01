@@ -27,6 +27,6 @@ public class Empleado {
 
 	@Override
 	public String toString() {
-		return "\nNombre: " + getNombre() + "\nSueldo: " + getSueldo();
+		return "\nNombre: " + getNombre() + "\nSueldo: " + getSueldo() + "\n";
 	}
 }

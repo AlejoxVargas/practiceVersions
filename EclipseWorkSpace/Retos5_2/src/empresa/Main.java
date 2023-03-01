@@ -26,7 +26,7 @@ public class Main {
 		do {
 			System.out.println("1.Empleado" + "\n2.Jefe" + "\n3.Becario" + "\n0.Salir");
 			opcion = sc.nextInt();
-		} while (opcion != 1 && opcion != 2 && opcion != 3);
+		} while (opcion < 0 || opcion > 3);
 
 		return opcion;
 	}
@@ -82,5 +82,9 @@ public class Main {
 		System.out.println("Sueldo Total Empleados: " + sueldoEmpleado);
 		System.out.println("Sueldo Total Becarios: " + sueldoBecarios);
 		System.out.println("Sueldo Total Jefes: " + sueldoJefes);
+	}
+	
+	public static void organizarCategoria(ArrayList<Empleado>Empresa) {
+		
 	}
 }
