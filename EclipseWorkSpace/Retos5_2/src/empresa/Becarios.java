@@ -1,6 +1,6 @@
 package empresa;
 
-public class Becarios extends Empleados {
+public class Becarios extends Empleado {
 	private String contrato;
 
 	public Becarios(String nombre, double sueldo, String contrato) {
@@ -15,8 +15,9 @@ public class Becarios extends Empleados {
 	public void setContrato(String contrato) {
 		this.contrato = contrato;
 	}
+
 	@Override
 	public String toString() {
-		return "\nNombre: " + getNombre() + "\nSueldo: " + getSueldo() + "\nContrato: " + getContrato();
+		return super.toString() + "Contrato: " + getContrato() + "\n";
 	}
 }

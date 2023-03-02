@@ -1,10 +1,10 @@
 package empresa;
 
-public class Empleados {
+public class Empleado {
 	private String nombre;
 	private double sueldo;
 
-	public Empleados(String nombre, double sueldo) {
+	public Empleado(String nombre, double sueldo) {
 		this.nombre = nombre;
 		this.sueldo = sueldo;
 	}
@@ -27,6 +27,6 @@ public class Empleados {
 
 	@Override
 	public String toString() {
-		return "\nNombre: " + getNombre() + "\nSueldo: " + getSueldo();
+		return "\nNombre: " + getNombre() + "\nSueldo: " + getSueldo() + "\n";
 	}
 }
