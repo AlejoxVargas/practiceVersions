@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="affd8843-9eea-40fe-aa09-60ad20f5bfdd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Retos4_1/src/main/java/MatricesUnidimensionales/Ejercicio0.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_1/src/main/java/MatricesUnidimensionales/Ejercicio0.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Retos4_3/src/main/java/bidimensional/Ejercicio1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_3/src/main/java/bidimensional/Ejercicio1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Retos4_3/target/classes/bidimensional/Ejercicio1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_3/target/classes/bidimensional/Ejercicio1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Retos4_4/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_4/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Retos4_7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_7/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Retos4_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +28,24 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/Retos4_8"
+    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/EclipseWorkSpace"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Retos5_2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Retos5_2" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

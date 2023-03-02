@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="40884502-5f5c-4264-97c5-94398a72131a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/EclipseWorkSpace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_1/src/.idea/EclipseWorkSpace.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_1/src/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_1/src/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_1/src/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_1/src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retos4_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_8/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="98c6ddca-9fee-4f5e-a943-6c5b47e388b1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos5_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos5_2/src/empresa/Jefes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_2/src/empresa/Jefes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +17,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2LlxMmlhepxGJ9MQ9fBcaXZElDb" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MSFOHK9JJyoiinaxJCHsLAOAZJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -25,23 +28,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/EclipseWorkSpace/Retos5_1"
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Alejandro Vargas\Desktop\WorkArea\practiceVersions\EclipseWorkSpace\Retos5_1\src" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="40884502-5f5c-4264-97c5-94398a72131a" name="Changes" comment="" />
-      <created>1676459424838</created>
+      <changelist id="98c6ddca-9fee-4f5e-a943-6c5b47e388b1" name="Changes" comment="" />
+      <created>1677753053477</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1676459424838</updated>
+      <updated>1677753053477</updated>
     </task>
     <servers />
   </component>
