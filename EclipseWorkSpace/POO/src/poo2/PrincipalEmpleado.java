@@ -1,5 +1,8 @@
 package poo2;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class PrincipalEmpleado {
 
 	public static void main(String[] args) {
@@ -46,6 +49,8 @@ public class PrincipalEmpleado {
 		}
 		
 		//refundición de clases 
+		Arrays.sort(misEmpleados);
+		System.out.println("---------------");
 	}
 
 }

@@ -3,7 +3,7 @@ package poo2;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Empleado {
+public class Empleado implements Comparable {
 	private final String nombre;
 	private double sueldo;
 	private Date altaContrato;
@@ -22,7 +22,7 @@ public class Empleado {
 	}
 
 	public Empleado(String nombre) {
-		this(nombre,1000,2000,1,1);
+		this(nombre, 1000, 2000, 1, 1);
 		this.seccion = "Administración";
 	}
 
@@ -69,7 +69,20 @@ public class Empleado {
 	}
 
 	public String getDatos() {
-		return "Nombre " + getNombre() + " Sueldo " + getSueldo() + " fecha alta" + " Seccion " + getSeccion() + " Identificativo " + getId();
+		return "Nombre " + getNombre() + " Sueldo " + getSueldo() + " fecha alta" + " Seccion " + getSeccion()
+				+ " Identificativo " + getId();
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		Empleado otro = (Empleado) o; // castear
+		if (otro.sueldo > this.sueldo) {
+			return -1;
+		} else if (otro.sueldo < this.sueldo) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 
 }
