@@ -51,6 +51,10 @@ public class PrincipalEmpleado {
 		//refundición de clases 
 		Arrays.sort(misEmpleados);
 		System.out.println("---------------");
+		
+		System.out.println(jefeRRHH.tomarDecisionees("Dar mas dias de descanso"));
+		System.out.println("El jefe: " + jefeRRHH.getNombre() + " Tiene un bonus de : " + jefeRRHH.estableceBonus(500));
+		System.out.println("El empleado: " + misEmpleados[1].getNombre() + " Tiene un bonus de : " +  misEmpleados[1].estableceBonus(1000));
 	}
 
 }

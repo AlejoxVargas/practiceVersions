@@ -3,7 +3,7 @@ package poo2;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Empleado implements Comparable {
+public class Empleado implements Comparable,Trabajadores {
 	private final String nombre;
 	private double sueldo;
 	private Date altaContrato;
@@ -83,6 +83,11 @@ public class Empleado implements Comparable {
 		} else {
 			return 0;
 		}
+	}
+
+	@Override
+	public double estableceBonus(double gratificacion) {
+		return Trabajadores.bonusBase + gratificacion;
 	}
 
 }
