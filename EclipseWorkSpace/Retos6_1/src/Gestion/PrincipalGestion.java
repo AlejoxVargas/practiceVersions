@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class PrincipalGestion {
     static Scanner sc = new Scanner(System.in);
-
     public static void main(String[] args) {
         Menu();
     }
@@ -17,7 +16,8 @@ public class PrincipalGestion {
         do {
             menu = opcionMenu();
             switch (menu){
-                case 1 -> crearEmpleado(crearArray(),crearTipoEmpleadoMenu());
+                case 1 -> crearEmpleado(usarArray(),crearTipoEmpleadoMenu());
+                case 2 -> consultarSueldo(usarArray());
             }
         } while (menu != 0);
     }
@@ -43,13 +43,16 @@ public class PrincipalGestion {
 
         return menu;
     }
+    public static Empleado[] usarArray(){
+        Empleado[] plantilla = new Empleado[fillArray()];
+        return plantilla;
+    }
 
-    public static Empleado[] crearArray() {
+    public static int fillArray() {
         int personalCantidad = 0;
         System.out.println("Tamaño de la plantila de la empresa: ");
         personalCantidad = sc.nextInt();
-        Empleado[] plantilla = new Empleado[personalCantidad];
-        return plantilla;
+        return personalCantidad;
     }
 
     public static void crearEmpleado(Empleado[] plantilla, int opcion) {
@@ -113,5 +116,18 @@ public class PrincipalGestion {
         } while (!valido);
 
         return menu;
+    }
+    public static void empleadosCategorias (Empleado[] plantilla){
+        for (int i = 0; i < plantilla.length; i++){
+            if (plantilla[i] instanceof EmpVenta){
+
+            }
+        }
+    }
+
+    public static void consultarSueldo(Empleado[] plantilla){
+        for(int i = 0; i < plantilla.length; i++){
+            System.out.println(plantilla[i].toString());
+        }
     }
 }
