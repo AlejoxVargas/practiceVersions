@@ -6,18 +6,26 @@ import java.util.Scanner;
 
 public class PrincipalGestion {
     static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
+//        int personalCantidad = 0;
+//        System.out.println("Tamaño de la plantila de la empresa: ");
+//        personalCantidad = sc.nextInt();
+//        Empleado[] plantilla = new Empleado[personalCantidad];
         Menu();
     }
 
     public static void Menu() {
         int menu;
+        int tamañoPlantilla;
         boolean llave = true;
         do {
             menu = opcionMenu();
-            switch (menu){
-                case 1 -> crearEmpleado(usarArray(),crearTipoEmpleadoMenu());
-                case 2 -> consultarSueldo(usarArray());
+            //tamañoPlantilla = fillArray();
+            Empleado[] plantilla = new Empleado[2];
+            switch (menu) {
+                case 1 -> { crearEmpleado(plantilla, crearTipoEmpleadoMenu());}
+                case 2 -> consultarSueldo(plantilla);
             }
         } while (menu != 0);
     }
@@ -43,8 +51,9 @@ public class PrincipalGestion {
 
         return menu;
     }
-    public static Empleado[] usarArray(){
-        Empleado[] plantilla = new Empleado[fillArray()];
+
+    public static Empleado[] usarArray(int tamañoPlantilla) {
+        Empleado[] plantilla = new Empleado[tamañoPlantilla];
         return plantilla;
     }
 
@@ -80,22 +89,43 @@ public class PrincipalGestion {
             switch (opcion) {
                 case 1 -> {
                     plantilla[i] = new EmpVenta(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
+                    System.out.println("Numero de ventas: ");
+                    int ventas = sc.nextInt();
+                    ((EmpVenta)plantilla[i]).setVentas(ventas);
                 }
                 case 2 -> {
                     plantilla[i] = new EmpRepresentantes(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
+                    System.out.println("Numero de ventas: ");
+                    int ventas = sc.nextInt();
+                    ((EmpRepresentantes)plantilla[i]).setVentas(ventas);
                 }
                 case 3 -> {
                     plantilla[i] = new EmpProduccion(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
+                    System.out.println("¿Manipula productos de riesgo? ");
+                    String opcionRiesgo = sc.nextLine();
+                    ((EmpProduccion)plantilla[i]).setProductoRiesgo(opcionRiesgo);
+                    System.out.println("Unidades producidas: ");
+                    int produccion = sc.nextInt();
+                    ((EmpProduccion)plantilla[i]).setUnidadesProducidas(produccion);
                 }
                 case 4 -> {
                     plantilla[i] = new EmpMantenimiento(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
+                    System.out.println("¿Manipula productos de riesgo? ");
+                    String opcionRiesgo = sc.nextLine();
+                    ((EmpMantenimiento)plantilla[i]).setProductoRiesgo(opcionRiesgo);
+                    System.out.println("Horas trabajadas: ");
+                    int produccion = sc.nextInt();
+                    ((EmpProduccion)plantilla[i]).setUnidadesProducidas(produccion);
                 }
                 case 5 -> opcionMenu();
             }
         }
+        for (int i = 0; i < plantilla.length; i++) {
+            System.out.println(plantilla[i].toString());
+        }
     }
 
-    public static int crearTipoEmpleadoMenu(){
+    public static int crearTipoEmpleadoMenu() {
         int menu = 0;
         boolean valido = false;
         do {
@@ -117,17 +147,20 @@ public class PrincipalGestion {
 
         return menu;
     }
-    public static void empleadosCategorias (Empleado[] plantilla){
-        for (int i = 0; i < plantilla.length; i++){
-            if (plantilla[i] instanceof EmpVenta){
+
+    public static void empleadosCategorias(Empleado[] plantilla) {
+        for (int i = 0; i < plantilla.length; i++) {
+            if (plantilla[i] instanceof EmpVenta) {
 
             }
         }
     }
 
-    public static void consultarSueldo(Empleado[] plantilla){
-        for(int i = 0; i < plantilla.length; i++){
-            System.out.println(plantilla[i].toString());
+    public static void consultarSueldo(Empleado[] plantilla) {
+        for (Empleado i : plantilla) {
+            if(i instanceof EmpVenta){
+                System.out.println(((EmpVenta)i).getSueldo());
+            }
         }
     }
 }

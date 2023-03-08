@@ -23,6 +23,9 @@ public class EmpVenta extends Empleado {
 		double sueldo = ((20 / 100) * this.ventas) + 400;
 		return sueldo;
 	}
+	public double getSueldo() {
+		return calcularSueldo();
+	}
 
 	@Override
 	public String getNombreCompleto() {
