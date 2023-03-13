@@ -11,6 +11,7 @@ public class PrincipalGestion {
     public static void main(String[] args) {
         Menu();
     }
+
     public static void Menu() {
         int menu;
         int tamañoPlantilla;
@@ -224,8 +225,61 @@ public class PrincipalGestion {
         System.out.println("Sueldo medio de la categoria Producción: " + mediaEmpProduccion / contadorProdu);
         System.out.println("Sueldo medio de la categoria Mantenimiento: " + mediaEmpMantenimiento / contardorManteni);
     }
-}
 
+    public static int MenuCriteriosInterface1(Empleado[] plantilla) {
+        int menu = 0;
+        boolean llave = false;
+        do {
+            try {
+                System.out.println("""
+                        \n1.Organizar por categorias:
+                        \n2.Organizar por criterio especifico
+                        \n0.Salir""");
+                menu = sc.nextInt();
+                if (menu > 2) {
+                    System.out.println("Debe elegir una opción entre 0 y 2");
+                } else {
+                    llave = true;
+                }
+                if (menu == 0) {
+                    sc.close();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Debe elegir una opción entre 0 y 2");
+            }
+        } while (llave);
+        return menu;
+    }
+
+    public static int MenuCriteriosInterface2(Empleado[] plantilla) {
+        int menu = 0;
+        boolean llave = false;
+        do {
+            try {
+                System.out.println("""
+                        Organizar según: 
+                        \n1.Nombre
+                        \n2.Apellido
+                        \n3.Edad
+                        \n4.Fecha Entrada
+                        \n0.Salir""");
+                menu = sc.nextInt();
+                if (menu > 2) {
+                    System.out.println("Debe elegir una opción entre 0 y 4");
+                } else {
+                    llave = true;
+                }
+                if (menu == 0) {
+                    sc.close();
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Debe elegir una opción entre 0 y 4");
+            }
+        } while (llave);
+        return menu;
+    }
+}
 /*
-* Saber como hacer el toString para consultar el sueldo (tengo errores desde la clase hija con el método getNombreCompleto)
-* Saber como recorrer el array para hacer el compareTO y sí debo hacerlo con el objeto siguiente, método burbuja, etc...*/
+ * Saber como hacer el toString para consultar el sueldo (tengo errores desde la clase hija con el método getNombreCompleto)
+ * Saber como recorrer el array para hacer el compareTO y sí debo hacerlo con el objeto siguiente, método burbuja, etc...
+ * organizar cada uno segun criterios pero dentro de su misma categoria sin que se salga de esta categoria*/

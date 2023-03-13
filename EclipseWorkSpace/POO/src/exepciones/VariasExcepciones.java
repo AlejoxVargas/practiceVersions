@@ -12,6 +12,8 @@ public class VariasExcepciones {
 			System.out.println("Hay que introducir n entero");
 			System.out.println(e.getMessage());
 			System.out.println("Error de tipo: " + e.getClass().getName());
+		}	finally {
+			 System.out.println("Esto se ejecuta siempre");
 		}
 	}
 

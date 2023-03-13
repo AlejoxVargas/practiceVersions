@@ -8,10 +8,10 @@ private String psNombre;
 private String psApellido1;
 private LocalDate pdNacimiento;
 private String piDni;
-private CAsignatura[] paoAsignatura;
+private CAsignatura paoAsignatura;
 private int [] paiNota;
 
-    public CAlumno(String psNombre, String psApellido1, LocalDate pdNacimiento, String piDni, CAsignatura[] paoAsignatura, int[] paiNota) {
+    public CAlumno(String psNombre, String psApellido1, LocalDate pdNacimiento, String piDni, CAsignatura paoAsignatura, int[] paiNota) {
         this.psNombre = psNombre;
         this.psApellido1 = psApellido1;
         this.pdNacimiento = pdNacimiento;
@@ -52,11 +52,11 @@ private int [] paiNota;
         this.piDni = piDni;
     }
 
-    public CAsignatura[] getPaoAsignatura() {
+    public CAsignatura getPaoAsignatura() {
         return paoAsignatura;
     }
 
-    public void setPaoAsignatura(CAsignatura[] paoAsignatura) {
+    public void setPaoAsignatura(CAsignatura paoAsignatura) {
         this.paoAsignatura = paoAsignatura;
     }
 

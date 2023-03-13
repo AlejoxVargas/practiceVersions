@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c2f1a8d-0ff2-4237-9321-aeb5645d3af8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Retos5_3/.idea/Retos5_3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Retos5_3/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Retos5_3/src/colegio/CAlumnoMain1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/POO/src/exepciones/VariasExcepciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/POO/src/exepciones/VariasExcepciones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos5_3/src/colegio/CAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_3/src/colegio/CAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos5_3/src/colegio/CAsignatura.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_3/src/colegio/CAsignatura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos5_3/src/colegio/CProfesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_3/src/colegio/CProfesor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpMantenimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpMantenimiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpProduccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpProduccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpRepresentantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpRepresentantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpVenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos5_3/src/colegio/CAlumnoMain1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_3/src/colegio/CAlumnoMain1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/PrincipalGestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/PrincipalGestion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +38,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/EclipseWorkSpace"
+    "last_opened_file_path": "C:/Users/USUARIO CCC - TARDE/Desktop/workArea/practiceVersions/EclipseWorkSpace"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
