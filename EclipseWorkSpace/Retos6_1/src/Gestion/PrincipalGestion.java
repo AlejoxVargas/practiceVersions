@@ -6,23 +6,19 @@ import java.util.Scanner;
 
 public class PrincipalGestion {
     static Scanner sc = new Scanner(System.in);
+    static Empleado[] plantilla = new Empleado[2];
 
     public static void main(String[] args) {
-//        int personalCantidad = 0;
-//        System.out.println("Tamaño de la plantila de la empresa: ");
-//        personalCantidad = sc.nextInt();
-//        Empleado[] plantilla = new Empleado[personalCantidad];
         Menu();
     }
-
     public static void Menu() {
         int menu;
         int tamañoPlantilla;
         boolean llave = true;
         do {
             menu = opcionMenu();
-            //tamañoPlantilla = fillArray();
-            Empleado[] plantilla = new Empleado[4];
+//            tamañoPlantilla = fillArray();
+//            Empleado[] plantilla = new Empleado[2];
             switch (menu) {
                 case 1 -> {
                     for (Empleado i : plantilla) {
@@ -30,6 +26,7 @@ public class PrincipalGestion {
                     }
                 }
                 case 2 -> consultarSueldo(plantilla);
+                case 3 -> sueldoMedioCategorias(plantilla);
             }
         } while (menu != 0);
     }
@@ -56,9 +53,8 @@ public class PrincipalGestion {
         return menu;
     }
 
-    public static Empleado[] usarArray(int tamañoPlantilla) {
-        Empleado[] plantilla = new Empleado[tamañoPlantilla];
-        return plantilla;
+    public static Empleado[] usarArray(int Plantilla) {
+        return new Empleado[Plantilla];
     }
 
     public static int fillArray() {
@@ -73,6 +69,7 @@ public class PrincipalGestion {
         String apellido;
         int edad;
         int anyo, mes, dia;
+        boolean vacio = false;
 
         sc.nextLine();
 
@@ -89,39 +86,45 @@ public class PrincipalGestion {
         System.out.println("Día: ");
         dia = sc.nextInt();
 
-        for (int i = 0; i < plantilla.length; i++) {
-            switch (opcion) {
-                case 1 -> {
-                    plantilla[i] = new EmpVenta(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
-                    System.out.println("Numero de ventas: ");
-                    int ventas = sc.nextInt();
-                    ((EmpVenta) plantilla[i]).setVentas(ventas);
+        for (int i = 0; i < plantilla.length && !vacio; i++) {
+            if (plantilla[i] == null) {
+                switch (opcion) {
+                    case 1 -> {
+                        plantilla[i] = new EmpVenta(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
+                        System.out.println("Numero de ventas: ");
+                        int ventas = sc.nextInt();
+                        ((EmpVenta) plantilla[i]).setVentas(ventas);
+                        vacio = true;
+                    }
+                    case 2 -> {
+                        plantilla[i] = new EmpRepresentantes(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
+                        System.out.println("Numero de ventas: ");
+                        int ventas = sc.nextInt();
+                        ((EmpRepresentantes) plantilla[i]).setVentas(ventas);
+                        vacio = true;
+                    }
+                    case 3 -> {
+                        plantilla[i] = new EmpProduccion(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
+                        System.out.println("¿Manipula productos de riesgo? ");
+                        String opcionRiesgo = sc.nextLine();
+                        ((EmpProduccion) plantilla[i]).setProductoRiesgo(opcionRiesgo);
+                        System.out.println("Unidades producidas: ");
+                        int produccion = sc.nextInt();
+                        ((EmpProduccion) plantilla[i]).setUnidadesProducidas(produccion);
+                        vacio = true;
+                    }
+                    case 4 -> {
+                        plantilla[i] = new EmpMantenimiento(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
+                        System.out.println("¿Manipula productos de riesgo? ");
+                        String opcionRiesgo = sc.nextLine();
+                        ((EmpMantenimiento) plantilla[i]).setProductoRiesgo(opcionRiesgo);
+                        System.out.println("Horas trabajadas: ");
+                        int produccion = sc.nextInt();
+                        ((EmpProduccion) plantilla[i]).setUnidadesProducidas(produccion);
+                        vacio = true;
+                    }
+                    case 5 -> opcionMenu();
                 }
-                case 2 -> {
-                    plantilla[i] = new EmpRepresentantes(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
-                    System.out.println("Numero de ventas: ");
-                    int ventas = sc.nextInt();
-                    ((EmpRepresentantes) plantilla[i]).setVentas(ventas);
-                }
-                case 3 -> {
-                    plantilla[i] = new EmpProduccion(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
-                    System.out.println("¿Manipula productos de riesgo? ");
-                    String opcionRiesgo = sc.nextLine();
-                    ((EmpProduccion) plantilla[i]).setProductoRiesgo(opcionRiesgo);
-                    System.out.println("Unidades producidas: ");
-                    int produccion = sc.nextInt();
-                    ((EmpProduccion) plantilla[i]).setUnidadesProducidas(produccion);
-                }
-                case 4 -> {
-                    plantilla[i] = new EmpMantenimiento(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
-                    System.out.println("¿Manipula productos de riesgo? ");
-                    String opcionRiesgo = sc.nextLine();
-                    ((EmpMantenimiento) plantilla[i]).setProductoRiesgo(opcionRiesgo);
-                    System.out.println("Horas trabajadas: ");
-                    int produccion = sc.nextInt();
-                    ((EmpProduccion) plantilla[i]).setUnidadesProducidas(produccion);
-                }
-                case 5 -> opcionMenu();
             }
         }
     }
@@ -157,10 +160,72 @@ public class PrincipalGestion {
     }
 
     public static void consultarSueldo(Empleado[] plantilla) {
-        for (Empleado i : plantilla) {
-            if (i instanceof EmpVenta) {
-                System.out.println(((EmpVenta) i).getSueldo());
+        String nombre;
+        System.out.println("Nombre del empleado a consultar: ");
+        sc.nextLine();
+        nombre = sc.nextLine();
+
+        for (Empleado empleado : plantilla) {
+            if (empleado.getNombre().equalsIgnoreCase(nombre) && empleado instanceof EmpVenta) {
+                System.out.println(((EmpVenta) empleado).getSueldo());
+            }
+            if (empleado.getNombre().equalsIgnoreCase(nombre) && empleado instanceof EmpRepresentantes) {
+                System.out.println(((EmpRepresentantes) empleado).getSueldo());
+            }
+            if (empleado.getNombre().equalsIgnoreCase(nombre) && empleado instanceof EmpProduccion) {
+                System.out.println(((EmpProduccion) empleado).getSueldo());
+            }
+            if (empleado.getNombre().equalsIgnoreCase(nombre) && empleado instanceof EmpMantenimiento) {
+                System.out.println(((EmpMantenimiento) empleado).getSueldo());
             }
         }
     }
+
+    public static void consultarEmpleado(Empleado[] plantilla) {
+        for (Empleado empleado : plantilla) {
+            if (empleado instanceof EmpVenta) {
+                System.out.println(((EmpVenta) empleado).getNombreCompleto());
+            }
+            if (empleado instanceof EmpRepresentantes) {
+                System.out.println(((EmpRepresentantes) empleado).getNombreCompleto());
+            }
+            if (empleado instanceof EmpProduccion) {
+                System.out.println(((EmpProduccion) empleado).getNombreCompleto());
+            }
+            if (empleado instanceof EmpMantenimiento) {
+                System.out.println(((EmpMantenimiento) empleado).getNombreCompleto());
+            }
+        }
+    }
+
+    public static void sueldoMedioCategorias(Empleado[] plantilla) {
+        double mediaEmpVentas = 0, mediaEmpRepresentantes = 0, mediaEmpProduccion = 0, mediaEmpMantenimiento = 0;
+        int contadorVentas = 0, contadorRepre = 0, contadorProdu = 0, contardorManteni = 0;
+        for (Empleado empleado : plantilla) {
+            if (empleado instanceof EmpVenta) {
+                mediaEmpVentas += ((EmpVenta) empleado).getSueldo();
+                contadorVentas++;
+            }
+            if (empleado instanceof EmpRepresentantes) {
+                mediaEmpRepresentantes += ((EmpRepresentantes) empleado).getSueldo();
+                contadorRepre++;
+            }
+            if (empleado instanceof EmpProduccion) {
+                mediaEmpProduccion += ((EmpProduccion) empleado).getSueldo();
+                contadorProdu++;
+            }
+            if (empleado instanceof EmpMantenimiento) {
+                mediaEmpMantenimiento += ((EmpMantenimiento) empleado).getSueldo();
+                contardorManteni++;
+            }
+        }
+        System.out.println("Sueldo medio de la categoria ventas: " + mediaEmpVentas / contadorVentas);
+        System.out.println("Sueldo medio de la categoria representantes: " + mediaEmpRepresentantes / contadorRepre);
+        System.out.println("Sueldo medio de la categoria Producción: " + mediaEmpProduccion / contadorProdu);
+        System.out.println("Sueldo medio de la categoria Mantenimiento: " + mediaEmpMantenimiento / contardorManteni);
+    }
 }
+
+/*
+* Saber como hacer el toString para consultar el sueldo (tengo errores desde la clase hija con el método getNombreCompleto)
+* Saber como recorrer el array para hacer el compareTO y sí debo hacerlo con el objeto siguiente, método burbuja, etc...*/
