@@ -28,7 +28,7 @@ public class EmpRepresentantes extends Empleado {
 
     @Override
     public String getNombreCompleto() {
-        return "El Empleado representante: " + this.getNombreCompleto();
+        return "Empleado representante: " + super.getNombreCompleto();
     }
 
 }

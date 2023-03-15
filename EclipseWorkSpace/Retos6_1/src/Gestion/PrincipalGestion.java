@@ -28,6 +28,12 @@ public class PrincipalGestion {
                 }
                 case 2 -> consultarSueldo(plantilla);
                 case 3 -> sueldoMedioCategorias(plantilla);
+                case 4 -> {
+                    switch (MenuCriteriosInterface1()) {
+                        case 1 -> organizarPorCategorias(plantilla);
+                        case 2 -> MenuCriteriosInterface2(plantilla);
+                    }
+                }
             }
         } while (menu != 0);
     }
@@ -107,6 +113,7 @@ public class PrincipalGestion {
                     case 3 -> {
                         plantilla[i] = new EmpProduccion(nombre, apellido, edad, LocalDate.of(anyo, mes, dia));
                         System.out.println("¿Manipula productos de riesgo? ");
+                        sc.nextLine();
                         String opcionRiesgo = sc.nextLine();
                         ((EmpProduccion) plantilla[i]).setProductoRiesgo(opcionRiesgo);
                         System.out.println("Unidades producidas: ");
@@ -128,6 +135,7 @@ public class PrincipalGestion {
                 }
             }
         }
+        consultarEmpleado(plantilla);
     }
 
     public static int crearTipoEmpleadoMenu() {
@@ -149,7 +157,6 @@ public class PrincipalGestion {
                 System.out.println("Tiene que ser un número entero entre 1 y 4");
             }
         } while (!valido);
-
         return menu;
     }
 
@@ -185,16 +192,16 @@ public class PrincipalGestion {
     public static void consultarEmpleado(Empleado[] plantilla) {
         for (Empleado empleado : plantilla) {
             if (empleado instanceof EmpVenta) {
-                System.out.println(((EmpVenta) empleado).getNombreCompleto());
+                System.out.println(empleado.getNombreCompleto());
             }
             if (empleado instanceof EmpRepresentantes) {
-                System.out.println(((EmpRepresentantes) empleado).getNombreCompleto());
+                System.out.println(empleado.getNombreCompleto());
             }
             if (empleado instanceof EmpProduccion) {
-                System.out.println(((EmpProduccion) empleado).getNombreCompleto());
+                System.out.println(empleado.getNombreCompleto());
             }
             if (empleado instanceof EmpMantenimiento) {
-                System.out.println(((EmpMantenimiento) empleado).getNombreCompleto());
+                System.out.println(empleado.getNombreCompleto());
             }
         }
     }
@@ -226,27 +233,27 @@ public class PrincipalGestion {
         System.out.println("Sueldo medio de la categoria Mantenimiento: " + mediaEmpMantenimiento / contardorManteni);
     }
 
-    public static int MenuCriteriosInterface1(Empleado[] plantilla) {
+    public static int MenuCriteriosInterface1() {
         int menu = 0;
         boolean llave = false;
         do {
-            try {
-                System.out.println("""
-                        \n1.Organizar por categorias:
-                        \n2.Organizar por criterio especifico
-                        \n0.Salir""");
-                menu = sc.nextInt();
-                if (menu > 2) {
-                    System.out.println("Debe elegir una opción entre 0 y 2");
-                } else {
-                    llave = true;
-                }
-                if (menu == 0) {
-                    sc.close();
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Debe elegir una opción entre 0 y 2");
-            }
+            //try {
+            System.out.println("""
+                    1.Organizar por categorias:
+                    2.Organizar por criterio especifico
+                    0.Salir""");
+            menu = sc.nextInt();
+//                if (menu > 2) {
+//                    System.out.println("Debe elegir una opción entre 0 y 2");
+//                } else {
+//                    llave = true;
+//                }
+//                if (menu == 0) {
+//                    sc.close();
+//                }
+//            } catch (InputMismatchException e) {
+//                System.out.println("Debe elegir una opción entre 0 y 2");
+//            }
         } while (llave);
         return menu;
     }
@@ -277,6 +284,23 @@ public class PrincipalGestion {
             }
         } while (llave);
         return menu;
+    }
+
+    public static void organizarPorCategorias(Empleado[] plantilla) {
+        for (Empleado empleado : plantilla) {
+            if (empleado instanceof EmpVenta) {
+                System.out.println(empleado.getNombreCompleto() + ((EmpVenta) empleado).getSueldo());
+            }
+            if (empleado instanceof EmpRepresentantes) {
+                System.out.println(empleado.getNombreCompleto() + ((EmpRepresentantes) empleado).getSueldo());
+            }
+            if (empleado instanceof EmpProduccion) {
+                System.out.println(empleado.getNombreCompleto() + ((EmpProduccion) empleado).getSueldo());
+            }
+            if (empleado instanceof EmpMantenimiento) {
+                System.out.println(empleado.getNombreCompleto() + ((EmpMantenimiento) empleado).getSueldo());
+            }
+        }
     }
 }
 /*

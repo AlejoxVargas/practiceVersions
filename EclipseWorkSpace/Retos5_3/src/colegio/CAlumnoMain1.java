@@ -7,6 +7,7 @@ import java.util.Date;
 public class CAlumnoMain1 {
     public static void main(String[] args) {
         ArrayList<CAsignatura> grupoAsignaturas = new ArrayList<CAsignatura>();
+        CAlumno[] grupoAlumnos = new CAlumno[3];
         int [] nota = {0,0};
 
         CProfesor Manuel = new CProfesor("Manuel", "Santana", LocalDate.of(1980, 1, 1), 4767, 1000, "Informatica");
@@ -17,8 +18,8 @@ public class CAlumnoMain1 {
         grupoAsignaturas.add(new CAsignatura(22, "Marcas", Carolina, 4));
         grupoAsignaturas.add(new CAsignatura(33, "Entornos", Javier, 3));
 
-        CAlumno Pedro = new CAlumno("Pedro", "Santana", LocalDate.of(2001, 12, 3), 1234, grupoAsignaturas, nota);
-        CAlumno Maria = new CAlumno("María", "Ruiz",LocalDate.of(2011,11,4),1234);
-        CAlumno Esther = new CAlumno("Esther","Rodríguez", LocalDate.of(1999,10,5),3456);
+        grupoAlumnos[0] = new CAlumno("Pedro", "Santana", LocalDate.of(2001, 12, 3), 1234, grupoAsignaturas, nota);
+        grupoAlumnos[1] = new CAlumno("María", "Ruiz",LocalDate.of(2011,11,4),1234);
+        grupoAlumnos[2] = new CAlumno("Esther","Rodríguez", LocalDate.of(1999,10,5),3456);
     }
 }

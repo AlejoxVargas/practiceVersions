@@ -1,0 +1,35 @@
+@use 'anidacion';
+// comentario
+
+$color-principal: rojo;
+
+p{
+    @if ($color-principal == rojo){
+        color: red;
+    }
+    @else if ($color-principal == verde){
+        color: green;
+    }else{
+        color: black;
+    }
+}
+
+body{
+    background: $color-principal;
+}
+
+@mixin caja_personalizada($color: green){
+    background-color: $color;
+    border: 4px solid black;
+    box-shadow: 2px 2px 2px black;
+    color: $color-principal
+}
+
+.caja{
+    @include caja_personalizada ();
+    width: 400px - 100px;
+}
+.caja2{
+    @include caja_personalizada ($color: pink);
+    width: 400px - 100px;
+}

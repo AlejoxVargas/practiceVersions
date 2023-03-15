@@ -1,0 +1,3 @@
+@echo off
+cls
+for %%i in (%1/*.txt) do type %%i | sort /+1 |more

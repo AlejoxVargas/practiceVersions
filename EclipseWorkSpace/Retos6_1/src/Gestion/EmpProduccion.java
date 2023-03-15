@@ -45,7 +45,7 @@ public class EmpProduccion extends Empleado implements Riesgo {
 
     @Override
     public String getNombreCompleto() {
-        return "El Empleado de produccion: " + this.getNombreCompleto();
+        return "Empleado producción: " + super.getNombreCompleto();
     }
 
 }

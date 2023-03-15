@@ -27,6 +27,6 @@ public abstract class Empleado {
     public abstract double calcularSueldo();
 
     public String getNombreCompleto() {
-        return "\nNombre: " + this.nombre + "\nApellido: " + this.apellido;
+        return this.nombre + "--" + this.apellido + "--" + this.edad + "--" + this.fechaEntrada;
     }
 }

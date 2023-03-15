@@ -1,0 +1,34 @@
+@for $i from 1 through 6 {
+    h#{$i}{
+        font-size: (6-$i) * 15px;
+    }
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.color{
+    border: 2px solid red;
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+$j: 20;
+@while ( $j > 1 ) {
+    .color-#{$j}{
+        width: 8px * $j;
+        border: 2px solid red;
+        padding: 20px;
+        height: 80px;
+    }
+    $j: $j - 1;
+}
+
+@for $i from 1 through 20 {
+    .color-#{$i}:nth-child(#{$i}){
+        background-color: darken( white, $i*5);
+    }
+}
