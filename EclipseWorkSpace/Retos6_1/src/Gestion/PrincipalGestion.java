@@ -152,7 +152,9 @@ public class PrincipalGestion {
                         5. Menu Principal
                         0. Salir""");
                 menu = sc.nextInt();
-                valido = true;
+                if (menu != 5) {
+                    valido = true;
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Tiene que ser un número entero entre 1 y 4");
             }
@@ -289,16 +291,16 @@ public class PrincipalGestion {
     public static void organizarPorCategorias(Empleado[] plantilla) {
         for (Empleado empleado : plantilla) {
             if (empleado instanceof EmpVenta) {
-                System.out.println(empleado.getNombreCompleto() + ((EmpVenta) empleado).getSueldo());
+                System.out.println(empleado.getNombreCompleto() + " Sueldo: " + ((EmpVenta) empleado).getSueldo());
             }
             if (empleado instanceof EmpRepresentantes) {
-                System.out.println(empleado.getNombreCompleto() + ((EmpRepresentantes) empleado).getSueldo());
+                System.out.println(empleado.getNombreCompleto() + " Sueldo: " + ((EmpRepresentantes) empleado).getSueldo());
             }
             if (empleado instanceof EmpProduccion) {
-                System.out.println(empleado.getNombreCompleto() + ((EmpProduccion) empleado).getSueldo());
+                System.out.println(empleado.getNombreCompleto() + " Sueldo: " + ((EmpProduccion) empleado).getSueldo());
             }
             if (empleado instanceof EmpMantenimiento) {
-                System.out.println(empleado.getNombreCompleto() + ((EmpMantenimiento) empleado).getSueldo());
+                System.out.println(empleado.getNombreCompleto() + " Sueldo: " + ((EmpMantenimiento) empleado).getSueldo());
             }
         }
     }

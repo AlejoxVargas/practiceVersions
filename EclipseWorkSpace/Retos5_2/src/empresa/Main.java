@@ -14,6 +14,8 @@ public class Main {
 			opcion = Menu();
 			if (opcion == 0) {
 				llave = false;
+				organizarCategoria(empresa);
+				sueldoCategorias(empresa);
 			} else {
 				crear(empresa, opcion);
 			}
@@ -46,7 +48,7 @@ public class Main {
 
 		switch (opcion) {
 		case 1 -> {
-			Empresa.add(new Empleado(nombre, sueldo));
+			Empresa.add(new CrearEmpleado(nombre, sueldo));
 		}
 		case 2 -> {
 			System.out.println("Prima: ");
@@ -60,7 +62,6 @@ public class Main {
 			Empresa.add(new Becarios(nombre, sueldo, contrato));
 		}
 		}
-		System.out.println(Empresa.toString());
 	}
 
 	public static void sueldoCategorias(ArrayList<Empleado> Empresa) {
@@ -69,22 +70,36 @@ public class Main {
 		double sueldoJefes = 0;
 
 		for (int i = 0; i < Empresa.size(); i++) {
-			if (Empresa.get(i) instanceof Empleado) {
+			if (Empresa.get(i) instanceof CrearEmpleado) {
 				sueldoEmpleado += Empresa.get(i).getSueldo();
 			}
 			if (Empresa.get(i) instanceof Becarios) {
 				sueldoBecarios += Empresa.get(i).getSueldo();
 			}
 			if (Empresa.get(i) instanceof Jefes) {
-				sueldoEmpleado += Empresa.get(i).getSueldo();
+				sueldoJefes += Empresa.get(i).getSueldo();
 			}
 		}
+		System.out.println("----Sumar sueldos por categorías----");
 		System.out.println("Sueldo Total Empleados: " + sueldoEmpleado);
-		System.out.println("Sueldo Total Becarios: " + sueldoBecarios);
 		System.out.println("Sueldo Total Jefes: " + sueldoJefes);
+		System.out.println("Sueldo Total Becarios: " + sueldoBecarios);
 	}
 	
-	public static void organizarCategoria(ArrayList<Empleado>Empresa) {
-		
+	public static void organizarCategoria(ArrayList<Empleado>empresa) {
+		for (int i = 0; i < empresa.size(); i++){
+			if (empresa.get(i) instanceof CrearEmpleado){
+				System.out.println("-----EMPLEADOS-----");
+				System.out.println(empresa.get(i));
+			}
+			if (empresa.get(i) instanceof Becarios){	
+				System.out.println("-----BECARIOS-----");
+				System.out.println(empresa.get(i));
+			}
+			if (empresa.get(i) instanceof Jefes){
+				System.out.println("-----JEFES-----");
+				System.out.println(empresa.get(i));
+			}
+		}
 	}
 }
