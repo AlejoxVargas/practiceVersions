@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c2f1a8d-0ff2-4237-9321-aeb5645d3af8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Retos5_2/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retos5_2/src/empresa/CrearEmpleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos5_2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos5_1/src/ejercicio2/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_1/src/ejercicio2/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos5_1/src/ejercicio2/ProfesorEmerito.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_1/src/ejercicio2/ProfesorEmerito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos5_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos5_3/src/colegio/CAlumnoMain1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_3/src/colegio/CAlumnoMain1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos5_2/src/empresa/Jefes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_2/src/empresa/Jefes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos5_2/src/empresa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos5_2/src/empresa/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpMantenimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpMantenimiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpProduccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpProduccion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpRepresentantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpRepresentantes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpVenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/Empleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/PrincipalGestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/PrincipalGestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Retos4_5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_5/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +43,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USUARIO CCC - TARDE/Desktop/workArea/practiceVersions/EclipseWorkSpace&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/USUARIO CCC - TARDE/Desktop/workArea/practiceVersions/Retos4_5"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

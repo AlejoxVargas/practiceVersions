@@ -16,12 +16,12 @@ public class Jefes extends Empleado {
         this.prima = prima;
     }
 
-    public double getSueldo() {
-        return super.getSueldo() + this.prima;
+    public double calcularSueldo() {
+        return  super.getSueldo() + getPrima();
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Prima: " + getPrima() + "\nSueldo + Prima: " + this.getSueldo() + "\n";
+        return super.toString() + "Prima: " + getPrima() + "\nSueldo + Prima: " + this.calcularSueldo() + "\n";
     }
 }

@@ -24,6 +24,7 @@ public class ProfesorEmerito extends Profesor {
         return "Nombre: " + getNombre()
                 + "\nEdad: " + getEdad()
                 + "\nAños Consolidados: " + getAnnosConsolidados()
-                + "\nSalario Base: " + obtenerSalarioBase();
+                + "\nSalario Base: " + obtenerSalarioBase()
+                + "\nAños Emerito: " + getAñosEmerito();
     }
 }
