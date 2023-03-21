@@ -16,39 +16,39 @@ public class Documental extends Programa {
     public boolean programar(Programa[] escaleta, int hora) {
         boolean llave = false; /*para mas información, este mismo se encuentra explicado pero en la parte de pelicula*/
         int limite = super.getDuracion();
-        int horas = 0;
+        int horasCount = 0;
 
-        for (int i = hora; i <= limite; i++, horas++) {
-            if (super.programar(escaleta, hora)) {
-                if (horas == limite) {
-                    if (this.redifusion) {
+        for (int i = 0; i < limite; i++) {
+            for (int j = 0; j < limite; j++) {
+                if (super.programar(escaleta, hora)) {
+                    horasCount++;
+                }
+            }
+            if (horasCount == limite) {
+                if (this.redifusion) {
+                    for (int j = 0; j < limite; j++) {
                         escaleta[hora] = this;
+                        hora++;
                         llave = true;
-                    } else {
-                        if (hora >= 10 && hora <= 18) {
-                            for (int j = hora; j <= limite; j++) {
-                                escaleta[j] = this;
-                                llave = true;
-                            }
-                        } else {
-                            llave = false;
-                        }
-                    }
-                    if (getTema().equalsIgnoreCase("violencia")) {
-                        if (hora >= 0 && hora <= 5) {
-                            for (int j = hora; j <= limite; j++) {
-                                escaleta[j] = this;
-                                llave = true;
-                            }
-                        } else {
-                            llave = false;
-                        }
                     }
                 } else {
-                    llave = false;
+                    if (hora >= 10 && hora <= 18) {
+                        for (int j = hora; j <= limite; j++) {
+                            escaleta[hora] = this;
+                            hora++;
+                            llave = true;
+                        }
+                    }
                 }
-            } else {
-                llave = false;
+                if (getTema().equalsIgnoreCase("violencia")) {
+                    if (hora >= 0 && hora <= 5) {
+                        for (int j = hora; j <= limite; j++) {
+                            escaleta[hora] = this;
+                            hora++;
+                            llave = true;
+                        }
+                    }
+                }
             }
         }
         return llave;

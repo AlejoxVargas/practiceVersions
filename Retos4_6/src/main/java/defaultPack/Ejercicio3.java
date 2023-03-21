@@ -5,13 +5,13 @@ public class Ejercicio3{
     static char[][] tablero;
     static char[][] minas;
     static int[][] solucion;
-    static Scanner cap;
+    static Scanner sc;
 
     public static void main(String[] args) {
-        cap = new Scanner(System.in);
+        sc = new Scanner(System.in);
 
         System.out.println("Seleccione el nivel:\n1. Principiante\n2. Intermedio\n3. Experto");
-        int nivel = cap.nextInt();
+        int nivel = sc.nextInt();
 
         switch (nivel){
             case 1:
@@ -85,9 +85,9 @@ public class Ejercicio3{
         boolean completado = false;
         do {
             System.out.print("Ingrese fila: ");
-            int x = cap.nextInt() - 1;
+            int x = sc.nextInt() - 1;
             System.out.print("Ingrese columna: ");
-            int y = cap.nextInt() - 1;
+            int y = sc.nextInt() - 1;
 
             if (minas[x][y] == 'X') {
                 System.out.println("Perdiste pendejo!");

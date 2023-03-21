@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a5ee10d-1ef0-4345-bd43-e300778d1350" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DAM_PR_Ex2T_A_V/DAM_PR_Ex2T_A_V.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAM_PR_Ex2T_A_V/src/Examen/Documental.java" beforeDir="false" afterPath="$PROJECT_DIR$/DAM_PR_Ex2T_A_V/src/Examen/Documental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAM_PR_Ex2T_A_V/src/Examen/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/DAM_PR_Ex2T_A_V/src/Examen/Pelicula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAM_PR_Ex2T_A_V/src/Examen/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/DAM_PR_Ex2T_A_V/src/Examen/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/USUARIO CCC - TARDE/Desktop/workArea/practiceVersions/Examenes/PrimerTrimestre/DAM-PR_Ex1T_A_V"
+    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/EclipseWorkSpace"
   }
 }]]></component>
   <component name="RunManager">
@@ -62,16 +63,5 @@
       <updated>1679064320885</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/DAM_PR_Ex2T_A_V/src/Examen/Documental.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -27,7 +27,7 @@ public class Pelicula extends Programa {
             }
             if (horasCount == 2) { /*si es así entra en este if para saber si el boolean de estreno es v o f*/
                 if (this.estreno) {
-                    if (hora >= 21 && hora < 24) { /*si el boolean es V entra en este otro bucle para saber si la hora indicada es entre las 21 y 24 del estreno*/
+                    if (hora >= 21 && hora <= 24) { /*si el boolean es V entra en este otro bucle para saber si la hora indicada es entre las 21 y 24 del estreno*/
                         for (int j = 0; j < 2; j++) {
                             escaleta[hora] = this;
                             hora++;

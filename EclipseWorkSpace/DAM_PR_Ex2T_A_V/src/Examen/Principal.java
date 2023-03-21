@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class Principal {
     static Scanner sc = new Scanner(System.in);
     static Programa[] escaleta = new Programa[24];
-    static Pelicula auxPeli = new Pelicula("nombre", "Director", true);
-    static Documental auxDocu = new Documental("nombre", 0, "tema", false);
+    static Pelicula auxPeli = new Pelicula("TENET", "Christopher Nolan", false);
+    static Documental auxDocu = new Documental("Welcome to earth", 3, "Naturaleza", false);
 
     public static void main(String[] args) {
         usarMenu();
@@ -122,6 +122,7 @@ public class Principal {
         auxDocu = new Documental(nombre, duracion, tema, llave);
         System.out.println(auxDocu.toString());
     }
+
     //metodo para mostrar la opción 3 de escaleta
     public static void visualizarEscaleta(Programa[] escaleta) {
         for (Programa programa : escaleta) {
@@ -137,15 +138,35 @@ public class Principal {
     }
 
     public static void ProgramarPrograma(Programa[] escaleta) {
+        int opcion = 0;
+        int hora;
         System.out.println("Hora del programa: ");
-        int hora = sc.nextInt();
-        System.out.println(auxPeli.programar(escaleta,hora));
+        hora = sc.nextInt();
+        do {
+            visualizarProgramas();
+            System.out.println("""
+                    \t----PROGRAMAR----
+                    1.Película
+                    2.Documental""");
+            opcion = sc.nextInt();
+        } while (opcion < 1 || opcion > 2);
+        switch (opcion) {
+            case 1 -> System.out.println(auxPeli.programar(escaleta, hora));
+            case 2 -> System.out.println(auxDocu.programar(escaleta, hora));
+        }
     }
 
     public static int tamañoCrear() {
         System.out.println("¿Cuantas programas quiere crear?");
         int cantidad = sc.nextInt();
         return cantidad;
+    }
+
+    public static void visualizarProgramas() {
+        System.out.println("\t----PELICULAS----");
+        System.out.println(auxPeli.toString());
+        System.out.println("\t----DOCUMENTAL----");
+        System.out.println(auxDocu.toString());
     }
 }
 
