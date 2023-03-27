@@ -1,8 +1,7 @@
 package Gestion;
 
 import java.time.LocalDate;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class PrincipalGestion {
     static Scanner sc = new Scanner(System.in);
@@ -304,8 +303,20 @@ public class PrincipalGestion {
             }
         }
     }
+
+    public static void OrganizarPorCriterio(Empleado[] plantilla) {
+        Collections.sort(plantilla, new Comparator<Empleado>() {
+            @Override
+            public int compare(EmpVenta o1, EmpVenta o2) {
+
+                return Integer.compare(o1.getVentas(), o2.getVentas());
+            }
+        });
+    }
 }
 /*
  * Saber como hacer el toString para consultar el sueldo (tengo errores desde la clase hija con el método getNombreCompleto)
  * Saber como recorrer el array para hacer el compareTO y sí debo hacerlo con el objeto siguiente, método burbuja, etc...
- * organizar cada uno segun criterios pero dentro de su misma categoria sin que se salga de esta categoria*/
+ * organizar cada uno segun criterios pero dentro de su misma categoria sin que se salga de esta categoria
+ * hacer un sort sobre que empleados tienen mas ventas*/
+

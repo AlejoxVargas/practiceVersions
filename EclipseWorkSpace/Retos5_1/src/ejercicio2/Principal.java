@@ -99,7 +99,7 @@ public class Principal {
                     System.out.println("Años emerito: ");
                     annosEmerito = sc.nextInt();
                     profesorEmerito.add(profesor.get(i));
-                    ((ProfesorEmerito)profesorEmerito.get(i)).setAñosEmerito(annosEmerito);
+                    ((ProfesorEmerito) profesorEmerito.get(i)).setAñosEmerito(annosEmerito);
                     profesor.remove(i);
                     encontrado = false;
                     break;
@@ -113,8 +113,9 @@ public class Principal {
         System.out.println("-----PROFESOR-----");
         arrangeProfesores(profesor);
     }
+
     public static void arrangeProfesores(ArrayList<Profesor> profesorOrdenar) {
-        Collections.sort(profesorOrdenar, new Comparator<Profesor>(){
+        Collections.sort(profesorOrdenar, new Comparator<Profesor>() {
             @Override
             public int compare(Profesor o1, Profesor o2) {
                 return Integer.compare(o1.getAnnosConsolidados(), o2.getAnnosConsolidados());
