@@ -1,0 +1,10 @@
+@echo off
+:inicio
+color/?
+echo ---------------------------------------
+set /p cp=introducir color primer plano:
+set /p cf=introducir color segundo plano:
+color %cp%%cf%
+echo ¿Es correcto?
+choice /C:SN 
+if errorlevel 2 goto inicio
