@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf048b05-7a41-4452-85e4-428c5530cc2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_2/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_2/src/empresa/CrearEmpleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_1/src/ejercicio2/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_1/src/ejercicio2/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_1/src/ejercicio2/ProfesorEmerito.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_1/src/ejercicio2/ProfesorEmerito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_2/src/empresa/Jefes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_2/src/empresa/Jefes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_2/src/empresa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_2/src/empresa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/EmpMantenimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/EmpMantenimiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/EmpProduccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/EmpProduccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/EmpRepresentantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/EmpRepresentantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/EmpVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/EmpVenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/PrincipalGestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/PrincipalGestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Instituto/grupo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Instituto/grupo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +43,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/USUARIO CCC - TARDE/Desktop/workArea/practiceVersions/EclipseWorkSpace/Retos5_2"
+    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/DAM/Primer Trimestre/Programación/Ejercicios/Donebymyself"
   }
 }]]></component>
   <component name="RunManager">

@@ -14,10 +14,10 @@ public class grupo {
         alumnos = new alumno[2];
     }
 
-    public asignarAlumno(alumno alumnox) {
+   /* public asignarAlumno(alumno alumnox) {
         boolean llave = false;
         for(int i = 0; i < alumn
-    }
+    }*/
 
     @Override
     public String toString() {
