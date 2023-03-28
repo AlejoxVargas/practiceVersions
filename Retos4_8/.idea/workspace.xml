@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9ad7f16-2917-4415-b01f-01ba71fe0921" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/DAM_PR_Ex2T_A_V/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/DAM_PR_Ex2T_A_V/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_1/src/ejercicio2/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos5_1/src/ejercicio2/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/Empleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/PrincipalGestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos6_1/src/Gestion/PrincipalGestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -45,18 +43,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ALUMNO CCC - TARDE/Desktop/practiceVersions/EclipseWorkSpace/Retos6_1&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/ALUMNO CCC - TARDE/Desktop/practiceVersions/EclipseWorkSpace/Retos6_1",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Principal">
     <configuration name="Ejercicio1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="OtroEjercicio.Ejercicio1" />

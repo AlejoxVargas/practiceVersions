@@ -30,7 +30,11 @@ public class PrincipalGestion {
                 case 4 -> {
                     switch (MenuCriteriosInterface1()) {
                         case 1 -> organizarPorCategorias(plantilla);
-                        case 2 -> MenuCriteriosInterface2(plantilla);
+                        case 2 -> {
+                            switch (MenuCriteriosInterface2(plantilla)){
+                                case 3 -> OrganizarPorCriterio(plantilla);
+                            }
+                        }
                     }
                 }
             }
@@ -265,21 +269,21 @@ public class PrincipalGestion {
         do {
             try {
                 System.out.println("""
-                        Organizar según: 
-                        \n1.Nombre
-                        \n2.Apellido
-                        \n3.Edad
-                        \n4.Fecha Entrada
-                        \n0.Salir""");
+                        Organizar según:\s
+                        1.Nombre
+                        2.Apellido
+                        3.Edad
+                        4.Fecha Entrada
+                        0.Salir""");
                 menu = sc.nextInt();
-                if (menu > 2) {
+                /*if (menu > 4) {
                     System.out.println("Debe elegir una opción entre 0 y 4");
                 } else {
                     llave = true;
                 }
                 if (menu == 0) {
                     sc.close();
-                }
+                }*/
             } catch (InputMismatchException e) {
                 System.out.println("Debe elegir una opción entre 0 y 4");
             }
@@ -303,15 +307,13 @@ public class PrincipalGestion {
             }
         }
     }
-
     public static void OrganizarPorCriterio(Empleado[] plantilla) {
-        Collections.sort(plantilla, new Comparator<Empleado>() {
+        Comparator<Empleado> nameComparator = new Comparator<Empleado>() {
             @Override
-            public int compare(EmpVenta o1, EmpVenta o2) {
-
-                return Integer.compare(o1.getVentas(), o2.getVentas());
+            public int compare(Empleado o1, Empleado o2) {
+                return Integer.compare(o1.getEdad(), o2.getEdad());
             }
-        });
+        };
     }
 }
 /*

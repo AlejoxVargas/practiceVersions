@@ -1,6 +1,7 @@
 package Gestion;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 
 public abstract class Empleado {
     private String nombre;
@@ -18,6 +19,30 @@ public abstract class Empleado {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public LocalDate getFechaEntrada() {
+        return fechaEntrada;
+    }
+
+    public void setFechaEntrada(LocalDate fechaEntrada) {
+        this.fechaEntrada = fechaEntrada;
     }
 
     public void setNombre(String nombre) {
