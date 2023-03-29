@@ -1,7 +1,6 @@
 package Gestion;
 
 import java.time.LocalDate;
-import java.util.Comparator;
 
 public abstract class Empleado {
     private String nombre;
@@ -51,7 +50,7 @@ public abstract class Empleado {
 
     public abstract double calcularSueldo();
 
-    public String getNombreCompleto() {
+    public String getDatos() {
         return this.nombre + "--" + this.apellido + "--" + this.edad + "--" + this.fechaEntrada;
     }
 }

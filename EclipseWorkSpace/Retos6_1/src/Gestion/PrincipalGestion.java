@@ -5,9 +5,12 @@ import java.util.*;
 
 public class PrincipalGestion {
     static Scanner sc = new Scanner(System.in);
-    static Empleado[] plantilla = new Empleado[2];
+    static Empleado[] plantilla = new Empleado[4];
 
     public static void main(String[] args) {
+        plantilla[0] = new EmpVenta("Venta","1",32,LocalDate.of(2020,01,23));
+        plantilla[1] = new EmpVenta("Venta","2",60,LocalDate.of(2020,01,23));
+        plantilla[2] = new EmpMantenimiento("Mantenimiento","1",23,LocalDate.of(2023,02,23));
         Menu();
     }
 
@@ -197,16 +200,16 @@ public class PrincipalGestion {
     public static void consultarEmpleado(Empleado[] plantilla) {
         for (Empleado empleado : plantilla) {
             if (empleado instanceof EmpVenta) {
-                System.out.println(empleado.getNombreCompleto());
+                System.out.println(empleado.getDatos());
             }
             if (empleado instanceof EmpRepresentantes) {
-                System.out.println(empleado.getNombreCompleto());
+                System.out.println(empleado.getDatos());
             }
             if (empleado instanceof EmpProduccion) {
-                System.out.println(empleado.getNombreCompleto());
+                System.out.println(empleado.getDatos());
             }
             if (empleado instanceof EmpMantenimiento) {
-                System.out.println(empleado.getNombreCompleto());
+                System.out.println(empleado.getDatos());
             }
         }
     }
@@ -294,26 +297,30 @@ public class PrincipalGestion {
     public static void organizarPorCategorias(Empleado[] plantilla) {
         for (Empleado empleado : plantilla) {
             if (empleado instanceof EmpVenta) {
-                System.out.println(empleado.getNombreCompleto() + " Sueldo: " + ((EmpVenta) empleado).getSueldo());
+                System.out.println(empleado.getDatos() + " Sueldo: " + ((EmpVenta) empleado).getSueldo());
             }
             if (empleado instanceof EmpRepresentantes) {
-                System.out.println(empleado.getNombreCompleto() + " Sueldo: " + ((EmpRepresentantes) empleado).getSueldo());
+                System.out.println(empleado.getDatos() + " Sueldo: " + ((EmpRepresentantes) empleado).getSueldo());
             }
             if (empleado instanceof EmpProduccion) {
-                System.out.println(empleado.getNombreCompleto() + " Sueldo: " + ((EmpProduccion) empleado).getSueldo());
+                System.out.println(empleado.getDatos() + " Sueldo: " + ((EmpProduccion) empleado).getSueldo());
             }
             if (empleado instanceof EmpMantenimiento) {
-                System.out.println(empleado.getNombreCompleto() + " Sueldo: " + ((EmpMantenimiento) empleado).getSueldo());
+                System.out.println(empleado.getDatos() + " Sueldo: " + ((EmpMantenimiento) empleado).getSueldo());
             }
         }
     }
     public static void OrganizarPorCriterio(Empleado[] plantilla) {
-        Comparator<Empleado> nameComparator = new Comparator<Empleado>() {
+        Comparator<Empleado> ageComparator = Comparator.comparing(Empleado::getEdad);
+        /*Comparator<Empleado> nameComparator = new Comparator<Empleado>() {
             @Override
             public int compare(Empleado o1, Empleado o2) {
                 return Integer.compare(o1.getEdad(), o2.getEdad());
             }
-        };
+        };*/
+        for (Empleado empleado : plantilla){
+            System.out.println(empleado.getDatos());
+        }
     }
 }
 /*

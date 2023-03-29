@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1bfa626b-36de-413f-8159-b15ccb30d69f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpMantenimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpMantenimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpProduccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpProduccion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpRepresentantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpRepresentantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpVenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/EmpVenta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/Empleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Retos6_1/src/Gestion/PrincipalGestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos6_1/src/Gestion/PrincipalGestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Retos4_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_8/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

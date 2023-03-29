@@ -28,7 +28,7 @@ public class EmpVenta extends Empleado {
     }
 
     @Override
-    public String getNombreCompleto() {
-        return "Empleado ventas:\n " + super.getNombreCompleto() + "\n";
+    public String getDatos() {
+        return "Empleado ventas:\n " + super.getDatos() + "\n";
     }
 }
