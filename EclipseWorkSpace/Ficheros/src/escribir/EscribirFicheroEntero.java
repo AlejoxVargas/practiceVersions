@@ -16,10 +16,10 @@ public class EscribirFicheroEntero {
 	static class Escribir {
 		public void escribir() {
 			try {
-				FileWriter escribir = new FileWriter("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\Ficheros\\EscribirFichero1.txt");
+				FileWriter escribir = new FileWriter("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\Ficheros\\EscribirFichero.txt");
 				BufferedWriter mibuffer = new BufferedWriter(escribir);
 				String frase = "Ahora estoy escribiendo2...";
-					mibuffer.write("Ahora estoy escribiendo2...");
+					mibuffer.write(frase);
 				escribir.close();
 			} catch (IOException e) {
 				System.out.println("No se ha encontrado el fichero");
