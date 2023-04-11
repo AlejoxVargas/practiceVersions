@@ -8,9 +8,10 @@ public class PrincipalGestion {
     static Empleado[] plantilla = new Empleado[4];
 
     public static void main(String[] args) {
-        plantilla[0] = new EmpVenta("Venta","1",32,LocalDate.of(2020,01,23));
-        plantilla[1] = new EmpVenta("Venta","2",60,LocalDate.of(2020,01,23));
-        plantilla[2] = new EmpMantenimiento("Mantenimiento","1",23,LocalDate.of(2023,02,23));
+        plantilla[0] = new EmpVenta("Venta","1",32,LocalDate.of(2020,1,23));
+        plantilla[1] = new EmpVenta("Venta","2",60,LocalDate.of(2020,1,23));
+        plantilla[2] = new EmpVenta("Venta","1",21, LocalDate.of(2020,3,1));
+        plantilla[3] = new EmpMantenimiento("Mantenimiento","1",23,LocalDate.of(2023,2,23));
         Menu();
     }
 
@@ -311,13 +312,13 @@ public class PrincipalGestion {
         }
     }
     public static void OrganizarPorCriterio(Empleado[] plantilla) {
-        Comparator<Empleado> ageComparator = Comparator.comparing(Empleado::getEdad);
-        /*Comparator<Empleado> nameComparator = new Comparator<Empleado>() {
+        //Comparator<Empleado> ageComparator = Comparator.comparing(Empleado::getEdad);
+        Comparator<EmpVenta> nameComparator = new Comparator<EmpVenta>() {
             @Override
-            public int compare(Empleado o1, Empleado o2) {
+            public int compare(EmpVenta o1, EmpVenta o2) {
                 return Integer.compare(o1.getEdad(), o2.getEdad());
             }
-        };*/
+        };
         for (Empleado empleado : plantilla){
             System.out.println(empleado.getDatos());
         }
