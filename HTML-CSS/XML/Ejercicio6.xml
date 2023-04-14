@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipos>
+    <equipo>
+        <nombre>Real Madrid</nombre>
+        <ciudad>Madrid</ciudad>
+        <entrenador>Carlo Ancelotti</entrenador>
+        <jugador posicion="delantero">
+            <nombre>Karim Benzema</nombre>
+            <nacionalidad>Francia</nacionalidad>
+        </jugador>
+        <jugador posicion="portero">
+            <nombre>Thibaut Courtois</nombre>
+            <nacionalidad>Belgica</nacionalidad>
+        </jugador>
+    </equipo>
+    <equipo>
+        <nombre>Barcelona</nombre>
+        <ciudad>Barcelona</ciudad>
+        <entrenador>Xavi Hernández</entrenador>
+        <jugador posicion="medio">
+            <nombre>Frenkie de Jong</nombre>
+            <nacionalidad>Países Bajos</nacionalidad>
+        </jugador>
+        <jugador posicion="defensa">
+            <nombre>Jordi Alba</nombre>
+            <nacionalidad>España</nacionalidad>
+        </jugador>
+    </equipo>
+</equipos>

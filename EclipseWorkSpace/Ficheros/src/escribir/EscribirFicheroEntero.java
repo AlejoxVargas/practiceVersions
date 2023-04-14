@@ -15,14 +15,21 @@ public class EscribirFicheroEntero {
 
 	static class Escribir {
 		public void escribir() {
+			String frase = "Ahora estoy escribiendo";
 			try {
-				FileWriter escribir = new FileWriter("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\Ficheros\\EscribirFichero.txt");
+				FileWriter escribir = new FileWriter("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\Ficheros2\\EscribirFichero.txt", true); //el true añade en un texto
 				BufferedWriter mibuffer = new BufferedWriter(escribir);
-				String frase = "Ahora estoy escribiendo2...";
-					mibuffer.write(frase);
+				
+				mibuffer.write(frase);
+				mibuffer.newLine();
+				mibuffer.append('#');
+				
+				mibuffer.close();
 				escribir.close();
+				
 			} catch (IOException e) {
-				System.out.println("No se ha encontrado el fichero");
+				
+				System.err.println("No se ha encontrado el fichero");
 			}
 		}
 	}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+    <libro idioma="ingles">
+        <titulo>The Hobbit</titulo>
+        <autor>J. R. R. Tolkien</autor>
+        <editorial>Allen and Unwin</editorial>
+    </libro>
+    <libro idioma="castellano">
+        <titulo>El Quijote</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <editorial>Alfaguara</editorial>
+    </libro>
+    <libro idioma="Frances">
+        <titulo>La Treizième heure</titulo>
+        <autor>Emmanuelle Bayamack-Tam</autor>
+        <editorial>Prix Médicis</editorial>
+    </libro>
+</biblioteca>
