@@ -20,7 +20,7 @@ public class Ejercicio5 {
         String palabra;
 
         try {
-            f = new File("C:\\Users\\Alejandro Vargas\\Desktop\\parrafo.txt");
+            f = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\parrafo.txt");
             fr = new FileReader(f);
             br = new BufferedReader(fr);
 
@@ -41,7 +41,7 @@ public class Ejercicio5 {
                 posicion = i.indexOf(palabra);
                 while (posicion != -1) {
                     contador++;
-                    posicion = contenedor.indexOf(palabra);
+                    posicion = i.indexOf(palabra, posicion+1);
                 }
             }
 
