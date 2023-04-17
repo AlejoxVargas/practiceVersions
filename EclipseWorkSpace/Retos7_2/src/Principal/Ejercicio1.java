@@ -23,13 +23,13 @@ public class Ejercicio1 {
 		BufferedWriter bw = null;
 
 		try {
-			// Apertura del fichero y creacion de BufferedReader para poder
-			// hacer una lectura con el metodo readLine.
+			// Apertura del fichero y creación de BufferedReader para poder
+			// hacer una lectura con el método readLine.
 
-			fr = new FileReader("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\texto.txt");
+			fr = new FileReader("C:\\Users\\Alejandro Vargas\\Desktop\\texto.txt");
 			br = new BufferedReader(fr);
 
-			fw = new FileWriter("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\invertido.txt"); // true, para sobreescribir el fichero
+			fw = new FileWriter("C:\\Users\\Alejandro Vargas\\Desktop\\invertido.txt");
 			bw = new BufferedWriter(fw);
 
 			String linea;
@@ -44,8 +44,10 @@ public class Ejercicio1 {
 			}
 
 			System.out.println(invertida.toString());
-			// bw.newLine(); //salto de linea para sobreescribir
-			bw.write(invertida);
+
+			for (Character i : invertida){
+				bw.write(i);
+			}
 
 		} catch (IOException e) {
 			System.err.println("Fichero no encontrado");
@@ -53,7 +55,7 @@ public class Ejercicio1 {
 		} finally {
 			try {
 				// En el finally cerramos el fichero, para asegurarnos
-				// que se cierra tanto si todo va bien como si salta una excepcion.
+				// que se cierra tanto si todo va bien como si salta una excepción.
 				if (null != fr && null != fw) {
 					br.close();
 					fr.close();
