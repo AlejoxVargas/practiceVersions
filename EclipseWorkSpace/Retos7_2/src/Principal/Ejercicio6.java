@@ -1,6 +1,7 @@
 package Principal;
 
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -10,6 +11,7 @@ public class Ejercicio6 {
      * (0 al 9) y cree el fichero “estadistica.txt”, donde se guarde las frecuencias,
      * la moda (el número que aparece con mayor frecuencia) y la media.*/
     public static void main(String[] args) {
+        DecimalFormat df = new DecimalFormat("#.00");
 
         File f1;
         File f2;
@@ -20,10 +22,10 @@ public class Ejercicio6 {
 
         try {
 
-            f1 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\numeros.txt");
+            f1 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\numeros.txt");
             fr = new FileReader(f1);
             br = new BufferedReader(fr);
-            f2 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\estadistica.txt");
+            f2 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\estadistica.txt");
             fw = new FileWriter(f2);
             bw = new BufferedWriter(fw);
 
@@ -31,10 +33,15 @@ public class Ejercicio6 {
             ArrayList<Integer> contenedor = new ArrayList<>();
 
             while ((linea = br.readLine()) != null) {
+                bw.write("[");
                 for (int i = 0; i < linea.length(); i++) {
                     contenedor.add(Character.getNumericValue(linea.charAt(i)));
+                    bw.write(linea.charAt(i));
+                    bw.write(", ");
                 }
+                bw.write("]");
                 System.out.println(contenedor);
+                bw.newLine();
             }
 
             //Frecuencia
@@ -51,12 +58,43 @@ public class Ejercicio6 {
                 }
                 if (contadorNumero == 1) {
                     System.out.println("Número " + inicio + " - " + contadorNumero + " vez");
+                    bw.write("Número " + inicio + " - " + contadorNumero + " vez");
+                    bw.newLine();
                 } else {
                     System.out.println("Número " + inicio + " - " + contadorNumero + " veces");
+                    bw.write("Número " + inicio + " - " + contadorNumero + " veces");
+                    bw.newLine();
                 }
             }
 
-            //Moda
+           /* //Frecuencia
+            int[] moda = new int[contenedor.size()];
+            int contadorFrecuencia = 0;
+
+            for (int i = 0; i < moda.length; i++) {
+                int numRepeticiones = 0;
+                for (int j = 0; i < moda.length; i++) {
+                    if (moda[i] == moda[j]) {
+                        contadorFrecuencia++;
+                    }
+                    moda[i] = contadorFrecuencia;
+                    contadorFrecuencia = 0;
+                }
+            }
+            //Frecuencia que se repite
+            int contador = 0;
+            boolean repetido = false;
+            for (int i = 0; i < moda.length; i++) {
+                if (moda[0] == moda[i]) {
+                    contador++;
+                }
+            }
+            if (contador == moda.length) {
+                repetido = true;
+            } else {
+                repetido = false;
+            }*/
+
             int maximoNumRepeticiones = 0;
             ArrayList<Integer> moda = new ArrayList<>();
 
@@ -78,12 +116,13 @@ public class Ejercicio6 {
             for (Integer i : contenedor) {
                 media += i;
             }
+            double resultado = media / contenedor.size();
             System.out.printf("Media: " + "%.2f%n", media / contenedor.size());
+            bw.newLine();
+            bw.write("Media: " + df.format(resultado));
 
-            //Escribir
-
-
-        } catch (Exception e) {
+        } catch (
+                Exception e) {
             throw new RuntimeException(e);
         } finally {
             try {
