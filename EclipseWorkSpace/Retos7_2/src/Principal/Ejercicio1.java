@@ -59,7 +59,9 @@ public class Ejercicio1 {
 				if (null != fr && null != fw) {
 					br.close();
 					fr.close();
-					bw.close();
+					if (bw != null) {
+						bw.close();
+					}
 					fw.close();
 				}
 			} catch (Exception e2) {

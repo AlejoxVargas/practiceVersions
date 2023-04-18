@@ -2,7 +2,7 @@ package Principal;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Objects;
 
 public class Ejercicio6 {
     /*
@@ -15,17 +15,17 @@ public class Ejercicio6 {
         File f2;
         FileReader fr = null;
         BufferedReader br = null;
-        FileWriter fw;
-        BufferedWriter bw;
+        FileWriter fw = null;
+        BufferedWriter bw = null;
 
         try {
 
-            f1 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\numeros.txt");
+            f1 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\numeros.txt");
             fr = new FileReader(f1);
             br = new BufferedReader(fr);
-            /*f2 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\estadistica.txt");
+            f2 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\estadistica.txt");
             fw = new FileWriter(f2);
-            bw = new BufferedWriter(fw);*/
+            bw = new BufferedWriter(fw);
 
             String linea;
             ArrayList<Integer> contenedor = new ArrayList<>();
@@ -34,23 +34,54 @@ public class Ejercicio6 {
                 for (int i = 0; i < linea.length(); i++) {
                     contenedor.add(Character.getNumericValue(linea.charAt(i)));
                 }
-                System.out.println(linea);
-                System.out.println(contenedor.toString());
+                System.out.println(contenedor);
             }
 
             //Frecuencia
-            int contadorNumero = 0;
+            int contadorNumero;
             int inicio = 0;
+            double media = 0;
 
-                for (int i = 0; i < contenedor.size(); i++, inicio++) {
-                    contadorNumero = 0;
-                    for (int j = 0; j <= 9; j++ ) {
-                        if (inicio == contenedor.get(j)) {
-                            contadorNumero++;
-                        }
+            for (int i = 0; i <= 9; i++, inicio++) {
+                contadorNumero = 0;
+                for (Integer integer : contenedor) {
+                    if (inicio == integer) {
+                        contadorNumero++;
                     }
-                    System.out.println("Número " + inicio + " - " + contadorNumero);
                 }
+                if (contadorNumero == 1) {
+                    System.out.println("Número " + inicio + " - " + contadorNumero + " vez");
+                } else {
+                    System.out.println("Número " + inicio + " - " + contadorNumero + " veces");
+                }
+            }
+
+            //Moda
+            int maximoNumRepeticiones = 0;
+            ArrayList<Integer> moda = new ArrayList<>();
+
+            for (int i = 0; i < contenedor.size(); i++) {
+                int numRepeticiones = 0;
+                for (Integer integer : contenedor) {
+                    if (Objects.equals(contenedor.get(i), integer)) {
+                        numRepeticiones++;
+                    }
+                    if (numRepeticiones > maximoNumRepeticiones) {
+                        moda.add(contenedor.get(i));
+                        maximoNumRepeticiones = numRepeticiones;
+                    }
+                }
+            }
+            System.out.println("Moda: " + moda);
+
+            //Media
+            for (Integer i : contenedor) {
+                media += i;
+            }
+            System.out.printf("Media: " + "%.2f%n", media / contenedor.size());
+
+            //Escribir
+
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -61,6 +92,12 @@ public class Ejercicio6 {
                 }
                 if (fr != null) {
                     fr.close();
+                }
+                if (bw != null) {
+                    bw.close();
+                }
+                if (fw != null) {
+                    fw.close();
                 }
             } catch (Exception e2) {
                 System.err.println("No se ha podido cerrar");

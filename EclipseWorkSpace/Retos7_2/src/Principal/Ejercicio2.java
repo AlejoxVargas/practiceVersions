@@ -31,7 +31,6 @@ public class Ejercicio2 {
 
             while (linea != null && contador < cantidadLineas) {
                 linea = br.readLine();
-                //frase[contador] = linea;
                 System.out.println(linea);
                 contador++;
             }
