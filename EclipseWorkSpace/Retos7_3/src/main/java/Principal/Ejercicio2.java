@@ -39,11 +39,11 @@ public class Ejercicio2 {
             System.out.println("Día");
             int dia = sc.nextInt();
             LocalDate fechaNacimiento = LocalDate.of(annio,mes,dia);
-            persona1.setFechaNacimiento(fechaNacimiento);
+                persona1.setFechaNacimiento(fechaNacimiento);
 
 
             try {
-                f = new File("C:\\Users\\Alejandro Vargas\\Desktop\\binario.bat");
+                f = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\binario.dat");
                 fos = new FileOutputStream(f);
                 salida = new ObjectOutputStream(fos);
                 System.out.println(persona1.toString());
