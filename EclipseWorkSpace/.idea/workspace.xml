@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36b1f78d-da29-45a8-80c2-c30d69815bce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Retos7_3/src/main/java/Principal/Ejercicio1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio6.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio7.java" beforeDir="false" afterPath="$PROJECT_DIR$/Retos7_2/src/Principal/Ejercicio7.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +29,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/EclipseWorkSpace"
   }
 }]]></component>

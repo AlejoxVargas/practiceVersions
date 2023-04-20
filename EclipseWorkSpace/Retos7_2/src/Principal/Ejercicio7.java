@@ -1,8 +1,8 @@
 package Principal;
 
 import java.io.*;
-import java.util.ArrayList;
 
+@SuppressWarnings({"DuplicateExpressions", "DataFlowIssue"})
 public class Ejercicio7 {
     /*
      * Escribir un programa que encripte el fichero de texto “texto.txt”
@@ -21,36 +21,40 @@ public class Ejercicio7 {
         BufferedWriter bw = null;
 
         try {
-            f1 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\texto.txt");
+            f1 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\texto.txt");
             fr = new FileReader(f1);
             br = new BufferedReader(fr);
-            f2 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\encriptados.txt");
+            f2 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\encriptado.txt");
             fw = new FileWriter(f2);
             bw = new BufferedWriter(fw);
 
             String linea;
-            ArrayList<String> contenedor = new ArrayList<>();
+            String texto = null;
 
             while ((linea = br.readLine()) != null) {
-                for (int i = 0; i < linea.length(); i++) {
-                    contenedor.add(linea);
-                }
+                texto = linea.toUpperCase();
             }
-            //Codificar
-            String Letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            String frase = contenedor.get(0);
-            String caracter;
-            String textoCodificado = "";
+            StringBuilder cifrado = new StringBuilder();
 
-            for (int i = 0; i < contenedor.size(); i++) {
-                caracter = contenedor.get(i);
-                int posicion = contenedor.indexOf(caracter);
-                if (posicion == -1) {
-                    textoCodificado += caracter;
-                } else {
-                    textoCodificado += contenedor.get((posicion + 3) % contenedor.size());
+            int codigo = 3 % 26;
+            for (int i = 0; i < texto.length(); i++) {
+                if (texto.charAt(i) >= 'a' && texto.charAt(i) <= 'z') {
+                    if ((texto.charAt(i) + codigo) > 'z') {
+                        cifrado.append((char) (texto.charAt(i) + codigo - 26));
+                    } else {
+                        cifrado.append((char) (texto.charAt(i) + codigo));
+                    }
+                } else if (texto.charAt(i) >= 'A' && texto.charAt(i) <= 'Z') {
+                    if ((texto.charAt(i) + codigo) > 'Z') {
+                        cifrado.append((char) (texto.charAt(i) + codigo - 26));
+                    } else {
+                        cifrado.append((char) (texto.charAt(i) + codigo));
+                    }
                 }
+
             }
+            System.out.println(cifrado);
+            bw.write(String.valueOf(cifrado));
         } catch (
                 Exception e) {
             throw new RuntimeException(e);

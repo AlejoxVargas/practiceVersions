@@ -22,10 +22,10 @@ public class Ejercicio6 {
 
         try {
 
-            f1 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\numeros.txt");
+            f1 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\numeros.txt");
             fr = new FileReader(f1);
             br = new BufferedReader(fr);
-            f2 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\estadistica.txt");
+            f2 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\estadistica.txt");
             fw = new FileWriter(f2);
             bw = new BufferedWriter(fw);
 
@@ -67,35 +67,7 @@ public class Ejercicio6 {
                 }
             }
 
-           /* //Frecuencia
-            int[] moda = new int[contenedor.size()];
-            int contadorFrecuencia = 0;
-
-            for (int i = 0; i < moda.length; i++) {
-                int numRepeticiones = 0;
-                for (int j = 0; i < moda.length; i++) {
-                    if (moda[i] == moda[j]) {
-                        contadorFrecuencia++;
-                    }
-                    moda[i] = contadorFrecuencia;
-                    contadorFrecuencia = 0;
-                }
-            }
-            //Frecuencia que se repite
-            int contador = 0;
-            boolean repetido = false;
-            for (int i = 0; i < moda.length; i++) {
-                if (moda[0] == moda[i]) {
-                    contador++;
-                }
-            }
-            if (contador == moda.length) {
-                repetido = true;
-            } else {
-                repetido = false;
-            }*/
-
-            int maximoNumRepeticiones = 0;
+            int maximoNumRepeticiones = 1;
             ArrayList<Integer> moda = new ArrayList<>();
 
             for (int i = 0; i < contenedor.size(); i++) {
@@ -110,7 +82,26 @@ public class Ejercicio6 {
                     }
                 }
             }
+            for (int i = 0; i < contenedor.size(); i++) {
+                int numRepeticiones = 0;
+                for (Integer integer : contenedor) {
+                    if (Objects.equals(contenedor.get(i), integer)) {
+                        numRepeticiones++;
+                    }
+                    if (numRepeticiones == maximoNumRepeticiones) {
+                        moda.add(contenedor.get(i));
+                        maximoNumRepeticiones = numRepeticiones;
+                    }
+                }
+            }
             System.out.println("Moda: " + moda);
+            /**
+             * Ha habido avance al hacer otro for he igualarlo al maximo de repeticiones
+             * ya puedo leer todas las modas que son iguales, pero me saca un flujo de numeros
+             * más largo de lo que debería, es un pequeño bug que con depurador se puede solucionar
+             * fecha: 19/04/23
+             * solucionar para mañana
+             * */
 
             //Media
             for (Integer i : contenedor) {
