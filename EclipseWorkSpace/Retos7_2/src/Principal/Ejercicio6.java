@@ -22,10 +22,10 @@ public class Ejercicio6 {
 
         try {
 
-            f1 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\numeros.txt");
+            f1 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\numeros.txt");
             fr = new FileReader(f1);
             br = new BufferedReader(fr);
-            f2 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\estadistica.txt");
+            f2 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\estadistica.txt");
             fw = new FileWriter(f2);
             bw = new BufferedWriter(fw);
 

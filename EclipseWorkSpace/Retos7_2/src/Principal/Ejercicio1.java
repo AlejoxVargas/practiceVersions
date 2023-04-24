@@ -29,6 +29,8 @@ public class Ejercicio1 {
 			fr = new FileReader("C:\\Users\\Alejandro Vargas\\Desktop\\texto.txt");
 			br = new BufferedReader(fr);
 
+
+
 			fw = new FileWriter("C:\\Users\\Alejandro Vargas\\Desktop\\invertido.txt");
 			bw = new BufferedWriter(fw);
 
