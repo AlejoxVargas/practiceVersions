@@ -42,7 +42,7 @@ public class Ejercicio2 {
 
 
             try {
-                f = new File("C:\\Users\\Alejandro Vargas\\Desktop\\binario.dat");
+                f = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\binario.dat");
                 fos = new FileOutputStream(f);
                 fis = new FileInputStream(f);
 

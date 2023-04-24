@@ -22,10 +22,10 @@ public class Ejercicio6 {
 
         try {
 
-            f1 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\numeros.txt");
+            f1 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\numeros.txt");
             fr = new FileReader(f1);
             br = new BufferedReader(fr);
-            f2 = new File("C:\\Users\\Alejandro Vargas\\Desktop\\estadistica.txt");
+            f2 = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\estadistica.txt");
             fw = new FileWriter(f2);
             bw = new BufferedWriter(fw);
 
@@ -45,62 +45,45 @@ public class Ejercicio6 {
             }
 
             //Frecuencia
-            int contadorNumero;
-            int inicio = 0;
-            double media = 0;
+            int[] frecuencia = new int[10];
 
-            for (int i = 0; i <= 9; i++, inicio++) {
+            int contadorNumero;
+            double media = 0;
+            int moda = 0;
+
+            for (int i = 0; i <= 9; i++) {
                 contadorNumero = 0;
+
                 for (Integer integer : contenedor) {
-                    if (inicio == integer) {
+                    if (i == integer) {
                         contadorNumero++;
+                        frecuencia[i]++;
                     }
+                }
+                if (contadorNumero > moda){
+                    moda = contadorNumero;
                 }
                 if (contadorNumero == 1) {
-                    System.out.println("Número " + inicio + " - " + contadorNumero + " vez");
-                    bw.write("Número " + inicio + " - " + contadorNumero + " vez");
+                    System.out.println("Número " + i + " - " + contadorNumero + " vez");
+                    bw.write("Número " + i + " - " + contadorNumero + " vez");
                     bw.newLine();
                 } else {
-                    System.out.println("Número " + inicio + " - " + contadorNumero + " veces");
-                    bw.write("Número " + inicio + " - " + contadorNumero + " veces");
+                    System.out.println("Número " + i + " - " + contadorNumero + " veces");
+                    bw.write("Número " + i + " - " + contadorNumero + " veces");
                     bw.newLine();
                 }
             }
-            int maximoNumRepeticiones = 1;
-            ArrayList<Integer> moda = new ArrayList<>();
 
-            for (int i = 0; i < contenedor.size(); i++) {
-                int numRepeticiones = 0;
-                for (Integer integer : contenedor) {
-                    if (Objects.equals(contenedor.get(i), integer)) {
-                        numRepeticiones++;
-                    }
-                    if (numRepeticiones > maximoNumRepeticiones) {
-                        moda.add(contenedor.get(i));
-                        maximoNumRepeticiones = numRepeticiones;
-                    }
+            //Moda
+            ArrayList<Integer> modaArray = new ArrayList<>();
+
+            for (int i = 0; i < frecuencia.length; i++){
+                if (moda == frecuencia[i]){
+                    modaArray.add(i);
                 }
             }
-            for (int i = 0; i < contenedor.size(); i++) {
-                int numRepeticiones = 0;
-                for (Integer integer : contenedor) {
-                    if (Objects.equals(contenedor.get(i), integer)) {
-                        numRepeticiones++;
-                    }
-                    if (numRepeticiones == maximoNumRepeticiones) {
-                        moda.add(contenedor.get(i));
-                        maximoNumRepeticiones = numRepeticiones;
-                    }
-                }
-            }
-            System.out.println("Moda: " + moda);
-            /**
-             * Ha habido avance al hacer otro for he igualarlo al maximo de repeticiones
-             * ya puedo leer todas las modas que son iguales, pero me saca un flujo de numeros
-             * más largo de lo que debería, es un pequeño bug que con depurador se puede solucionar
-             * fecha: 19/04/23
-             * solucionar para mañana
-             * */
+            bw.write("Moda: " + modaArray);
+            System.out.println("Moda: " + modaArray);
 
             //Media
             for (Integer i : contenedor) {
