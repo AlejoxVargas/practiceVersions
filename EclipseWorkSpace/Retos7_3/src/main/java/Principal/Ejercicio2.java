@@ -15,34 +15,31 @@ public class Ejercicio2 {
      * rellenando con espacios al final para completar la longitud.
      * Leer el fichero
      * */
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(in);
 
         File f;
         FileOutputStream fos = null;
         FileInputStream fis;
+        ArrayList<PERSONA> personas = new ArrayList<>();
 
         int opcion;
 
         do {
-            PERSONA persona1 = new PERSONA();
 
             out.println("Nombre: ");
             String nombre = sc.nextLine();
-            persona1.setNombre(nombre);
             out.println("Apellido1: ");
             String apellido1 = sc.nextLine();
-            persona1.setApellido1(apellido1);
             out.println("Apellido2: ");
             String apellido2 = sc.nextLine();
-            persona1.setApellido2(apellido2);
             out.println("Año: ");
             String annio = sc.nextLine();
-            persona1.setAnioNacimiento(annio);
 
+            personas.add(new PERSONA(nombre,apellido1,apellido2,annio));
 
             try {
-                f = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\binario.dat");
+                f = new File("C:\\Users\\Alejandro Vargas\\Desktop\\binario.dat");
                 fos = new FileOutputStream(f);
                 fis = new FileInputStream(f);
 
@@ -100,6 +97,13 @@ public class Ejercicio2 {
         private String apellido1;
         private String apellido2;
         private String AnioNacimiento;
+
+        public PERSONA(String nombre, String apellido1, String apellido2, String anioNacimiento) {
+            this.nombre = nombre;
+            this.apellido1 = apellido1;
+            this.apellido2 = apellido2;
+            AnioNacimiento = anioNacimiento;
+        }
 
         public String getNombre() {
             return nombre;

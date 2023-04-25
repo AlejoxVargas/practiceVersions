@@ -3,7 +3,6 @@ package Principal;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Ejercicio6 {
     /*
