@@ -28,7 +28,11 @@ public class Serializando {
 }
 
 class Empleado implements Serializable{
-    private String nombre;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1859525275143132405L;
+	private String nombre;
     private double sueldo;
     private Date fechaContrato;
     public Empleado(String n, double s, int anho, int mes, int dia) {
@@ -57,7 +61,11 @@ class Empleado implements Serializable{
 }
 
 class Administrador extends Empleado{
-    private double incentivo;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1881056236380136510L;
+	private double incentivo;
     public Administrador(String n, double s, int anho, int mes, int dia) {
         super(n,s,anho,mes,dia);
         incentivo=0;

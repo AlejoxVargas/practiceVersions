@@ -15,40 +15,36 @@ public class Ejercicio2 {
      * rellenando con espacios al final para completar la longitud.
      * Leer el fichero
      * */
+    static Scanner sc = new Scanner(in);
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(in);
 
         File f;
         FileOutputStream fos = null;
         FileInputStream fis;
-        ArrayList<PERSONA> personas = new ArrayList<>();
 
         int opcion;
+        int contador = 0;
+        ArrayList<PERSONA> personas = new ArrayList<>();
 
         do {
-
-            out.println("Nombre: ");
-            String nombre = sc.nextLine();
-            out.println("Apellido1: ");
-            String apellido1 = sc.nextLine();
-            out.println("Apellido2: ");
-            String apellido2 = sc.nextLine();
-            out.println("Año: ");
-            String annio = sc.nextLine();
-
-            personas.add(new PERSONA(nombre,apellido1,apellido2,annio));
-
             try {
-                f = new File("C:\\Users\\Alejandro Vargas\\Desktop\\binario.dat");
+
+                f = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\binario.dat");
                 fos = new FileOutputStream(f);
                 fis = new FileInputStream(f);
 
-                fos.write(nombre.getBytes());
-                fos.write(apellido1.getBytes());
-                fos.write(apellido2.getBytes());
+                //ESCRIBIR --> Llama al método 'agregarPersona' para ser almacenado en un ArrayList y escribe con FileOutPutStream la información del objeto
+                personas.add(contador, agregarPersona());
 
+                for (PERSONA persona : personas) {
+                    fos.write(persona.getNombre().getBytes());
+                    fos.write(persona.getApellido1().getBytes());
+                    fos.write(persona.getApellido2().getBytes());
+                }
+
+                //LEER --> Dentro del ArrayList 'contenedor' almacena en caracteres el contenido que haya leído del fichero el fis(FileInputStream)
                 ArrayList<Character> contenedor = new ArrayList<>();
-
                 int contenido;
 
                 while ((contenido = fis.read()) != -1) {
@@ -56,19 +52,23 @@ public class Ejercicio2 {
                 }
                 out.println(contenedor);
 
+                //Sí el contenido del ArrayList que contiene char es menor que 20, llamará a FileOutputStream y agrega un espacio hasta rellenar el nombre y apellidos hasta 20
                 if (contenedor.size() < 20) {
                     for (int i = contenedor.size(); i < 20; i++) {
                         fos.write(" ".getBytes());
                     }
                 }
-                fos.write(annio.getBytes());
+                /*
+                * Ahora necesito que el array contenedor me separe los caracteres del segundo objeto ya que los pone todos como si fuera una sola linea
+                * */
+
+                //Luego agregamos el dato del año de nacimiento y así no se verá afectado por la regla anterior
+                fos.write(personas.get(0).getAnioNacimiento().getBytes());
 
                 while ((contenido = fis.read()) != -1) {
                     contenedor.add((char) contenido);
                 }
                 out.println(contenedor);
-
-                //falta que se puedan crear varias personas en un mismo archivo, ya que lo sobreescribe
 
             } catch (Exception e) {
                 out.println("Error al escribir el archivo");
@@ -88,15 +88,16 @@ public class Ejercicio2 {
                     2-No""");
             opcion = sc.nextInt();
             sc.nextLine();
+            contador++;
         } while (opcion != 2);
     }
 
     public static class PERSONA {
 
-        private String nombre;
-        private String apellido1;
-        private String apellido2;
-        private String AnioNacimiento;
+        private final String nombre;
+        private final String apellido1;
+        private final String apellido2;
+        private final String AnioNacimiento;
 
         public PERSONA(String nombre, String apellido1, String apellido2, String anioNacimiento) {
             this.nombre = nombre;
@@ -109,33 +110,18 @@ public class Ejercicio2 {
             return nombre;
         }
 
-        public void setNombre(String nombre) {
-            this.nombre = nombre;
-        }
-
         public String getApellido1() {
             return apellido1;
-        }
-
-        public void setApellido1(String apellido1) {
-            this.apellido1 = apellido1;
         }
 
         public String getApellido2() {
             return apellido2;
         }
 
-        public void setApellido2(String apellido2) {
-            this.apellido2 = apellido2;
-        }
-
         public String getAnioNacimiento() {
             return AnioNacimiento;
         }
 
-        public void setAnioNacimiento(String fechaNacimiento) {
-            this.AnioNacimiento = fechaNacimiento;
-        }
 
         @Override
         public String toString() {
@@ -144,5 +130,17 @@ public class Ejercicio2 {
                     "\nApellido2: " + getApellido2() +
                     "\nFecha Nacimiento: " + getAnioNacimiento();
         }
+    }
+
+    public static PERSONA agregarPersona() {
+        out.println("Nombre: ");
+        String nombre = sc.nextLine();
+        out.println("Apellido1: ");
+        String apellido1 = sc.nextLine();
+        out.println("Apellido2: ");
+        String apellido2 = sc.nextLine();
+        out.println("Año: ");
+        String annio = sc.nextLine();
+        return new PERSONA(nombre, apellido1, apellido2, annio);
     }
 }
