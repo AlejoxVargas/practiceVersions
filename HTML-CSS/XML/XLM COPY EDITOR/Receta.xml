@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="Receta.css" type="text/css"?>
+<!--DOCTYPE  Receta SYSTEM "Receta.xsd"-->
+<Receta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Receta.xsd">
+  <Nombre>Tortilla de patatas</Nombre>
+  <Descripcion>
+        La tradicional y típica tortilla de patatas, 
+        tal como la hacen todas las madres. 
+    </Descripcion>
+  <Ingredientes>
+    <Ingrediente>
+      <Cantidad unidad="pieza">3</Cantidad>
+      <Item>Patata</Item>
+    </Ingrediente>
+    <Ingrediente>
+      <Cantidad unidad="pieza">4</Cantidad>
+      <Item>Huevos</Item>
+    </Ingrediente>
+    <Ingrediente>
+      <Cantidad unidad="litro">0.1</Cantidad>
+      <Item>Aceite</Item>
+    </Ingrediente>
+  </Ingredientes>
+  <Instrucciones>
+    <Paso>
+            Pelar y cortar la patata en rodajas 
+        </Paso>
+    <Paso>
+            Poner aceite en una paella 
+        </Paso>
+    <!-- Y asi seguimos... -->
+  </Instrucciones>
+</Receta>

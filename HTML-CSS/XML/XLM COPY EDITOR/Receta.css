@@ -1,0 +1,12 @@
+Nombre{
+font-size: 50px;
+}
+Descripcion{
+display:block;
+font-size: 30px;
+background-color: yellow;
+}
+Ingrediente{
+display: block;
+border: 5px;
+}
