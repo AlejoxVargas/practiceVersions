@@ -27,7 +27,6 @@ public class Ejercicio2 {
         int opcion;
         int contador = 0;
         String linea;
-        int finalLinea = 0;
 
         ArrayList<PERSONA> personas = new ArrayList<>();
 
@@ -36,7 +35,7 @@ public class Ejercicio2 {
         do {
             try {
 
-                f = new File("C:\\Users\\Alejandro Vargas\\Desktop\\binario.dat");
+                f = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\binario.dat");
                 fos = new FileOutputStream(f);
                 fis = new FileInputStream(f);
                 br = new BufferedReader(new InputStreamReader(fis));
@@ -64,12 +63,8 @@ public class Ejercicio2 {
                 //Lectura con StringBuilder que almacena en las líneas que haya leído el buffer
 
                 while ((linea = br.readLine()) != null) {
-                    //sb.append(linea);
-                    //finalLinea = linea.length();
-                    //sb.append("\n");*/
-                    if (!linea.isEmpty() && !sb.toString().contains(linea)) {
-                        out.println(sb.toString());
-                    }
+                    sb.append(linea);
+                    sb.append("\n");
                 }
                 out.println(sb.toString());
 

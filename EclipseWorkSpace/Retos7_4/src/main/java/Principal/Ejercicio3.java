@@ -7,18 +7,16 @@ import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Ejercicio1 {
+public class Ejercicio3 {
     /*
-     * Escribir un método que reciba por parámetro un array
-     * de valores enteros correspondientes a referencias a
-     * artículos y un array de valores reales correspondientes
-     * a los precios de los artículos anteriores. Se podrá usar
-     * también ArrayList. El método recibirá también el nombre
-     * de un fichero sobre el que se escribirá cada referencia
-     * de artículo seguida de su precio.
-     * */
+    * 3. Realizar un método que reciba por parámetro el nombre
+    * de un fichero que almacena una serie de referencias y precios
+    * de artículos y actualice los precios de forma que los superiores
+    * a 100 euros se decrementen en un 50% y los inferiores se incrementen
+    * en un 50%. El método capturará y tratará todas las excepciones que
+    *  puedan producirse.
+    * */
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Integer> referencias = new ArrayList<>();
@@ -46,6 +44,11 @@ public class Ejercicio1 {
         } while (opcion != 0);
     }
 
+    /*
+     * Actualice los precios de forma que los superiores
+     * a 100 euros se decrementen en un 50% y los inferiores se incrementen
+     * en un 50%.
+     * */
     public static void escribirArchivo(ArrayList<Integer> referencias, ArrayList<Double> precios, String directorio) {
         try (RandomAccessFile archivo = new RandomAccessFile(new File(directorio), "rw")) {
             for (int i = 0; i < referencias.size(); i++) {
