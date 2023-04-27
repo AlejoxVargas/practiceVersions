@@ -22,17 +22,24 @@ public class Ejercicio2 {
         File f;
         FileOutputStream fos = null;
         FileInputStream fis;
+        BufferedReader br;
 
         int opcion;
         int contador = 0;
+        String linea;
+        int finalLinea = 0;
+
         ArrayList<PERSONA> personas = new ArrayList<>();
+
+        StringBuilder sb = new StringBuilder();
 
         do {
             try {
 
-                f = new File("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\binario.dat");
+                f = new File("C:\\Users\\Alejandro Vargas\\Desktop\\binario.dat");
                 fos = new FileOutputStream(f);
                 fis = new FileInputStream(f);
+                br = new BufferedReader(new InputStreamReader(fis));
 
                 //ESCRIBIR --> Llama al método 'agregarPersona' para ser almacenado en un ArrayList y escribe con FileOutPutStream la información del objeto
                 personas.add(contador, agregarPersona());
@@ -41,34 +48,30 @@ public class Ejercicio2 {
                     fos.write(persona.getNombre().getBytes());
                     fos.write(persona.getApellido1().getBytes());
                     fos.write(persona.getApellido2().getBytes());
+                    int total = persona.getNombre().length() + persona.getApellido1().length() + persona.getApellido2().length();
+                    // Sí la variable 'total' que contiene la longitud de los campos es menor que 20, entonces agrega un espacio hasta == 20
+                    if (total < 20) {
+                        for (int i = total; i < 20; i++) {
+                            fos.write(" ".getBytes());
+                        }
+                    }
+                    // Luego agregamos el campo de año
+                    fos.write(persona.getAnioNacimiento().getBytes());
+                    // Salto de linea
+                    fos.write("\n".getBytes());
                 }
 
-                //LEER --> Dentro del ArrayList 'contenedor' almacena en caracteres el contenido que haya leído del fichero el fis(FileInputStream)
-                ArrayList<Character> contenedor = new ArrayList<>();
-                int contenido;
+                //Lectura con StringBuilder que almacena en las líneas que haya leído el buffer
 
-                while ((contenido = fis.read()) != -1) {
-                    contenedor.add((char) contenido);
-                }
-                out.println(contenedor);
-
-                //Sí el contenido del ArrayList que contiene char es menor que 20, llamará a FileOutputStream y agrega un espacio hasta rellenar el nombre y apellidos hasta 20
-                if (contenedor.size() < 20) {
-                    for (int i = contenedor.size(); i < 20; i++) {
-                        fos.write(" ".getBytes());
+                while ((linea = br.readLine()) != null) {
+                    //sb.append(linea);
+                    //finalLinea = linea.length();
+                    //sb.append("\n");*/
+                    if (!linea.isEmpty() && !sb.toString().contains(linea)) {
+                        out.println(sb.toString());
                     }
                 }
-                /*
-                * Ahora necesito que el array contenedor me separe los caracteres del segundo objeto ya que los pone todos como si fuera una sola linea
-                * */
-
-                //Luego agregamos el dato del año de nacimiento y así no se verá afectado por la regla anterior
-                fos.write(personas.get(0).getAnioNacimiento().getBytes());
-
-                while ((contenido = fis.read()) != -1) {
-                    contenedor.add((char) contenido);
-                }
-                out.println(contenedor);
+                out.println(sb.toString());
 
             } catch (Exception e) {
                 out.println("Error al escribir el archivo");
