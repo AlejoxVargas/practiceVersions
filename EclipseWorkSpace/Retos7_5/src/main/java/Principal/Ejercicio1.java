@@ -2,7 +2,16 @@ package Principal;
 
 import java.io.*;
 import java.util.ArrayList;
-
+/*
+* 1. Escribir un programa Java que trate objetos de la clase Casa. Un objeto casa tiene los siguientes atributos:
+• dirección
+• portal
+• piso
+• localidad
+• código postal
+• metros cuadrados
+• número de habitaciones
+   La aplicación debe permitir escribir y leer estos datos de un fichero.*/
 public class Ejercicio1 {
     public static void main(String[] args) {
         ArrayList<Casa> casas = new ArrayList<>();
