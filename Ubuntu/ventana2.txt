@@ -1,0 +1,384 @@
+    1  sudo history
+    2  history
+    3  cd ..
+    4  ls
+    5  cd home
+    6  ls
+    7  sudo apt install testdisk
+    8  testdisk sudo
+    9  sudo testdisk
+   10  df -TH
+   11  tail -f fehca
+   12  tail -f fecha 
+   13  date >> fehca
+   14  date >> fe
+   15  date >> fecha 
+   16  history
+   17  df - Th
+   18  df -Th
+   19  sudo testdisk
+   20  vi
+   21  history
+   22  vim
+   23  help more
+   24  #help 
+   25  help |more
+   26  help| grep mk
+   27  help | grep mk
+   28  grep mk | help
+   29  copy -help
+   30  cp -help
+   31  cp --help
+   32  grep javi /etc/passwd
+   33  grep ccc /etc/passwd
+   34  sudo grep ccc /etc/passwd
+   35  sudo grep ccc /etc/groupwd
+   36  etc/grouppwd
+   37  /etc/grouppwd
+   38  etc/groupwd
+   39  /etc/groupwd
+   40  etc/passwd
+   41  /etc/passwd
+   42  sudo /etc/passwd
+   43  sudo etc/passwd
+   44  sudo /etc/passwd
+   45  ls
+   46  cd ..
+   47  ls
+   48  cd ccc-tarde/
+   49  cls
+   50  clear
+   51  history
+   52  clear
+   53  ls
+   54  cd Documents/
+   55  mkdir CCC
+   56  ls
+   57  cd CCC/
+   58  cd ..
+   59  touch dir1/CCC
+   60  touch dir1/CCC1
+   61  touch CCC/dir1
+   62  find . -name dir1
+   63  find . -name CCC
+   64  fin . -name 'CCC' -type f
+   65  find . -name 'CCC' -type f
+   66  find . -name 'CCC' -type d
+   67  find .. -type l
+   68  find .. -type l | more
+   69  clear
+   70  find ..  -iname 'CCC'
+   71  find ..  -iname 'dir1'
+   72  find .. -iname 'CCC' -exec ls -l {} \;
+   73  find / -size +100000 -exec ls -l {} \; 2>/dev/null | more
+   74  find / -size +100000k -exec ls -l {} \; 2>/dev/null | more
+   75  find / -perm 000 -exec ls -l {} \; 2>/dev/null | more
+   76  # find / -perm 000 -exec ls -l {} \; 2>/dev/null | more -> busqueda de a todo lo que puedo acceder que no tiene ningun permiso
+   77  locate passwd
+   78  sudo apt install plocate
+   79  locate passwd
+   80  seq 1 100 
+   81  seq 1 100 > secuencia
+   82  ls
+   83  sort secuencia 
+   84  sort secuencia | more
+   85  sort secuencia -n | more
+   86  seq 1 7 100 > secuencia
+   87  more secuencia 
+   88  seq 1 100 >> secuencia
+   89  more secuencia 
+   90  sort -n secuencia | more
+   91  sort -r secuencia | more
+   92  sort -n -r secuencia | more
+   93  sort -nr secuencia | more
+   94  man sort
+   95  sort -f /etc/passwd | more
+   96  sort -n secuencia | uniq
+   97  sort -nr secuencia | uniq
+   98  sort -nr secuencia 
+   99  sort -nr secuencia | uniq 
+  100  #sort -nr secuencia | uniq -> ordena por orden y lo redirigimos a uniq  
+  101  #uniq eliminar las lineas repetidas de un fichero ordenado
+  102  sort -nr secuencia | uniq -d
+  103  sort -nr secuencia | uniq -c
+  104  clear
+  105  date > fecha
+  106  date >> fecha
+  107  #tail -f fecha es un registro de log para saber que acciones en vivo estan ejecuntandose ciertas acciones o personas, o indentificar algun intruso, saber que error esta sucediendo, ficheros vivos mejor dicho
+  108  #se puede filtrar para una busqueda mas especifica ->
+  109  tail -f fecha | grep CEST
+  110  wc fecha 
+  111  #wc fecha informacion del contenido
+  112  wc -l fecha 
+  113  wc -c fecha 
+  114  wc -w fecha 
+  115  wc -w *
+  116  cut -d':' -f6 /etc/passwd
+  117  sudo cut -d':' -f6 /etc/passwd
+  118  /etc/passwd
+  119  sudo /etc/passwd
+  120  history
+  121  cleear
+  122  clear
+  123  history
+  124  clear
+  125  history
+  126  #fg pasar primer termino y bg background
+  127  sudo date 04181931
+  128  /
+  129  find /
+  130  find / -perm 000 > permisos 2>&1
+  131  more permisos 
+  132  ls
+  133  cat secuencia 
+  134  sed '1,10d' secuencia 
+  135  history 
+  136  sed 'i\___' secuencia 
+  137  sed '1,10d' secuencia 
+  138  sed '100,$p' secuencia 
+  139  sed -n '/^9/p' secuencia #todas las lineas que acaba por nueve ya que el '^' lo que hace es algo parecido como el '*'
+  140  sed '/^.8/p' secuencia 
+  141  sed -n '/^.8/p' secuencia 
+  142  sed -n '/^9/p' secuencia #todas las lineas que acaba por nueve ya que el '^' lo que hace es algo parecido como el '*'
+  143  sed -n '/^.8/p' secuencia 
+  144  sed 's/9/_/' secuencia #me sustituye la primera ocurrencia
+  145  sed 's/9/_/g' secuencia #me sustituye la ocurrencia global
+  146  sed 's/100.115/9/_/g' secuencia #me sustituye la ocurrencia global
+  147  sed 's 100.115/9/_/g' secuencia 
+  148  sed '100.115/9/_/g' secuencia 
+  149  sed 'y/[345]/[-_\/]/'
+  150  sed 'y/[345]/[-_\/]/' secuencia 
+  151  sed /s/9/#&/ secuencia 
+  152  sed '100.115/9/_/g' secuencia 
+  153  mand find | sed 's/find/_____&_____/g'
+  154  man find | sed 's/find/_____&_____/g'
+  155  clear
+  156  history
+  157  #awk es un lenguaje de programación muy potente y sus siglas indican el nombre de sus creadores
+  158  tail /etc/passwd
+  159  #tail /etc/passwd información de los usuarios
+  160  awk -F: #indicar un caracter separador (-F) y ':' para separar 
+  161  awk -F: '{print "Usuario: ", $0 ", Shell: ", $5}'
+  162  awk -F: '{print "Usuario: ", $0, " Shell: ", $5}'
+  163  awk -F: '{print "Usuario: ", $0, " Shell: ", $5}' /etc/passwd
+  164  awk -F: '{print "Usuario: ", $1, " Shell: ", $7}' /etc/passwd
+  165  awk -F: '{print "Usuario: ", $1, " Shell: ", $7}' /etc/passwd #puedo sacar la información que yo quiera y expresar mejor un listado de información
+  166  #con awk -F: le indica que vamos a mostrar de una manera especifica que quiero que muestre, con el -F: le decimos que luego de cada ':' habrá una informacion distinta y se separa mediante $1 $2, son una especie de contar que cada ':' es un $ nuevo, es un campo nuevo
+  167  awk -F: '{print "Usuario: ", $1, " Shell: ", $7}' /etc/passwd #podemos componer con las variables dolar '$1, $2' ETC... y se subdivien en categorias mediante el -F: ':' indica cada cuanto será un '$' nuevo
+  168  #-----COMANDOS PARA COMPACTAR Y AGRUPAR FICHEROS
+  169  gzip
+  170  ls
+  171  dir
+  172  ll
+  173  gzip fe
+  174  ll
+  175  chmod 777
+  176  chmod 777 fe
+  177  chmod 777 fe.gz 
+  178  ll
+  179  fe
+  180  gunzip fe.gz 
+  181  ll
+  182  #gzip fe comando para comprimir 
+  183  #gunzip fe.gz comando para descrompimir  
+  184  #si aparece en verde es porque tiene permisos de ejecución
+  185  #si aparece en rojo le podemos dar permisos de ejecución con: chmod 777 fe.gz
+  186  #ll -> es ls -la que enlista todo lo que hay incluso los ocultos con una lista larga 
+  187  pwd > f1
+  188  date > f2
+  189  cd ..
+  190  cd dir1
+  191  mkdir 1
+  192  mkdir 2
+  193  man find > dir2/f3
+  194  mkdir f3
+  195  man find > dir2/f3
+  196  ll -r dir
+  197  ll -r dir2
+  198  ls
+  199  1
+  200  cd 1
+  201  ls
+  202  rd 1
+  203  cd ..
+  204  ñs
+  205  ls
+  206  ccc-tarde/
+  207  ls
+  208  cd ccc-tarde/
+  209  ls
+  210  cd Do
+  211  cd Documents/
+  212  ls
+  213  man ps
+  214  #tar primera opcion de tar -c (crear) -x (crear) -t (listar)
+  215  #tar -v (dime lo que haces) que ejecucion haces como el debugger
+  216  #tar seguido de eso vene el nombre (nombre).tar
+  217  tar -cvf dir1.tar
+  218  #tar -cvf dir1.tar (f) para el n
+  219  tar -cvf dir1.tar dir1
+  220  ls
+  221  mkdir dir1
+  222  tar -cvf dir1.tar dir1 #finalizamos con el nombre
+  223  ll dir1
+  224  ll dir1.tar 
+  225  tar -tvf dir1.tar #listado de lo que esta comprimido
+  226  #tar sirve para empaquetar
+  227  #para transferir informacion entre sistemas linux
+  228  rm -r dir1
+  229  #como puedo extraer la informacion de un tar borrado?
+  230  tar -xvf dir1.tar
+  231  ll
+  232  ll -R dir1 #listado recursivo
+  233  #me crea un dir1 como empecie de copia donde se almacenara todo como estaba antes de borrar
+  234  rm -r dir1
+  235  tar -czvf dir1.tgz  #(tgz 't->tar' 'gz' 'gzip')
+  236  tar -czvf dir1.tgz dir1 #(tgz 't->tar' 'gz' 'gzip')
+  237  tar -xvf dir1.tar
+  238  tar -czvf dir1.tgz dir1
+  239  ll dir1
+  240  ls
+  241  -----COMANDO EXIT-----
+  242  #-----COMANDO EXIT-----
+  243  #Sale de las shells una a una
+  244  id
+  245  #id identificacion del usuario
+  246  -h
+  247  --h
+  248  man
+  249  man cp
+  250  cp help
+  251  cp -help
+  252  cp --help
+  253  history
+  254  grep *.*
+  255  cd ..
+  256  grep *.*
+  257  dir grep *.*
+  258  dir
+  259  ll grep *.*
+  260  ll
+  261  ll | grep *.*
+  262  ll | grep *
+  263  grep *
+  264  *
+  265  cd Desktop/
+  266  man > man1
+  267  man man > man1
+  268  type man1
+  269  cat man1 
+  270  cat man1 ^h
+  271  cat man1 | grep ^h
+  272  clear
+  273  history
+  274  cat man1 | grep '^h'
+  275  cat man1 | grep h
+  276  cat man1 |grep ':[^/]' regex
+  277  grep ':[^/]' regex
+  278  cat man1 | grep ':[^/]'
+  279  cat man1 
+  280  man man | sed 's/^ *//'
+  281  man man | sed 's/^ *//' > man1
+  282  grep ':[^/]'
+  283  grep ':[^/]' man1 
+  284  grep ': ' man1 
+  285  grep ':[^ ]' man1 
+  286  grep '^a' man1 
+  287  sed 's/^./___/' man1 
+  288  cat man1 
+  289  cat man1 | sed -e 's/^$//'
+  290  clear
+  291  cat man1 | sed -e 's/^$/U'
+  292  cat man1 | sed 's/^$/U'
+  293  sed 's/^./U/' man1 
+  294  sed 's/[aeiou]/u/' man1 
+  295  cat man1 
+  296  sed '/u/' man1 
+  297  sed 's/^./U/' man1 
+  298  man ls
+  299  help mv
+  300  mv -help
+  301  mv --help
+  302  mv -?
+  303  whatis mv
+  304  man mv
+  305  whatis chmod
+  306  apropos chmod
+  307  apropos mv
+  308  apropos m
+  309  apropos
+  310  apropos ae
+  311  howtos mv
+  312  howtos
+  313  howtos --help
+  314  uid
+  315  id
+  316  sudo -i
+  317  cd..
+  318  cd ,,
+  319  cd ..
+  320  ls
+  321  cd ..
+  322  ls
+  323  cd ..
+  324  ls
+  325  cd ..
+  326  ls
+  327  tree
+  328  tree --help
+  329  man tree
+  330  tree -?
+  331  tree
+  332  sudo snap install tree
+  333  tree --help
+  334  man tree
+  335  tree man
+  336  mantree
+  337  man tree
+  338  tree
+  339  tree /
+  340  tree .
+  341  sudo
+  342  sudo --help
+  343  sudo -l
+  344  sudo -i
+  345  ls
+  346  id
+  347  sudo -i
+  348  useradd
+  349  adduser
+  350  sudo adduser
+  351  sudo adduser usuario1
+  352  cat /etc/passwd
+  353  su - usuario1 
+  354  exit
+  355  jobs
+  356  kill %1
+  357  jobs
+  358  exit
+  359  cat /etc/passwd
+  360  man addgrupo
+  361  man addgroup
+  362  man groupadd
+  363  sudo groupadd flores
+  364  cat /etc/group
+  365  sudo adduser margarita flores
+  366  cat /etc/group
+  367  sudo adduser floripondio flores
+  368  cat /etc/group
+  369  cat /etc/gshadow
+  370  sudo cat /etc/gshadow
+  371  sudo cat /etc/passwd
+  372  sudo cat /etc/shadow
+  373  sudo cat /etc/gshadow
+  374  sudo cat /etc/group
+  375  less /etc/passwd
+  376  man less
+  377  less /etc/passwd
+  378  /etc/passwd
+  379  sudo /etc/passwd
+  380  sudo cat /etc/passwd
+  381  less /etc/passwd
+  382  sudo less /etc/passwd
+  383  history
+  384  history > ventana2.txt
