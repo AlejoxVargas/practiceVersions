@@ -1,6 +1,5 @@
 package Principal;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -47,15 +46,8 @@ public class Ejercicio3 {
         } while (opcion != 0);
     }
 
-    /*
-     * Actualice los precios de forma que los superiores
-     * a 100 euros se decrementen en un 50% y los inferiores se incrementen
-     * en un 50%.
-     * */
     public static void escribirArchivo(ArrayList<Integer> referencias, ArrayList<Double> precios, String directorio) {
         long posicion = 0;
-        String linea;
-        int indice = 0;
         long size;
 
         //Escribir las referencias y precios al archivo desde los Arrays de referencias y precios
@@ -68,37 +60,39 @@ public class Ejercicio3 {
             }
             mostrar(directorio);
             /*C:\\Users\\Alejandro Vargas\\Desktop\\referencias.txt*/
-            size = raf.length();
-            size = raf.length() / 8;
-            linea = String.valueOf(raf.readDouble());
+            size = raf.length() / 12;
             raf.seek(0);
 
-            while (raf.getFilePointer() < raf.length()) {
-                for (Double i : precios) {
-                    if (i > 100) {
-                        double mayorque = i;
-                        indice = linea.indexOf((int) mayorque);
-                        raf.seek(indice * 4L);
-                        System.out.println("Valor actual: " + raf.readDouble());
-                        raf.seek(indice * 4L);
-                        mayorque = i * 0.5;
-                        raf.writeDouble(mayorque);
-                    } else {
-                        double menorque = i;
-                        indice = linea.indexOf(5);
-                        raf.seek(indice * 4L);
-                        System.out.println("Valor actual: " + raf.readDouble());
-                        raf.seek(indice * 4L);
-                        menorque = i * 1.5;
-                        raf.writeDouble(menorque);
-                    }
+            for (int i = 0; i < size; i++) {
+                double precio = raf.readDouble();
+
+                raf.seek(posicion + 4);
+                if (precio > 100) {
+                    //System.out.println("Valor actual: " + precio);
+                    precio *= 0.5;
+                } else {
+                    //System.out.println("Valor actual: " + precio);
+                    precio *= 1.5;
+                }
+                raf.writeDouble(precio);
+                posicion += 12;
+            }
+
+            mostrar(directorio);
+        } catch (
+                FileNotFoundException e) {
+            System.out.println("El archivo no se ha encontrado.");
+        } catch (
+                IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (raf != null) {
+                try {
+                    raf.close();
+                } catch (IOException e) {
+                    // Ignore exception
                 }
             }
-            mostrar(directorio);
-        } catch (FileNotFoundException e) {
-            System.out.println("El archivo no se ha encontrado.");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
