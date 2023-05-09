@@ -1,2 +1,0 @@
-  521  #7. Establecer el alias 'ahora' que muestre la salida: AAMMDDhhmm
-  541  alias ahora="date +%Y%m%d%H%M"
