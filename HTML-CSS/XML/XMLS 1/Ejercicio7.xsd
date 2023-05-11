@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
-  <xs:element name="vehiculo">
-    <xs:simpleType>
+  <xs:element name="vehiculo" type="tVehiculo">
+    <xs:simpleType name="tVehiculo">
       <xs:restriction base="xs:string">
         <xs:enumeration value="barco"/>
         <xs:enumeration value="bicicleta"/>
