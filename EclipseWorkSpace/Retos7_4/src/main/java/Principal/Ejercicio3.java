@@ -36,7 +36,7 @@ public class Ejercicio3 {
             System.out.println("Directorio: ");
             directorio = sc.nextLine();
 
-            escribirArchivo(referencias, precios, directorio);
+            actualizarPrecios(referencias, precios, directorio);
 
             System.out.println("""
                     ¿Quiere agregar otra referencia?
@@ -46,45 +46,34 @@ public class Ejercicio3 {
         } while (opcion != 0);
     }
 
-    public static void escribirArchivo(ArrayList<Integer> referencias, ArrayList<Double> precios, String directorio) {
-        long posicion = 0;
-        long size;
-
-        //Escribir las referencias y precios al archivo desde los Arrays de referencias y precios
+    public static void actualizarPrecios(ArrayList<Integer> referencias, ArrayList<Double> precios, String directorio) {
         try {
+
             raf = new RandomAccessFile(directorio, "rw");
 
-            for (int i = 0; i < referencias.size(); i++) {
-                raf.writeInt(referencias.get(i));
-                raf.writeDouble(precios.get(i));
-            }
-            mostrar(directorio);
-            /*C:\\Users\\Alejandro Vargas\\Desktop\\referencias.txt*/
-            size = raf.length() / 12;
-            raf.seek(0);
+            Escribir(referencias, precios, directorio); //Escribe las referencias y precios
 
-            for (int i = 0; i < size; i++) {
+            /*C:\\Users\\Alejandro Vargas\\Desktop\\referencias.txt*/
+
+            while (raf.getFilePointer() < raf.length()) {
+                int referencia = raf.readInt();
                 double precio = raf.readDouble();
 
-                raf.seek(posicion + 4);
+                // Actualizar precios según criterio establecido
                 if (precio > 100) {
-                    //System.out.println("Valor actual: " + precio);
                     precio *= 0.5;
                 } else {
-                    //System.out.println("Valor actual: " + precio);
                     precio *= 1.5;
                 }
-                raf.writeDouble(precio);
-                posicion += 12;
-            }
 
-            mostrar(directorio);
-        } catch (
-                FileNotFoundException e) {
-            System.out.println("El archivo no se ha encontrado.");
-        } catch (
-                IOException e) {
-            throw new RuntimeException(e);
+                // Volver a escribir el precio actualizado en el archivo
+                raf.seek(raf.getFilePointer() - 8);
+                raf.writeDouble(precio);
+            }
+            Mostrar(directorio);
+        } catch (IOException e) {
+            // Capturar y tratar todas las excepciones
+            e.printStackTrace();
         } finally {
             if (raf != null) {
                 try {
@@ -99,7 +88,19 @@ public class Ejercicio3 {
     /*actualice los precios de forma que los superiores
      * a 100 euros se decrementen en un 50% y los inferiores se incrementen
      * en un 50%.*/
-    public static void mostrar(String directorio) {
+    public static void Escribir(ArrayList<Integer> referencias, ArrayList<Double> precios, String directorio) {
+        try {
+            raf = new RandomAccessFile(directorio, "rw");
+            for (int i = 0; i < referencias.size(); i++) {
+                raf.writeInt(referencias.get(i));
+                raf.writeDouble(precios.get(i));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void Mostrar(String directorio) {
         try {
             raf = new RandomAccessFile(directorio, "rw");
             raf.seek(0);
