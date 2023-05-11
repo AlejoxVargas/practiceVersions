@@ -1,4 +1,4 @@
-package BBDD;
+package com.dam.proyecto.miProyecto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,9 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class Conexion {
+public class App {
 	public static void main(String[] args) {
-		
 		try {
 			Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost/dam", "root", "");
 			Statement miStatement = miConexion.createStatement();
