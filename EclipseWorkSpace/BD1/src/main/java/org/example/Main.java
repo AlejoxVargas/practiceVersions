@@ -6,15 +6,10 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
-
-    static {
-        try {
-            Connection myConecction = DriverManager.getConnection("jdbc:mysql://localhost/maquinaexpendedora", "root", "");
-            Statement myStatement = myConecction.createStatement();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    static Connection myConecction = null;
+    //static Statement myStatement = null;
+    static PreparedStatement ps = null;
+    static ResultSet miResultSet = null;
 
     public static void main(String[] args) {
         Menu();
@@ -26,14 +21,10 @@ public class Main {
         do {
             menu = opcionMenu();
             switch (menu) {
-                case 1:
-                    Create();
-                case 2:
-                    Read();
-                case 3:
-                    Update();
-                case 4:
-                    Delete();
+                case 1 -> Create();
+                case 2 -> Read();
+                case 3 -> Update();
+                case 4 -> Delete();
             }
         } while (menu != 0);
     }
@@ -60,31 +51,52 @@ public class Main {
     }
     /*----C----R----U-----D*/
 
-    public static void Create() throws SQLException {
-        /*System.out.println("id: ");
-        int id = sc.nextInt();
-        System.out.println("nombre producto: ");
-        String nombre = sc.nextLine();
-        System.out.println("""
-                Tipo:
-                Comida / Bebida""");
-        String tipo = sc.nextLine();
-        boolean boleano = tipo.equalsIgnoreCase("comida");
-        System.out.println("precio: ");
-        double precio = sc.nextDouble();*/
-        String instruccionSql = "INSERT INTO PRODUCTO (id,nombre,tipo,precio) VALUES (1,Snack,0,34.56)";
-        ResultSet miResultSet = myStatement.executeQuery("SELECT * FROM PRUEBA");
+    public static void Create() {
+        try {
+            myConecction = DriverManager.getConnection("jdbc:mysql://localhost/maquinaexpendedora", "root", "");
 
-        while (miResultSet.next()) {
-            System.out.println(miResultSet.getString("Nombre") + "\t" + miResultSet.getInt("Edad"));
+            System.out.println("id: ");
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.println("nombre producto: ");
+            String nombre = sc.nextLine();
+            System.out.println("""
+                    Tipo:
+                    Comida / Bebida""");
+            String tipo = sc.nextLine();
+            boolean boleano = tipo.equalsIgnoreCase("comida");
+            System.out.println("precio: ");
+            double precio = sc.nextDouble();
+
+            //String instruccionSql = "INSERT INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (" + id + "," + "'" + nombre + "'" + "," + boleano + "," + precio + ")";
+            //myStatement.executeUpdate(instruccionSql);
+
+            ps = myConecction.prepareStatement("INSERT INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (?,?,?,?)");
+            ps.setInt(1, id);
+            ps.setString(2, nombre);
+            ps.setBoolean(3, boleano);
+            ps.setDouble(4, precio);
+            int row = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
     public static void Read() {
-
+        try {
+            miResultSet = ps.executeQuery("SELECT * FROM PRODUCTOS");
+            while (miResultSet.next()) {
+                System.out.println(miResultSet.getInt("id") + "\t" + miResultSet.getString("nombre") + "\t" + miResultSet.getBoolean("tipo") + "\t" + miResultSet.getDouble("precio"));
+            }
+            miResultSet.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void Update() {
+
     }
 
     private static void Delete() {

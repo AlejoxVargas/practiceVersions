@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="fichas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ficha" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" type="tNumero"/>
+              <xs:element name="nombre" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="letra" type="tLetra"/>
+            <xs:attribute name="numero" type="tNumero"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="tNumero">
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="[01][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tLetra">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[XYZ]"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
