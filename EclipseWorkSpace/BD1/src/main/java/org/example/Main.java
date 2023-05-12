@@ -17,7 +17,6 @@ public class Main {
 
     public static void Menu() {
         int menu;
-        boolean llave = true;
         do {
             menu = opcionMenu();
             switch (menu) {
@@ -96,7 +95,42 @@ public class Main {
     }
 
     private static void Update() {
+        //hacer una sentencia que me permita pasarle el campo que quiero tal vez con un arrayList y luego modificar
+        try {
+            myConecction = DriverManager.getConnection("jdbc:mysql://localhost/maquinaexpendedora", "root", "");
+            System.out.println("""
+                    \tCampo a modificar
+                    1.id
+                    2.Nombre
+                    3.Tipo
+                    4.Precio""");
+            int opcion = sc.nextInt();
+            System.out.println("Nuevo valor: ");
+            ps = myConecction.prepareStatement("UPDATE INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (?,?,?,?)");
+            switch (opcion) {
+                case 1 -> {
+                    System.out.println("Nuevo id: ");
+                    ps.setInt(opcion, sc.nextInt());
+                }
+                case 2 -> {
+                    System.out.println("Nuevo nombre: ");
+                    ps.setString(opcion, sc.nextLine());
+                }
+                case 3 -> {
+                    System.out.println("Nuevo tipo: ");
+                    boolean boleano = sc.nextLine().equalsIgnoreCase("comida");
+                    ps.setBoolean(opcion, boleano);
+                }
+                case 4 -> {
+                    System.out.println("Nuevo precio: ");
+                    ps.setDouble(opcion, sc.nextDouble());
+                }
+            }
+            int row = ps.executeUpdate();
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void Delete() {
