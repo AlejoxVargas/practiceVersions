@@ -1,0 +1,8 @@
+Capitulo \d
+Capitulo \d\d?
+Capitulo [1-9]\d?
+Capitulo \d+
+Capitulo \DZ
+Capitulo AB{2,5}C
+Capitulo RS{2,}[3-8]?
+Capitulo COD\d{3}.+
