@@ -14,8 +14,8 @@ public class DAM1_PR_Ficheros_Control_230428_Alejo_Vargas {
     //Instancias globales de ObjectStream para leer y escribir
     static {
         try {
-            escribiendo = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Alejandro Vargas\\Desktop\\objetos.dat"));
-            leyendo = new ObjectInputStream(new FileInputStream("C:\\Users\\Alejandro Vargas\\Desktop\\objetos.dat"));
+            escribiendo = new ObjectOutputStream(new FileOutputStream("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\objetos.dat"));
+            leyendo = new ObjectInputStream(new FileInputStream("C:\\Users\\ALUMNO CCC - TARDE\\Desktop\\objetos.dat"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -64,17 +64,11 @@ public class DAM1_PR_Ficheros_Control_230428_Alejo_Vargas {
             Preguntas[] preguntasLeidas = (Preguntas[]) leyendo.readObject();
             for (int i = 0; i < preguntasLeidas.length; i++) {
                 System.out.println(preguntasLeidas[i].toString());
-                System.out.println(Arrays.toString(preguntasLeidas[i].getRespuetas()));
+                preguntasLeidas[i].getRespuetas();
             }
         } catch (IOException | ClassNotFoundException e) {
             // Fin de fichero alcanzado, no hay más objetos
             System.err.println("Error al leer del fichero: " + e.getMessage());
-        }
-    }
-
-    public static void getRespuetas(Preguntas[] preguntas) {
-        for (int i = 0; i < preguntas.length; i++) {
-            System.out.println(preguntas[i]);
         }
     }
 
@@ -98,7 +92,6 @@ public class DAM1_PR_Ficheros_Control_230428_Alejo_Vargas {
             sc.nextLine();
             int letraRespuesta = 97;
             for (int j = 0; j < respuestas.length; j++) {
-
                 System.out.println("Escriba la respuesta: " + (char) letraRespuesta);
                 respuestas[j] = sc.nextLine();
                 letraRespuesta++;
@@ -168,10 +161,8 @@ public class DAM1_PR_Ficheros_Control_230428_Alejo_Vargas {
         }
 
         public void getRespuetas() {
-            int letraPregunta = 97;
             for (int i = 0; i < respuetas.length; i++) {
-                System.out.println((char)letraPregunta) + ": "+ respuetas[i]);
-                letraPregunta++;
+                System.out.println(i + ": " + respuetas[i]);
             }
         }
 
