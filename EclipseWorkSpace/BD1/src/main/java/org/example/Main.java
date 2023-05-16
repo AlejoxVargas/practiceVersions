@@ -98,6 +98,9 @@ public class Main {
         //hacer una sentencia que me permita pasarle el campo que quiero tal vez con un arrayList y luego modificar
         try {
             myConecction = DriverManager.getConnection("jdbc:mysql://localhost/maquinaexpendedora", "root", "");
+            System.out.println("id del campo a modificar: ");
+            int id = sc.nextInt();
+            ps = myConecction.prepareStatement("UPDATE INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (?,?,?,?) WHERE id = " + id);
             System.out.println("""
                     \tCampo a modificar
                     1.id
@@ -105,8 +108,6 @@ public class Main {
                     3.Tipo
                     4.Precio""");
             int opcion = sc.nextInt();
-            System.out.println("Nuevo valor: ");
-            ps = myConecction.prepareStatement("UPDATE INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (?,?,?,?)");
             switch (opcion) {
                 case 1 -> {
                     System.out.println("Nuevo id: ");
