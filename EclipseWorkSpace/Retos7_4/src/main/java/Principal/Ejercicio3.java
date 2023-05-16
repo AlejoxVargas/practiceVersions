@@ -53,8 +53,6 @@ public class Ejercicio3 {
 
             Escribir(referencias, precios, directorio); //Escribe las referencias y precios
 
-            /*C:\\Users\\Alejandro Vargas\\Desktop\\referencias.txt*/
-
             while (raf.getFilePointer() < raf.length()) {
                 int referencia = raf.readInt();
                 double precio = raf.readDouble();
