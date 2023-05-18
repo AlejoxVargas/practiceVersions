@@ -5,30 +5,30 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    static Scanner sc = new Scanner(System.in);
-    static Connection myConecction = null;
-    //static Statement myStatement = null;
-    static PreparedStatement ps = null;
-    static ResultSet miResultSet = null;
+    private Connection connection;
 
     public static void main(String[] args) {
-        Menu();
+        Main main = new Main();
+        main.menu();
     }
 
-    public static void Menu() {
+    public void menu() {
+        connect();
         int menu;
         do {
             menu = opcionMenu();
             switch (menu) {
-                case 1 -> Create();
-                case 2 -> Read();
-                case 3 -> Update();
-                case 4 -> Delete();
+                case 1 -> create();
+                case 2 -> read();
+                case 3 -> update();
+                case 4 -> delete();
             }
         } while (menu != 0);
+        disconnect();
     }
 
     public static int opcionMenu() {
+        Scanner sc = new Scanner(System.in);
         int menu = 0;
         boolean valido = false;
         do {
@@ -36,104 +36,189 @@ public class Main {
                 System.out.println("""
                          _____MAQUINA EXPENDEDORA_____
                         1.Create
-                        2.Read (Consult)
+                        2.Read
                         3.Update
                         4.Delete
                         0.Salir""");
                 menu = sc.nextInt();
                 valido = true;
             } catch (InputMismatchException e) {
-                System.out.println("Opcición no valida " + e.getMessage());
+                System.out.println("Opción no valida " + e.getMessage());
             }
         } while (!valido);
         return menu;
     }
-    /*----C----R----U-----D*/
 
-    public static void Create() {
+    // Método para establecer la conexión con la base de datos
+    public void connect() {
+        String url = "jdbc:mysql://localhost/maquinaexpendedora";
+        String username = "root";
+        String password = "";
+
         try {
-            myConecction = DriverManager.getConnection("jdbc:mysql://localhost/maquinaexpendedora", "root", "");
+            connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Conexión establecida");
+        } catch (SQLException e) {
+            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+        }
+    }
 
-            System.out.println("id: ");
-            int id = sc.nextInt();
-            sc.nextLine();
-            System.out.println("nombre producto: ");
+    // Método para crear un nuevo registro en la tabla
+    public void create() {
+        try {
+            // Obtener los datos ingresados por el usuario
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Ingrese el valor para el campo 'nombre': ");
             String nombre = sc.nextLine();
-            System.out.println("""
-                    Tipo:
-                    Comida / Bebida""");
+
+            System.out.print("Ingrese el valor para el campo 'tipo': ");
             String tipo = sc.nextLine();
-            boolean boleano = tipo.equalsIgnoreCase("comida");
-            System.out.println("precio: ");
+
+            System.out.print("Ingrese el valor para el campo 'precio': ");
             double precio = sc.nextDouble();
 
-            //String instruccionSql = "INSERT INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (" + id + "," + "'" + nombre + "'" + "," + boleano + "," + precio + ")";
-            //myStatement.executeUpdate(instruccionSql);
+            // Consulta SQL
+            String sql = "INSERT INTO productos (nombre, tipo, precio) VALUES (?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
 
-            ps = myConecction.prepareStatement("INSERT INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (?,?,?,?)");
-            ps.setInt(1, id);
-            ps.setString(2, nombre);
-            ps.setBoolean(3, boleano);
-            ps.setDouble(4, precio);
-            int row = ps.executeUpdate();
+            // Establecer los valores de los parámetros
+            statement.setString(1, nombre);
+            statement.setString(2, tipo);
+            statement.setDouble(3, precio);
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+            // Ejecutar la consulta
+            int filasAfectadas = statement.executeUpdate();
 
-    public static void Read() {
-        try {
-            miResultSet = ps.executeQuery("SELECT * FROM PRODUCTOS");
-            while (miResultSet.next()) {
-                System.out.println(miResultSet.getInt("id") + "\t" + miResultSet.getString("nombre") + "\t" + miResultSet.getBoolean("tipo") + "\t" + miResultSet.getDouble("precio"));
+            // Verificar si se creó el registro correctamente
+            if (filasAfectadas > 0) {
+                System.out.println("El registro se ha creado correctamente.");
+            } else {
+                System.out.println("Error al crear el registro.");
             }
-            miResultSet.close();
+
+            // Cerrar el statement
+            statement.close();
+
+            /*String instruccionSql = "INSERT INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (" + id + "," + "'" + nombre + "'" + "," + boleano + "," + precio + ")";
+             * myStatement.executeUpdate(instruccionSql); */
+
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error al crear el registro: " + e.getMessage());
         }
     }
 
-    private static void Update() {
-        //hacer una sentencia que me permita pasarle el campo que quiero tal vez con un arrayList y luego modificar
+    // Método para consultar todos los registros de la tabla
+    public void read() {
         try {
-            myConecction = DriverManager.getConnection("jdbc:mysql://localhost/maquinaexpendedora", "root", "");
-            System.out.println("id del campo a modificar: ");
+            String sql = "SELECT * FROM productos";
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            // Ejecutar la consulta
+            ResultSet resultSet = statement.executeQuery();
+
+            // Recorrer los resultados y mostrarlos en pantalla
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String nombre = resultSet.getString("nombre");
+                String tipo = resultSet.getString("tipo");
+                double precio = resultSet.getDouble("precio");
+
+                System.out.println("ID: " + id + ", Nombre: " + nombre + ", Tipo: " + tipo + ", Precio: " + precio);
+            }
+
+            // Cerrar el statement y el resultSet
+            statement.close();
+            resultSet.close();
+        } catch (SQLException e) {
+            System.out.println("Error al consultar los registros: " + e.getMessage());
+        }
+    }
+
+    // Método para modificar un registro en la tabla
+    private void update() {
+        try {
+            // Obtener los datos ingresados por el usuario
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Ingrese el ID del registro a modificar: ");
+            int id = scanner.nextInt();
+            scanner.nextLine(); // Limpiar el buffer
+
+            System.out.print("Ingrese el nuevo valor para el campo 'nombre': ");
+            String nuevoNombre = scanner.nextLine();
+
+            System.out.print("Ingrese el nuevo valor para el campo 'Tipo': ");
+            String nuevoTipo = scanner.nextLine();
+
+            System.out.print("Ingrese el nuevo valor para el campo 'Precio': ");
+            double nuevoPrecio = scanner.nextDouble();
+
+            String sql = "UPDATE productos SET nombre = ?, tipo = ?, precio = ? WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            // Establecer los valores de los parámetros
+            statement.setString(1, nuevoNombre);
+            statement.setString(2, nuevoTipo);
+            statement.setDouble(3, nuevoPrecio);
+            statement.setInt(4, id);
+
+            // Ejecutar la consulta
+            int filasAfectadas = statement.executeUpdate();
+
+            // Verificar si se modificó algún registro
+            if (filasAfectadas > 0) {
+                System.out.println("El registro se ha modificado correctamente.");
+            } else {
+                System.out.println("No se encontró ningún registro con el ID proporcionado.");
+            }
+
+            // Cerrar el statement
+            statement.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error al modificar el registro: " + e.getMessage());
+        }
+    }
+
+    // Método para borrar un registro de la tabla
+    public void delete() {
+        try {
+            // Obtener el ID del registro a borrar ingresado por el usuario
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Ingrese el ID del registro a borrar: ");
             int id = sc.nextInt();
-            ps = myConecction.prepareStatement("UPDATE INTO PRODUCTOS (id,nombre,tipo,precio) VALUES (?,?,?,?) WHERE id = " + id);
-            System.out.println("""
-                    \tCampo a modificar
-                    1.id
-                    2.Nombre
-                    3.Tipo
-                    4.Precio""");
-            int opcion = sc.nextInt();
-            switch (opcion) {
-                case 1 -> {
-                    System.out.println("Nuevo id: ");
-                    ps.setInt(opcion, sc.nextInt());
-                }
-                case 2 -> {
-                    System.out.println("Nuevo nombre: ");
-                    ps.setString(opcion, sc.nextLine());
-                }
-                case 3 -> {
-                    System.out.println("Nuevo tipo: ");
-                    boolean boleano = sc.nextLine().equalsIgnoreCase("comida");
-                    ps.setBoolean(opcion, boleano);
-                }
-                case 4 -> {
-                    System.out.println("Nuevo precio: ");
-                    ps.setDouble(opcion, sc.nextDouble());
-                }
-            }
-            int row = ps.executeUpdate();
 
+            // Consulta SQL
+            String sql = "DELETE FROM productos WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            // Establecer el valor del parámetro
+            statement.setInt(1, id);
+
+            // Ejecutar la consulta
+            int filasAfectadas = statement.executeUpdate();
+
+            // Verificar si se borró el registro correctamente
+            if (filasAfectadas > 0) {
+                System.out.println("El registro se ha borrado correctamente.");
+            } else {
+                System.out.println("No se encontró ningún registro con el ID proporcionado.");
+            }
+
+            // Cerrar el statement
+            statement.close();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error al borrar el registro: " + e.getMessage());
         }
     }
 
-    private static void Delete() {
+    public void disconnect() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+                System.out.println("Conexión cerrada");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al cerrar la conexión: " + e.getMessage());
+        }
     }
 }
