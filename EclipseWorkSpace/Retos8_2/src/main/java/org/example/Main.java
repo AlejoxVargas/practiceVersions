@@ -9,10 +9,9 @@ public class Main {
     public static void main(String[] args) {
         Main main = new Main();
         main.connect();
-        main.goblalStatement();
-        main.createSeguroCocheTabla();
+       // main.createSeguroCocheTabla();
         main.insertDataIntoSeguroCoche();
-        main.updateSeguroCocheTable();
+        //main.updateSeguroCocheTable();
         main.disconnect();
     }
 
@@ -24,16 +23,9 @@ public class Main {
         try {
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("Conexión establecida");
-        } catch (SQLException e) {
-            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
-        }
-    }
-
-    public void goblalStatement() {
-        try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }
     }
 
@@ -51,10 +43,10 @@ public class Main {
             String selectQuery = "SELECT P.DNI, P.Edad, C.Matricula, C.Precio FROM propietarios P INNER JOIN coches C ON P.DNI = C.DNI";
             ResultSet resultSet = statement.executeQuery(selectQuery);
             while (resultSet.next()) {
-                String dni = resultSet.getString("DNI");
-                int edad = resultSet.getInt("Edad");
-                String matricula = resultSet.getString("Matricula");
-                double precio = resultSet.getDouble("Precio");
+                String dni = resultSet.getString("P.DNI");
+                int edad = resultSet.getInt("P.Edad");
+                String matricula = resultSet.getString("C.Matricula");
+                double precio = resultSet.getDouble("C.Precio");
 
                 double seguro;
                 if (edad < 40) {
