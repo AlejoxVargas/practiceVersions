@@ -3,24 +3,23 @@ package org.example;
 import java.sql.*;
 
 public class Main {
-    private Connection connection;
-    private Statement statement;
+    Connection connection;
+    Statement statement;
 
     public static void main(String[] args) {
         Main main = new Main();
         main.connect();
-       // main.createSeguroCocheTabla();
+        //main.createSeguroCocheTabla();
         main.insertDataIntoSeguroCoche();
         //main.updateSeguroCocheTable();
         main.disconnect();
     }
 
     public void connect() {
-        String url = "jdbc:mysql://localhost/datoscoches";
-        String username = "root";
-        String password = "";
-
         try {
+            String url = "jdbc:mysql://localhost/datosCoches";
+            String username = "root";
+            String password = "";
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("Conexión establecida");
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -40,13 +39,18 @@ public class Main {
 
     public void insertDataIntoSeguroCoche() {
         try {
-            String selectQuery = "SELECT P.DNI, P.Edad, C.Matricula, C.Precio FROM propietarios P INNER JOIN coches C ON P.DNI = C.DNI";
-            ResultSet resultSet = statement.executeQuery(selectQuery);
-            while (resultSet.next()) {
-                String dni = resultSet.getString("P.DNI");
-                int edad = resultSet.getInt("P.Edad");
-                String matricula = resultSet.getString("C.Matricula");
-                double precio = resultSet.getDouble("C.Precio");
+            String selectPropietarios = "SELECT dni, edad FROM propietarios";
+            String selectCoches = "SELECT matricula, precio FROM coches";
+            ResultSet resultSetPropietarios = statement.executeQuery(selectPropietarios);
+            ResultSet resultSetCoches = statement.executeQuery(selectCoches);
+            ResultSet resultSetSeguroCoche = statement.executeQuery("SELECT * FROM SeguroCoche");
+
+            resultSetSeguroCoche.moveToInsertRow();
+            while (resultSetPropietarios.next() && resultSetCoches.next()) {
+                String dni = resultSetPropietarios.getString("dni");
+                int edad = resultSetPropietarios.getInt("edad");
+                String matricula = resultSetCoches.getString("matricula");
+                double precio = resultSetCoches.getDouble("precio");
 
                 double seguro;
                 if (edad < 40) {
@@ -54,17 +58,17 @@ public class Main {
                 } else {
                     seguro = precio * 0.01;
                 }
-                resultSet.moveToInsertRow();
-                resultSet.updateString("Dni", dni);
-                resultSet.updateInt("Edad", edad);
-                resultSet.updateString("Matricula", matricula);
-                resultSet.updateDouble("Seguro", seguro);
-                resultSet.insertRow();
-                resultSet.moveToCurrentRow();
+
+                resultSetSeguroCoche.updateString("dni", dni);
+                resultSetSeguroCoche.updateInt("edad", edad);
+                resultSetSeguroCoche.updateString("matricula", matricula);
+                resultSetSeguroCoche.updateDouble("seguro", seguro);
+                resultSetSeguroCoche.insertRow();
+                resultSetSeguroCoche.moveToInsertRow();
             }
             printSeguroCocheTable();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
@@ -105,11 +109,9 @@ public class Main {
 
     public void disconnect() {
         try {
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-                System.out.println("Conexión cerrada");
-                statement.close();
-            }
+            statement.close();
+            connection.close();
+            System.out.println("Conexión cerrada");
         } catch (SQLException e) {
             System.out.println("Error al cerrar la conexión: " + e.getMessage());
         }
