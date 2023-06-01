@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <?xml-stylesheet href="Empresa03.xsl" type="text/xsl"?>
-
 <empresa nombre="El Corte Inglés">
     <departamento nombre="Investigación &amp; Desarrollo">
         <empleado nacionalidad="inglés">
