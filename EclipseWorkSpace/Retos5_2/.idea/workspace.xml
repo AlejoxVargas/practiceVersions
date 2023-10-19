@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="186d0898-e454-4567-9769-ff96b9d43aab" name="Changes" comment="" />
+    <list default="true" id="186d0898-e454-4567-9769-ff96b9d43aab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Retos5_1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos5_1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Retos7_3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos7_3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Retos7_4/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos7_4/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Retos7_5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos7_5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Examenes/Tercer Trimetre/DAM1_PR_Final_3_ev_230529_Alejandro_Vargas/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Examenes/Tercer Trimetre/DAM1_PR_Final_3_ev_230529_Alejandro_Vargas/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_5/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_5/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_5/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_5/Retos4_5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_7/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_7/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_8/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_8/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Retos4_8/src/main/java/AlquilerCoches/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Retos4_8/src/main/java/AlquilerCoches/Principal.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +41,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2N0dtrQE2qOfsLIVtLNNXiUpt8O" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,7 +54,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/Retos4_5"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/EclipseWorkSpace/Retos5_2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

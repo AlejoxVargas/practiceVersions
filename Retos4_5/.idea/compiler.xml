@@ -9,8 +9,5 @@
         <module name="Retos4_5" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Retos4_5" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -68,7 +68,7 @@ public class Principal {
         boolean noDisponible = false;
         do {
             sc.nextLine();
-            arrangeNumbers(libres);
+                arrangeNumbers(libres);
             System.out.println("Coche a alquilar: ");
             matricula = sc.nextLine();
 

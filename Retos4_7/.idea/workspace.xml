@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea84e07b-96ff-4a11-84e7-5b4b619ab2fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Base Datos/Triggers/Triggers1.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Base Datos/Triggers/Triggers1.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Retos4_3/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Retos4_3/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Retos4_3/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Retos4_3/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Retos4_3/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Retos4_3/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/POO/src/paquete1/Coche.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/POO/src/paquete1/Coche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/POO/src/paquete1/PrincipalCoche.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/POO/src/paquete1/PrincipalCoche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos7_3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos7_3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos7_4/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos7_4/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EclipseWorkSpace/Retos7_5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EclipseWorkSpace/Retos7_5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Examenes/Tercer Trimetre/DAM1_PR_Final_3_ev_230529_Alejandro_Vargas/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Examenes/Tercer Trimetre/DAM1_PR_Final_3_ev_230529_Alejandro_Vargas/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Retos4_8/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_8/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Retos4_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_8/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Retos4_8/src/main/java/AlquilerCoches/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Retos4_8/src/main/java/AlquilerCoches/Principal.java" afterDir="false" />
     </list>
@@ -38,18 +33,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
   <component name="ProjectId" id="2LP87SpJGOaQtUUTgQ5EipwuQNk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -59,7 +45,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/USUARIO CCC - TARDE/Desktop/workArea/practiceVersions/Retos4_3"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Alejandro Vargas/Desktop/WorkArea/practiceVersions/Retos4_7"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Ejercicio2">
